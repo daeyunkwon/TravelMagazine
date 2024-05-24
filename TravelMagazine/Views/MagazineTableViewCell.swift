@@ -33,12 +33,14 @@ class MagazineTableViewCell: UITableViewCell {
     func configureUI() {
         mainImageView.layer.cornerRadius = 10
         
-        titleLabel.font = .boldSystemFont(ofSize: 30)
+        titleLabel.font = .systemFont(ofSize: 25, weight: .bold)
         titleLabel.numberOfLines = 0
         
-        subTitleLabel.textColor = .systemGray5
+        subTitleLabel.textColor = .systemGray
+        subTitleLabel.font = .systemFont(ofSize: 16, weight: .semibold)
         
-        dateLabel.textColor = .systemGray5
+        dateLabel.textColor = .systemGray
+        dateLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         dateLabel.textAlignment = .right
     }
 
