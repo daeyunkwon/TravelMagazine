@@ -32,6 +32,5 @@ struct MagazineInfo {
         Magazine(title: "야시장 천국 '대만 여행' 먹킷리스트", subtitle: "요즘 가장 인기 있는 메뉴는 OO", photo_image: "https://i.namu.wiki/i/QhFAtIGWU_z76GaEa4Sl1zCW0XD31ofP1ny_jhVsGOuCuO7Ki4rga9lHcpUEFx1n8UXTTsOWZkAcz3P5bHAUSrzkwrDKCOMZEJ_KzCxhyBh1V0XQSkvYYjQy1pZh_0FOigpHnG1zHL7XfRV8KFUx-A.webp", date: "240103", link: "https://triple.guide/content/articles/69f887b0-4b87-451f-8859-82c7461858b9"),
         Magazine(title: "핑크빛 바다가 펼쳐지는 환상의 섬, 롬복", subtitle: "잊히지 않는 TV속 그곳!", photo_image: "https://i.namu.wiki/i/yV8yX6YIVmEKCx807NJG_hxrLyTMlJ-MShs1z1fd0PIB6IN4r94FRgH3a8xvhnvdxL15A3ELFq83n6y-4k51x5mboiHvZnbr1BPcAniZ6ErqJNbMnsFT_tLjimMJWHahYuW823ZO_hN5v-ca_Us90Q.webp", date: "240101", link: "https://triple.guide/content/articles/8c4cded5-ff1e-4898-b884-c7b9f84fd5d8"),
         Magazine(title: "여행 고수가 알려주는 새벽 비행기 이용 꿀팁", subtitle: "이제 공항에서 시간 때울 걱정 끝!", photo_image: "https://i.namu.wiki/i/6hscyOX5gNdRdcN5IdtHA7VkQHdFnvszFrGY0MrVv6Iljb2sRTKxne86s9h01lMGgIC10wOqlDHmDX09mL615-xJV0tOhNV9V_SdVVXaY47CM9aaqwS63NiUwnDSFX_DZPmeWCCHoxucWPbAPZnaSA.webp", date: "240105", link: "https://triple.guide/content/articles/791578f3-95d7-4300-a51f-6dff48db5d55"),
-
     ]
 }

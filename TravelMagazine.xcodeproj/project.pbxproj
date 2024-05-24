@@ -14,6 +14,7 @@
 		449B34902C0080DE0010F093 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449B348F2C0080DE0010F093 /* Assets.xcassets */; };
 		449B34932C0080DE0010F093 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 449B34922C0080DE0010F093 /* Base */; };
 		449B349B2C00829A0010F093 /* Magazine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B349A2C00829A0010F093 /* Magazine.swift */; };
+		449B34A12C0086590010F093 /* MagazineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B34A02C0086590010F093 /* MagazineTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		449B34922C0080DE0010F093 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449B34942C0080DE0010F093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449B349A2C00829A0010F093 /* Magazine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magazine.swift; sourceTree = "<group>"; };
+		449B34A02C0086590010F093 /* MagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				449B348C2C0080DD0010F093 /* Main.storyboard */,
+				449B34A02C0086590010F093 /* MagazineTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449B348B2C0080DD0010F093 /* ViewController.swift in Sources */,
+				449B34A12C0086590010F093 /* MagazineTableViewCell.swift in Sources */,
 				449B349B2C00829A0010F093 /* Magazine.swift in Sources */,
 				449B34872C0080DD0010F093 /* AppDelegate.swift in Sources */,
 				449B34892C0080DD0010F093 /* SceneDelegate.swift in Sources */,
