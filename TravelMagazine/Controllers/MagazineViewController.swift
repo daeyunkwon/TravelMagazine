@@ -7,13 +7,51 @@
 
 import UIKit
 
-class MagazineViewController: UIViewController {
-
+class MagazineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet var tableView: UITableView!
+    
+    var magazines: [Magazine] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupData()
+        setupNavi()
+        setupTableView()
     }
+    
+    func setupData() {
+        magazines = MagazineInfo.magazine
+    }
+    
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    func setupNavi() {
+        navigationItem.title = "SaSAC TRAVEL"
+    }
+    
+    //MARK: - TableView DataSource
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 1000
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return magazines.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MagazineTableViewCell", for: indexPath) as! MagazineTableViewCell
+        
+        cell.magazine = self.magazines[indexPath.row]
+        
+        return cell
+    }
+    
 
 
 }
+
 

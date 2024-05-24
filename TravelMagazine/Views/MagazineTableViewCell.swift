@@ -14,7 +14,17 @@ class MagazineTableViewCell: UITableViewCell {
     @IBOutlet var subTitleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
-
+    var magazine: Magazine? {
+        didSet {
+            guard let magazine = magazine else {return}
+            
+            mainImageView.image = UIImage(systemName: "star")
+            titleLabel.text = magazine.title
+            subTitleLabel.text = magazine.subtitle
+            dateLabel.text = magazine.date
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
