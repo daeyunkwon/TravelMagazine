@@ -13,6 +13,7 @@
 		449B348E2C0080DD0010F093 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 449B348D2C0080DD0010F093 /* Base */; };
 		449B34902C0080DE0010F093 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 449B348F2C0080DE0010F093 /* Assets.xcassets */; };
 		449B34932C0080DE0010F093 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 449B34922C0080DE0010F093 /* Base */; };
+		449B349B2C00829A0010F093 /* Magazine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B349A2C00829A0010F093 /* Magazine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		449B348F2C0080DE0010F093 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		449B34922C0080DE0010F093 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		449B34942C0080DE0010F093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		449B349A2C00829A0010F093 /* Magazine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magazine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,38 @@
 			children = (
 				449B34862C0080DD0010F093 /* AppDelegate.swift */,
 				449B34882C0080DD0010F093 /* SceneDelegate.swift */,
-				449B348A2C0080DD0010F093 /* ViewController.swift */,
-				449B348C2C0080DD0010F093 /* Main.storyboard */,
+				449B349D2C00833B0010F093 /* Models */,
+				449B349E2C0083520010F093 /* Views */,
+				449B349F2C0083830010F093 /* Controllers */,
 				449B348F2C0080DE0010F093 /* Assets.xcassets */,
 				449B34912C0080DE0010F093 /* LaunchScreen.storyboard */,
 				449B34942C0080DE0010F093 /* Info.plist */,
 			);
 			path = TravelMagazine;
+			sourceTree = "<group>";
+		};
+		449B349D2C00833B0010F093 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				449B349A2C00829A0010F093 /* Magazine.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		449B349E2C0083520010F093 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				449B348C2C0080DD0010F093 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		449B349F2C0083830010F093 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				449B348A2C0080DD0010F093 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449B348B2C0080DD0010F093 /* ViewController.swift in Sources */,
+				449B349B2C00829A0010F093 /* Magazine.swift in Sources */,
 				449B34872C0080DD0010F093 /* AppDelegate.swift in Sources */,
 				449B34892C0080DD0010F093 /* SceneDelegate.swift in Sources */,
 			);
