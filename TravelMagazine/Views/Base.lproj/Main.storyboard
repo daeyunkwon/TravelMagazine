@@ -77,7 +77,6 @@
                                                 <constraint firstItem="igU-G6-bCJ" firstAttribute="centerX" secondItem="6qP-Dv-Zhf" secondAttribute="centerX" id="vYg-Tk-esA"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.72454140929999999" green="1" blue="0.28242272190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="AVS-Fk-Tvd" id="Qhd-QO-yfW"/>
                                             <outlet property="mainImageView" destination="igU-G6-bCJ" id="wjG-hw-5AB"/>
