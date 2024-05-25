@@ -43,6 +43,7 @@ class MagazineTableViewCell: UITableViewCell {
     func configureUI() {
         mainImageView.layer.cornerRadius = 10
         mainImageView.contentMode = .scaleAspectFill
+        mainImageView.backgroundColor = .systemGray5
         
         titleLabel.font = .systemFont(ofSize: 25, weight: .bold)
         titleLabel.numberOfLines = 0
