@@ -23,7 +23,7 @@ class MagazineTableViewCell: UITableViewCell {
             
             titleLabel.text = magazine.title
             subTitleLabel.text = magazine.subtitle
-            dateLabel.text = magazine.date
+            dateLabel.text = self.makeDateString(str: magazine.date)
         }
     }
     
@@ -54,6 +54,21 @@ class MagazineTableViewCell: UITableViewCell {
         dateLabel.textColor = .systemGray
         dateLabel.font = .systemFont(ofSize: 14, weight: .semibold)
         dateLabel.textAlignment = .right
+    }
+    
+    func makeDateString(str: String) -> String {
+        //String -> Date로 변환하기
+        let myFormatter = DateFormatter()
+        myFormatter.dateFormat = "yyMMdd"  // String의 문자열 형식과 동일 해야함
+        myFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+        
+        let date = myFormatter.date(from: str) ?? Date()
+        
+        //원하는 format으로 표시하기 위해 다시 Date -> String 으로 변환하기
+        myFormatter.dateFormat = "yy년 M월 d일"
+        let dateString = myFormatter.string(from: date)
+        
+        return dateString
     }
 
 }
