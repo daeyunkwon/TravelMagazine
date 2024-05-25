@@ -28,6 +28,8 @@ class MagazineViewController: UIViewController, UITableViewDataSource, UITableVi
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.separatorStyle = .none
     }
     
     func setupNavi() {
