@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MagazineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -35,7 +36,7 @@ class MagazineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //MARK: - TableView DataSource
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 1000
+        return 500
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,6 +48,7 @@ class MagazineViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell.magazine = self.magazines[indexPath.row]
         
+        cell.selectionStyle = .none
         return cell
     }
     

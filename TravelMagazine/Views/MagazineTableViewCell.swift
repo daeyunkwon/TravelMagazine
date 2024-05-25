@@ -18,7 +18,9 @@ class MagazineTableViewCell: UITableViewCell {
         didSet {
             guard let magazine = magazine else {return}
             
-            mainImageView.image = UIImage(systemName: "star")
+            let url = URL(string: magazine.photo_image)
+            mainImageView.kf.setImage(with: url)
+            
             titleLabel.text = magazine.title
             subTitleLabel.text = magazine.subtitle
             dateLabel.text = magazine.date
@@ -32,6 +34,7 @@ class MagazineTableViewCell: UITableViewCell {
     
     func configureUI() {
         mainImageView.layer.cornerRadius = 10
+        mainImageView.contentMode = .scaleAspectFill
         
         titleLabel.font = .systemFont(ofSize: 25, weight: .bold)
         titleLabel.numberOfLines = 0
