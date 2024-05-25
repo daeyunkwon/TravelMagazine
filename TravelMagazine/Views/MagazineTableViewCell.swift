@@ -27,6 +27,14 @@ class MagazineTableViewCell: UITableViewCell {
         }
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        mainImageView.image = nil
+        titleLabel.text = nil
+        subTitleLabel.text = nil
+        dateLabel.text = nil
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
