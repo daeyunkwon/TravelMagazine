@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		445B6D752C00925500C40BC2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 445B6D742C00925500C40BC2 /* Kingfisher */; };
+		445B6D772C01D91C00C40BC2 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B6D762C01D91C00C40BC2 /* Restaurant.swift */; };
 		449B34872C0080DD0010F093 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B34862C0080DD0010F093 /* AppDelegate.swift */; };
 		449B34892C0080DD0010F093 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B34882C0080DD0010F093 /* SceneDelegate.swift */; };
 		449B348B2C0080DD0010F093 /* MagazineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B348A2C0080DD0010F093 /* MagazineViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		445B6D762C01D91C00C40BC2 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		449B34832C0080DD0010F093 /* TravelMagazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMagazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449B34862C0080DD0010F093 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449B34882C0080DD0010F093 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				449B349A2C00829A0010F093 /* Magazine.swift */,
+				445B6D762C01D91C00C40BC2 /* Restaurant.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				449B348B2C0080DD0010F093 /* MagazineViewController.swift in Sources */,
+				445B6D772C01D91C00C40BC2 /* Restaurant.swift in Sources */,
 				449B34A12C0086590010F093 /* MagazineTableViewCell.swift in Sources */,
 				449B349B2C00829A0010F093 /* Magazine.swift in Sources */,
 				449B34872C0080DD0010F093 /* AppDelegate.swift in Sources */,
