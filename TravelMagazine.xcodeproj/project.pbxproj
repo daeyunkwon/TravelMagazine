@@ -11,6 +11,7 @@
 		445B6D772C01D91C00C40BC2 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B6D762C01D91C00C40BC2 /* Restaurant.swift */; };
 		445B6D792C01DB5300C40BC2 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445B6D782C01DB5300C40BC2 /* Restaurant.storyboard */; };
 		445B6D7B2C01DB9000C40BC2 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */; };
+		445B6D7D2C020A9400C40BC2 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B6D7C2C020A9400C40BC2 /* RestaurantTableViewCell.swift */; };
 		449B34872C0080DD0010F093 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B34862C0080DD0010F093 /* AppDelegate.swift */; };
 		449B34892C0080DD0010F093 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B34882C0080DD0010F093 /* SceneDelegate.swift */; };
 		449B348B2C0080DD0010F093 /* MagazineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B348A2C0080DD0010F093 /* MagazineViewController.swift */; };
@@ -25,6 +26,7 @@
 		445B6D762C01D91C00C40BC2 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		445B6D782C01DB5300C40BC2 /* Restaurant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restaurant.storyboard; sourceTree = "<group>"; };
 		445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		445B6D7C2C020A9400C40BC2 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		449B34832C0080DD0010F093 /* TravelMagazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMagazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449B34862C0080DD0010F093 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449B34882C0080DD0010F093 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		447AC9B52C02120C00B3760C /* Magazine */ = {
+			isa = PBXGroup;
+			children = (
+				449B348C2C0080DD0010F093 /* Main.storyboard */,
+				449B34A02C0086590010F093 /* MagazineTableViewCell.swift */,
+			);
+			path = Magazine;
+			sourceTree = "<group>";
+		};
+		447AC9B62C02121600B3760C /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				445B6D782C01DB5300C40BC2 /* Restaurant.storyboard */,
+				445B6D7C2C020A9400C40BC2 /* RestaurantTableViewCell.swift */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
 		449B347A2C0080DD0010F093 = {
 			isa = PBXGroup;
 			children = (
@@ -92,9 +112,8 @@
 		449B349E2C0083520010F093 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				449B348C2C0080DD0010F093 /* Main.storyboard */,
-				449B34A02C0086590010F093 /* MagazineTableViewCell.swift */,
-				445B6D782C01DB5300C40BC2 /* Restaurant.storyboard */,
+				447AC9B52C02120C00B3760C /* Magazine */,
+				447AC9B62C02121600B3760C /* Restaurant */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -190,6 +209,7 @@
 				445B6D772C01D91C00C40BC2 /* Restaurant.swift in Sources */,
 				445B6D7B2C01DB9000C40BC2 /* RestaurantTableViewController.swift in Sources */,
 				449B34A12C0086590010F093 /* MagazineTableViewCell.swift in Sources */,
+				445B6D7D2C020A9400C40BC2 /* RestaurantTableViewCell.swift in Sources */,
 				449B349B2C00829A0010F093 /* Magazine.swift in Sources */,
 				449B34872C0080DD0010F093 /* AppDelegate.swift in Sources */,
 				449B34892C0080DD0010F093 /* SceneDelegate.swift in Sources */,

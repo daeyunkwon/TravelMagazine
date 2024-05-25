@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ovp-qf-IqO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ubT-Cy-iAs">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -103,12 +103,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="875.57251908396938" y="-35.211267605633807"/>
+            <point key="canvasLocation" x="1802.2900763358778" y="-35.211267605633807"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Restaurant-->
+        <scene sceneID="btA-5d-Oyp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Restaurant" id="Sfv-Ih-4EJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="gvY-uK-dsn"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4se-6W-RKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2588" y="-17"/>
+        </scene>
+        <!--매거진-->
         <scene sceneID="qYm-gO-9sH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ovp-qf-IqO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="매거진" image="newspaper" catalog="system" selectedImage="newspaper.fill" id="6d4-aa-Ebv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Kv-hg-04V">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -121,10 +132,34 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1VI-QB-qFI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1057.2519083969464" y="-34.507042253521128"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="GmB-sR-LNI">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ubT-Cy-iAs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DTC-Hb-t7k">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="labelColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ovp-qf-IqO" kind="relationship" relationship="viewControllers" id="Ie8-kQ-Hj7"/>
+                        <segue destination="Sfv-Ih-4EJ" kind="relationship" relationship="viewControllers" id="zbQ-Bv-40R"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4d0-51-hJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
+        <image name="newspaper" catalog="system" width="128" height="111"/>
+        <image name="newspaper.fill" catalog="system" width="128" height="112"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

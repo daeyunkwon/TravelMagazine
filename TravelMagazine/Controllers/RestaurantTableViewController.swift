@@ -8,82 +8,176 @@
 import UIKit
 
 class RestaurantTableViewController: UITableViewController {
+    
+    @IBOutlet var searchBackView: UIView!
+    @IBOutlet var searchTextField: UITextField!
+    @IBOutlet var searchButton: UIButton!
+    
+    @IBOutlet var optionButtons: [UIButton]!
+    
+    @IBOutlet var noSearchResultLabel: UILabel!
+        
+    var restaurants: [Restaurant] = RestaurantList.restaurantArray
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        setupTapGesture()
+        setupTableView()
+        setupNavi()
+        configureUI()
+    }
+    
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    func setupTableView() {
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 140
+    }
+    
+    func setupNavi() {
+        navigationItem.title = "식당"
+    }
+    
+    func configureUI() {
+        searchBackView.backgroundColor = .systemGray5
+        searchBackView.layer.cornerRadius = 20
+        
+        searchTextField.borderStyle = .none
+        searchTextField.tintColor = .label
+        searchTextField.textColor = .label
+        searchTextField.placeholder = "식당명 검색"
+        searchTextField.returnKeyType = .search
+        
+        searchButton.setTitle("", for: .normal)
+        searchButton.tintColor = .lightGray
+        
+        for btn in optionButtons {
+            btn.layer.borderColor = UIColor.lightGray.cgColor
+            btn.layer.borderWidth = 1
+            btn.layer.cornerRadius = 15
+            btn.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
+            
+            if btn == optionButtons.first {
+                btn.titleLabel?.tintColor = .optionButton
+                btn.backgroundColor = .label
+            } else {
+                btn.titleLabel?.tintColor = .label
+                btn.backgroundColor = .systemBackground
+            }
+        }
+        
+        noSearchResultLabel.text = "검색 결과가 없습니다."
+        noSearchResultLabel.font = .boldSystemFont(ofSize: 20)
+        noSearchResultLabel.isHidden = true
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        restaurants.count
     }
-
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as! RestaurantTableViewCell
+        
+        cell.restaurant = self.restaurants[indexPath.row]
+        
+        cell.selectionStyle = .none
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    //MARK: - Functions
+    
+    @objc func endEditing() {
+        view.endEditing(true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    @IBAction func searchButtonTapped(_ sender: UIButton) {
+        view.endEditing(true)
+        executeSearch()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    @IBAction func searchTextFieldReturnKeyTapped(_ sender: UITextField) {
+        print(#function)
+        executeSearch()
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    func executeSearch() {
+        guard var text = searchTextField.text else {return}
+        
+        text = text.trimmingCharacters(in: .whitespaces)
+        
+        if text == "" {
+            var selectedButton: UIButton = optionButtons[0]
+            
+            for btn in optionButtons {
+                if btn.backgroundColor == UIColor.label {
+                    selectedButton = btn
+                    break
+                }
+            }
+            
+            optionButtonTapped(selectedButton)
+        } else {
+            self.restaurants = self.restaurants.filter({ res in
+                res.name.trimmingCharacters(in: .whitespaces).contains(text)
+            })
+            
+            if restaurants.count == 0 {
+                showNoSearchResultLabel()
+            } else {
+                hideNoSearchResultLabel()
+            }
+            
+            tableView.reloadData()
+        }
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func showNoSearchResultLabel() {
+        self.noSearchResultLabel.isHidden = false
     }
-    */
-
+    
+    func hideNoSearchResultLabel() {
+        self.noSearchResultLabel.isHidden = true
+    }
+    
+    @IBAction func optionButtonTapped(_ sender: UIButton) {
+        guard let option = sender.currentTitle else {return}
+        
+        updateOptionButtonState(with: sender)
+        
+        if sender == optionButtons.first {
+            self.restaurants = RestaurantList.restaurantArray
+        } else {
+            self.restaurants = RestaurantList.restaurantArray.filter({ res in
+                if option == res.category {
+                    return true
+                }
+                return false
+            })
+        }
+        
+        if self.restaurants.count == 0 {
+            showNoSearchResultLabel()
+        } else {
+            hideNoSearchResultLabel()
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func updateOptionButtonState(with sender: UIButton) {
+        self.optionButtons.forEach { btn in
+            if btn == sender {
+                btn.titleLabel?.tintColor = .optionButton
+                btn.backgroundColor = .label
+            } else {
+                btn.titleLabel?.tintColor = .label
+                btn.backgroundColor = .systemBackground
+            }
+        }
+    }
 }
