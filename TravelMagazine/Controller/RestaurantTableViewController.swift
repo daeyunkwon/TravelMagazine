@@ -115,7 +115,7 @@ class RestaurantTableViewController: UITableViewController {
         
         text = text.trimmingCharacters(in: .whitespaces)
         
-        if text == "" {
+        if text.isEmpty {
             var selectedButton: UIButton = optionButtons[0]
             
             for btn in optionButtons {
