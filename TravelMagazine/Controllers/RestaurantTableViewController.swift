@@ -87,8 +87,14 @@ class RestaurantTableViewController: UITableViewController {
         
         cell.restaurant = self.restaurants[indexPath.row]
         
+        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        
         cell.selectionStyle = .none
         return cell
+    }
+    
+    @objc func likeButtonTapped() {
+        
     }
     
     //MARK: - Functions

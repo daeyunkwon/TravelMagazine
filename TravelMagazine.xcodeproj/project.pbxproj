@@ -69,6 +69,25 @@
 			path = Restaurant;
 			sourceTree = "<group>";
 		};
+		447AC9B72C02BBEE00B3760C /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				449B34862C0080DD0010F093 /* AppDelegate.swift */,
+				449B34882C0080DD0010F093 /* SceneDelegate.swift */,
+				449B34912C0080DE0010F093 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		447AC9B82C02BC0300B3760C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				449B348F2C0080DE0010F093 /* Assets.xcassets */,
+				449B34942C0080DE0010F093 /* Info.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		449B347A2C0080DD0010F093 = {
 			isa = PBXGroup;
 			children = (
@@ -88,14 +107,11 @@
 		449B34852C0080DD0010F093 /* TravelMagazine */ = {
 			isa = PBXGroup;
 			children = (
-				449B34862C0080DD0010F093 /* AppDelegate.swift */,
-				449B34882C0080DD0010F093 /* SceneDelegate.swift */,
+				447AC9B72C02BBEE00B3760C /* Application */,
 				449B349D2C00833B0010F093 /* Models */,
 				449B349E2C0083520010F093 /* Views */,
 				449B349F2C0083830010F093 /* Controllers */,
-				449B348F2C0080DE0010F093 /* Assets.xcassets */,
-				449B34912C0080DE0010F093 /* LaunchScreen.storyboard */,
-				449B34942C0080DE0010F093 /* Info.plist */,
+				447AC9B82C02BC0300B3760C /* Resource */,
 			);
 			path = TravelMagazine;
 			sourceTree = "<group>";
@@ -366,7 +382,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M37U587ZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelMagazine/Info.plist;
+				INFOPLIST_FILE = TravelMagazine/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -399,7 +415,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M37U587ZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelMagazine/Info.plist;
+				INFOPLIST_FILE = TravelMagazine/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
