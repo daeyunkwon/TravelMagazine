@@ -154,7 +154,7 @@ class RestaurantTableViewController: UITableViewController {
         
         updateOptionButtonUI(with: sender)
         
-        var currentList = self.backupRestaurants
+        let currentList = self.backupRestaurants
         var newList = RestaurantList.restaurantArray
         
         for i in 0..<currentList.count {

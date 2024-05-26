@@ -183,7 +183,6 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aU-1S-ofj">
                                                     <rect key="frame" x="133" y="5" width="245" height="23"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="215" id="ZLb-sy-O3j"/>
                                                         <constraint firstAttribute="height" constant="23" id="dkL-1m-UbK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
