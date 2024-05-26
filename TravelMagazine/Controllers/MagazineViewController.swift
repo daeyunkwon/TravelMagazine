@@ -8,6 +8,8 @@
 import UIKit
 import Kingfisher
 
+private let reuseIdentifier = "MagazineTableViewCell"
+
 class MagazineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var tableView: UITableView!
@@ -46,7 +48,7 @@ class MagazineViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MagazineTableViewCell", for: indexPath) as! MagazineTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MagazineTableViewCell
         
         cell.magazine = self.magazines[indexPath.row]
         

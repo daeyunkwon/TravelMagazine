@@ -7,6 +7,8 @@
 
 import UIKit
 
+private let reuseIdentifier = "RestaurantTableViewCell"
+
 class RestaurantTableViewController: UITableViewController {
     
     @IBOutlet var searchBackView: UIView!
@@ -81,7 +83,7 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as! RestaurantTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! RestaurantTableViewCell
         
         cell.restaurant = self.restaurants[indexPath.row]
         
