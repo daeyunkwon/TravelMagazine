@@ -191,6 +191,6 @@ class RestaurantTableViewController: UITableViewController {
 extension RestaurantTableViewController: RestaurantTableViewCellDelegate {
     func handleLikeButtonTapped(for cell: RestaurantTableViewCell) {
         cell.like.toggle()
-        cell.likeButtonImageSetting(isLike: cell.like)
+        cell.setupLikeButtonImage(isLike: cell.like)
     }
 }

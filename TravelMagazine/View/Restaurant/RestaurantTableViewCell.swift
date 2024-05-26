@@ -39,7 +39,7 @@ class RestaurantTableViewCell: UITableViewCell {
             addressLabel.text = restaurant.address
             priceLabel.text = "가격대: " + restaurant.priceString
             
-            likeButtonImageSetting(isLike: self.like)
+            setupLikeButtonImage(isLike: self.like)
         }
     }
     
@@ -52,9 +52,7 @@ class RestaurantTableViewCell: UITableViewCell {
         addressLabel.text = ""
         priceLabel.text = ""
         
-        let symbolConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .default)
-        let symbolImage = UIImage(systemName: "heart", withConfiguration: symbolConfig)
-        likeButton.setImage(symbolImage, for: .normal)
+        setupLikeButtonImage(isLike: self.like)
     }
     
     override func awakeFromNib() {
@@ -91,10 +89,10 @@ class RestaurantTableViewCell: UITableViewCell {
         likeButton.tintColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
         likeButton.setTitle("", for: .normal)
         likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
-        likeButtonImageSetting(isLike: self.like)
+        setupLikeButtonImage(isLike: self.like)
     }
     
-    func likeButtonImageSetting(isLike: Bool) {
+    func setupLikeButtonImage(isLike: Bool) {
         if isLike == false {
             let symbolConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .default)
             let symbolImage = UIImage(systemName: "heart", withConfiguration: symbolConfig)
