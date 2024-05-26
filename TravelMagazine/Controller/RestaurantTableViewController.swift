@@ -85,16 +85,12 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! RestaurantTableViewCell
         
-        cell.restaurant = self.restaurants[indexPath.row]
+        cell.delegate = self
         
-        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        cell.restaurant = self.restaurants[indexPath.row]
         
         cell.selectionStyle = .none
         return cell
-    }
-    
-    @objc func likeButtonTapped() {
-        
     }
     
     //MARK: - Functions
@@ -187,5 +183,14 @@ class RestaurantTableViewController: UITableViewController {
                 btn.backgroundColor = .systemBackground
             }
         }
+    }
+}
+
+//MARK: - RestaurantTableViewCellDelegate
+
+extension RestaurantTableViewController: RestaurantTableViewCellDelegate {
+    func handleLikeButtonTapped(for cell: RestaurantTableViewCell) {
+        cell.like.toggle()
+        cell.likeButtonImageSetting(isLike: cell.like)
     }
 }

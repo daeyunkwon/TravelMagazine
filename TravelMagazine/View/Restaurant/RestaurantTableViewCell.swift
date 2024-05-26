@@ -22,6 +22,8 @@ class RestaurantTableViewCell: UITableViewCell {
     
     @IBOutlet var likeButton: UIButton!
     
+    weak var delegate: RestaurantTableViewCellDelegate?
+    
     var like = false
     
     var restaurant: Restaurant? {
@@ -107,10 +109,7 @@ class RestaurantTableViewCell: UITableViewCell {
     }
     
     @objc func likeButtonTapped() {
-        self.like.toggle()
-        likeButtonImageSetting(isLike: like)
+        self.delegate?.handleLikeButtonTapped(for: self)
     }
     
-    
-
 }
