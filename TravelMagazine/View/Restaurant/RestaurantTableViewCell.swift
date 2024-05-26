@@ -24,8 +24,6 @@ class RestaurantTableViewCell: UITableViewCell {
     
     weak var delegate: RestaurantTableViewCellDelegate?
     
-    var like = false
-    
     var restaurant: Restaurant? {
         didSet {
             guard let restaurant else {return}
@@ -39,7 +37,7 @@ class RestaurantTableViewCell: UITableViewCell {
             addressLabel.text = restaurant.address
             priceLabel.text = "가격대: " + restaurant.priceString
             
-            setupLikeButtonImage(isLike: self.like)
+            setupLikeButtonImage(isLike: restaurant.like)
         }
     }
     
@@ -52,7 +50,7 @@ class RestaurantTableViewCell: UITableViewCell {
         addressLabel.text = ""
         priceLabel.text = ""
         
-        setupLikeButtonImage(isLike: self.like)
+        setupLikeButtonImage(isLike: self.restaurant?.like ?? false)
     }
     
     override func awakeFromNib() {
@@ -89,7 +87,6 @@ class RestaurantTableViewCell: UITableViewCell {
         likeButton.tintColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
         likeButton.setTitle("", for: .normal)
         likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
-        setupLikeButtonImage(isLike: self.like)
     }
     
     func setupLikeButtonImage(isLike: Bool) {

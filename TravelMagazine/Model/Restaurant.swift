@@ -17,10 +17,15 @@ struct Restaurant {
     let category: String
     let price: Int
     let type: Int
+    var like = false
     
     var priceString: String {
         let string = price.formatted()
         return string + "원"
+    }
+    
+    mutating func updateLike() {
+        self.like.toggle()
     }
 }
 

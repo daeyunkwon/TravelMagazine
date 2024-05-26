@@ -20,6 +20,7 @@ class RestaurantTableViewController: UITableViewController {
     @IBOutlet var noSearchResultLabel: UILabel!
         
     var restaurants: [Restaurant] = RestaurantList.restaurantArray
+    var backupRestaurants: [Restaurant] = RestaurantList.restaurantArray //like 속성값 백업용
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -151,12 +152,23 @@ class RestaurantTableViewController: UITableViewController {
     @IBAction func optionButtonTapped(_ sender: UIButton) {
         guard let option = sender.currentTitle else {return}
         
-        updateOptionButtonState(with: sender)
+        updateOptionButtonUI(with: sender)
         
-        if sender == optionButtons.first {
-            self.restaurants = RestaurantList.restaurantArray
-        } else {
-            self.restaurants = RestaurantList.restaurantArray.filter({ res in
+        var currentList = self.backupRestaurants
+        var newList = RestaurantList.restaurantArray
+        
+        for i in 0..<currentList.count {
+            for j in 0..<newList.count {
+                if currentList[i].name == newList[j].name {
+                    newList[j].like = currentList[i].like
+                }
+            }
+        }
+        
+        if sender == optionButtons.first { //전체 버튼 선택
+            self.restaurants = newList
+        } else { //전체 말고 다른 버튼 선택
+            self.restaurants = newList.filter({ res in
                 if option == res.category {
                     return true
                 }
@@ -164,7 +176,7 @@ class RestaurantTableViewController: UITableViewController {
             })
         }
         
-        if self.restaurants.count == 0 {
+        if self.restaurants.count == 0 { //검색결과 없는 경우
             showNoSearchResultLabel()
         } else {
             hideNoSearchResultLabel()
@@ -173,7 +185,7 @@ class RestaurantTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    func updateOptionButtonState(with sender: UIButton) {
+    func updateOptionButtonUI(with sender: UIButton) {
         self.optionButtons.forEach { btn in
             if btn == sender {
                 btn.titleLabel?.tintColor = .optionButton
@@ -190,7 +202,20 @@ class RestaurantTableViewController: UITableViewController {
 
 extension RestaurantTableViewController: RestaurantTableViewCellDelegate {
     func handleLikeButtonTapped(for cell: RestaurantTableViewCell) {
-        cell.like.toggle()
-        cell.setupLikeButtonImage(isLike: cell.like)
+        for i in 0..<self.restaurants.count {
+            if self.restaurants[i].name == cell.restaurant?.name {
+                self.restaurants[i].updateLike()
+                break
+            }
+        }
+        
+        for i in 0..<self.backupRestaurants.count {
+            if self.backupRestaurants[i].name == cell.restaurant?.name {
+                self.backupRestaurants[i].updateLike()
+                break
+            }
+        }
+        
+        tableView.reloadData()
     }
 }
