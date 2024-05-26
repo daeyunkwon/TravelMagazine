@@ -107,7 +107,6 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     @IBAction func searchTextFieldReturnKeyTapped(_ sender: UITextField) {
-        print(#function)
         executeSearch()
     }
     
