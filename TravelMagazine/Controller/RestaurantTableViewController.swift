@@ -66,6 +66,7 @@ class RestaurantTableViewController: UITableViewController {
             if btn == optionButtons.first {
                 btn.titleLabel?.tintColor = .optionButton
                 btn.backgroundColor = .label
+                btn.titleLabel?.font = .systemFont(ofSize: 15, weight: .black)
             } else {
                 btn.titleLabel?.tintColor = .label
                 btn.backgroundColor = .systemBackground
@@ -187,12 +188,14 @@ class RestaurantTableViewController: UITableViewController {
     
     func updateOptionButtonUI(with sender: UIButton) {
         self.optionButtons.forEach { btn in
-            if btn == sender {
+            if btn == sender { //눌린 경우
                 btn.titleLabel?.tintColor = .optionButton
                 btn.backgroundColor = .label
-            } else {
+                btn.titleLabel?.font = .systemFont(ofSize: 15, weight: .black)
+            } else { //안눌린 경우
                 btn.titleLabel?.tintColor = .label
                 btn.backgroundColor = .systemBackground
+                btn.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
             }
         }
     }

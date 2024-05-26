@@ -311,7 +311,7 @@
         <scene sceneID="dQk-Lf-ETR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kml-SM-91H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="식당" image="fork.knife.circle" catalog="system" selectedImage="fork.knife.circle.fill" id="Sn7-ap-cIc"/>
+                    <tabBarItem key="tabBarItem" title="식당" image="storefront" catalog="system" selectedImage="storefront.fill" id="Sn7-ap-cIc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhF-L9-hse">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
@@ -328,10 +328,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fork.knife.circle" catalog="system" width="128" height="123"/>
-        <image name="fork.knife.circle.fill" catalog="system" width="128" height="123"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="storefront" catalog="system" width="128" height="111"/>
+        <image name="storefront.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
