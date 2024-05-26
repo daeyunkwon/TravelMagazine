@@ -108,39 +108,39 @@
 			isa = PBXGroup;
 			children = (
 				447AC9B72C02BBEE00B3760C /* Application */,
-				449B349D2C00833B0010F093 /* Models */,
-				449B349E2C0083520010F093 /* Views */,
-				449B349F2C0083830010F093 /* Controllers */,
+				449B349D2C00833B0010F093 /* Model */,
+				449B349E2C0083520010F093 /* View */,
+				449B349F2C0083830010F093 /* Controller */,
 				447AC9B82C02BC0300B3760C /* Resource */,
 			);
 			path = TravelMagazine;
 			sourceTree = "<group>";
 		};
-		449B349D2C00833B0010F093 /* Models */ = {
+		449B349D2C00833B0010F093 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				449B349A2C00829A0010F093 /* Magazine.swift */,
 				445B6D762C01D91C00C40BC2 /* Restaurant.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		449B349E2C0083520010F093 /* Views */ = {
+		449B349E2C0083520010F093 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				447AC9B52C02120C00B3760C /* Magazine */,
 				447AC9B62C02121600B3760C /* Restaurant */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		449B349F2C0083830010F093 /* Controllers */ = {
+		449B349F2C0083830010F093 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				449B348A2C0080DD0010F093 /* MagazineViewController.swift */,
 				445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
