@@ -25,10 +25,10 @@
                                     <rect key="frame" x="8" y="8" width="377" height="119"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjp-6F-Y4Q">
-                                            <rect key="frame" x="8" y="8" width="361" height="60"/>
+                                            <rect key="frame" x="8" y="8" width="361" height="50"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wGt-Fb-JZi">
-                                                    <rect key="frame" x="15" y="10" width="288" height="40"/>
+                                                    <rect key="frame" x="15" y="5" width="288" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="Je3-xX-7Ti"/>
                                                     </constraints>
@@ -39,7 +39,7 @@
                                                     </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIH-g9-Ni3">
-                                                    <rect key="frame" x="308" y="13" width="38" height="34"/>
+                                                    <rect key="frame" x="308" y="8" width="38" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="38" id="od1-Gy-S6S"/>
                                                         <constraint firstAttribute="height" constant="34" id="pa7-ib-VwQ"/>
@@ -58,13 +58,13 @@
                                                 <constraint firstAttribute="trailing" secondItem="CIH-g9-Ni3" secondAttribute="trailing" constant="15" id="HgL-16-gZA"/>
                                                 <constraint firstItem="CIH-g9-Ni3" firstAttribute="leading" secondItem="wGt-Fb-JZi" secondAttribute="trailing" constant="5" id="PKq-ZC-Nbf"/>
                                                 <constraint firstItem="wGt-Fb-JZi" firstAttribute="centerY" secondItem="hjp-6F-Y4Q" secondAttribute="centerY" id="Pus-es-48J"/>
-                                                <constraint firstAttribute="height" constant="60" id="a2j-tG-EWv"/>
+                                                <constraint firstAttribute="height" constant="50" id="a2j-tG-EWv"/>
                                                 <constraint firstItem="CIH-g9-Ni3" firstAttribute="centerY" secondItem="hjp-6F-Y4Q" secondAttribute="centerY" id="qPK-Ib-C6P"/>
                                                 <constraint firstItem="wGt-Fb-JZi" firstAttribute="leading" secondItem="hjp-6F-Y4Q" secondAttribute="leading" constant="15" id="vpj-Ae-PLw"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xde-9N-bvz">
-                                            <rect key="frame" x="15" y="73" width="347" height="40"/>
+                                            <rect key="frame" x="15" y="63" width="347" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laV-cF-Atj">
                                                     <rect key="frame" x="0.0" y="0.0" width="39" height="40"/>
