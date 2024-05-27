@@ -44,8 +44,10 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if travels[indexPath.row].ad == false {
+            //CityCell 높이 설정
             return 150
         } else {
+            //AdCell 높이 설정
             return 70
         }
     }
@@ -56,11 +58,13 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if travels[indexPath.row].ad == true {
+        if travels[indexPath.row].ad == true { 
+            //AdCell 표시
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseAdCell, for: indexPath) as! AdTableViewCell
             cell.setupTitleLabel(text: travels[indexPath.row].title ?? "")
             return cell
         } else {
+            //CityCell 표시
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseCityCell, for: indexPath) as! CityTableViewCell
             cell.delegate = self
             cell.travel = self.travels[indexPath.row]
