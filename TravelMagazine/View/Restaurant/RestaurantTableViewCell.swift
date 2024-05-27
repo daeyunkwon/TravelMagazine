@@ -10,6 +10,8 @@ import Kingfisher
 
 class RestaurantTableViewCell: UITableViewCell {
     
+    //MARK: - Properties
+    
     @IBOutlet var backView: UIView!
     
     @IBOutlet var mainImageView: UIImageView!
@@ -40,6 +42,8 @@ class RestaurantTableViewCell: UITableViewCell {
             setupLikeButtonImage(isLike: restaurant.like)
         }
     }
+    
+    //MARK: - Life Cycle
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -103,8 +107,9 @@ class RestaurantTableViewCell: UITableViewCell {
         }
     }
     
+    //MARK: - Functions
+    
     @objc func likeButtonTapped() {
         self.delegate?.handleLikeButtonTapped(for: self)
     }
-    
 }

@@ -11,6 +11,8 @@ private let reuseIdentifier = "RestaurantTableViewCell"
 
 class RestaurantTableViewController: UITableViewController {
     
+    //MARK: - Properties
+    
     @IBOutlet var searchBackView: UIView!
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var searchButton: UIButton!
@@ -23,6 +25,7 @@ class RestaurantTableViewController: UITableViewController {
     var restaurants: [Restaurant] = RestaurantList.restaurantArray
     var backupRestaurants: [Restaurant] = RestaurantList.restaurantArray //like 속성값 백업용
 
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTapGesture()

@@ -9,6 +9,8 @@ import UIKit
 
 class MagazineTableViewCell: UITableViewCell {
     
+    //MARK: - Properties
+    
     @IBOutlet var mainImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subTitleLabel: UILabel!
@@ -26,6 +28,8 @@ class MagazineTableViewCell: UITableViewCell {
             dateLabel.text = magazine.dateString
         }
     }
+    
+    //MARK: - Life Cycle
     
     override func prepareForReuse() {
         super.prepareForReuse()

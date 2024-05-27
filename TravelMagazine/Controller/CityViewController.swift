@@ -1,0 +1,82 @@
+//
+//  CityViewController.swift
+//  TravelMagazine
+//
+//  Created by 권대윤 on 5/27/24.
+//
+
+import UIKit
+
+private let reuseCityCell = "CityTableViewCell"
+private let reuseAdCell = "AdTableViewCell"
+
+class CityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    //MARK: - Properties
+    
+    @IBOutlet var tableView: UITableView!
+    
+    let travels: [Travel] = TravelInfo.travel
+    
+    
+    //MARK: - Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupNavi()
+        setupTableView()
+    }
+    
+    func setupNavi() {
+        navigationItem.title = "도시 상세 정보"
+    }
+    
+    func setupTableView() {
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 120
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: reuseCityCell)
+        tableView.register(UINib(nibName: "AdTableViewCell", bundle: nil), forCellReuseIdentifier: reuseAdCell)
+    }
+    
+    //MARK: - UITableViewDataSource
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if travels[indexPath.row].ad == false {
+            return 150
+        } else {
+            return 70
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.travels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if travels[indexPath.row].ad == true {
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseAdCell, for: indexPath) as! AdTableViewCell
+            cell.setupTitleLabel(text: travels[indexPath.row].title ?? "")
+            cell.selectionStyle = .none
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseCityCell, for: indexPath) as! CityTableViewCell
+            cell.travel = self.travels[indexPath.row]
+            cell.selectionStyle = .none
+            if indexPath.row+1 < travels.count && travels[indexPath.row + 1].ad == true {
+                cell.separatorView.isHidden = true
+            } else {
+                cell.separatorView.isHidden = false
+            }
+            return cell
+        }
+    }
+    
+    //MARK: - Functions
+    
+
+    
+
+}

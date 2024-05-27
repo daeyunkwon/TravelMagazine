@@ -12,10 +12,13 @@ private let reuseIdentifier = "MagazineTableViewCell"
 
 class MagazineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //MARK: - Properties
+    
     @IBOutlet var tableView: UITableView!
     
     var magazines: [Magazine] = []
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
@@ -38,7 +41,8 @@ class MagazineViewController: UIViewController, UITableViewDataSource, UITableVi
         navigationItem.title = "SaSAC TRAVEL"
     }
     
-    //MARK: - TableView DataSource
+    //MARK: - UITableViewDataSource
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 500
     }
@@ -55,9 +59,6 @@ class MagazineViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.selectionStyle = .none
         return cell
     }
-    
-
-
 }
 
 
