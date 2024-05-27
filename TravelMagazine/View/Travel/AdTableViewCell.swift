@@ -26,6 +26,11 @@ class AdTableViewCell: UITableViewCell {
     ]
     
     //MARK: - Life Cycle
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel.text = ""
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

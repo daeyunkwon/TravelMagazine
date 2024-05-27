@@ -53,6 +53,14 @@ class CityTableViewCell: UITableViewCell {
     
     //MARK: - Life Cycle
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        mainImageView.image = nil
+        titleLabel.text = ""
+        subTitleLabel.text = ""
+        saveLabel.text = ""
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
