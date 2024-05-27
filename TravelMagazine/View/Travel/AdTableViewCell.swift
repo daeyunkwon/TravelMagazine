@@ -17,6 +17,14 @@ class AdTableViewCell: UITableViewCell {
     
     @IBOutlet var adButton: UIButton!
     
+    var randomBackgroundColorList: [UIColor] = [
+        UIColor.rgb(red: 250, green: 187, blue: 200),
+        UIColor.rgb(red: 139, green: 206, blue: 228),
+        UIColor.rgb(red: 249, green: 215, blue: 128),
+        UIColor.rgb(red: 171, green: 182, blue: 251),
+        UIColor.rgb(red: 160, green: 216, blue: 161),
+    ]
+    
     //MARK: - Life Cycle
 
     override func awakeFromNib() {
@@ -25,7 +33,7 @@ class AdTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
-        backView.backgroundColor = .systemCyan
+        backView.backgroundColor = randomBackgroundColorList.randomElement()
         backView.layer.cornerRadius = 10
         
         titleLabel.textColor = .black
