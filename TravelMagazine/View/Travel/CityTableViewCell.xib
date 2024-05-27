@@ -49,8 +49,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(88,888) - 저장 88,888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64v-1g-EoK">
-                        <rect key="frame" x="20.000000000000014" y="76.666666666666671" width="249.33333333333337" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 저장 88,888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64v-1g-EoK">
+                        <rect key="frame" x="121.00000000000001" y="75.666666666666671" width="148.33333333333337" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -62,16 +62,30 @@
                             <constraint firstAttribute="height" constant="1" id="7bf-Tp-6Pn"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Caj-mH-Sbp" customClass="CosmosView" customModule="Cosmos">
+                        <rect key="frame" x="20" y="76.666666666666671" width="104" height="16"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="76g-10-hpk"/>
+                            <constraint firstAttribute="width" constant="104" id="PH6-41-HtY"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="GoldStarFilled"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="1cy-LU-RA6" secondAttribute="trailing" constant="20" id="22T-X3-s8J"/>
+                    <constraint firstItem="64v-1g-EoK" firstAttribute="leading" secondItem="Caj-mH-Sbp" secondAttribute="trailing" constant="-3" id="2Ij-0B-g7r"/>
                     <constraint firstItem="cbk-f2-qFu" firstAttribute="top" secondItem="EWl-rD-v0f" secondAttribute="bottom" constant="2" id="3JG-7X-cld"/>
                     <constraint firstItem="cbk-f2-qFu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="88q-GX-8c9"/>
                     <constraint firstItem="ckx-Lj-ooT" firstAttribute="trailing" secondItem="25m-Uk-UDe" secondAttribute="trailing" id="DWT-Ds-EXa"/>
                     <constraint firstItem="1cy-LU-RA6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="HWN-ih-OY0"/>
                     <constraint firstItem="EWl-rD-v0f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="OVK-ew-Gan"/>
-                    <constraint firstItem="64v-1g-EoK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="RJg-hC-Lfb"/>
-                    <constraint firstItem="64v-1g-EoK" firstAttribute="top" secondItem="cbk-f2-qFu" secondAttribute="bottom" constant="2" id="U7C-W1-1Ql"/>
+                    <constraint firstItem="64v-1g-EoK" firstAttribute="top" secondItem="cbk-f2-qFu" secondAttribute="bottom" constant="1" id="U7C-W1-1Ql"/>
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="YP9-DP-kIt"/>
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="leading" secondItem="64v-1g-EoK" secondAttribute="trailing" constant="30" id="Zxj-Sy-bhH"/>
                     <constraint firstItem="EWl-rD-v0f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="hSH-lL-mXC"/>
@@ -79,15 +93,18 @@
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="leading" secondItem="EWl-rD-v0f" secondAttribute="trailing" constant="30" id="qJt-aQ-vUP"/>
                     <constraint firstAttribute="bottom" secondItem="1cy-LU-RA6" secondAttribute="bottom" id="rUw-az-uDF"/>
                     <constraint firstAttribute="trailing" secondItem="25m-Uk-UDe" secondAttribute="trailing" constant="20" id="t35-jX-cES"/>
+                    <constraint firstItem="Caj-mH-Sbp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="vZY-kt-st5"/>
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="leading" secondItem="cbk-f2-qFu" secondAttribute="trailing" constant="30" id="vkC-rS-uh4"/>
                     <constraint firstAttribute="bottom" secondItem="25m-Uk-UDe" secondAttribute="bottom" constant="15" id="x6o-af-Vli"/>
+                    <constraint firstItem="Caj-mH-Sbp" firstAttribute="top" secondItem="cbk-f2-qFu" secondAttribute="bottom" constant="2" id="xep-5j-ur3"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="gradeLabel" destination="64v-1g-EoK" id="DLl-9I-MIC"/>
+                <outlet property="cosmosView" destination="Caj-mH-Sbp" id="JFi-IT-vX0"/>
                 <outlet property="likeButton" destination="ckx-Lj-ooT" id="jUC-GD-jZu"/>
                 <outlet property="mainImageView" destination="25m-Uk-UDe" id="0mN-i8-y6x"/>
+                <outlet property="saveLabel" destination="64v-1g-EoK" id="DLl-9I-MIC"/>
                 <outlet property="separatorView" destination="1cy-LU-RA6" id="4oM-Y4-yoD"/>
                 <outlet property="subTitleLabel" destination="cbk-f2-qFu" id="Nkv-8X-ehp"/>
                 <outlet property="titleLabel" destination="EWl-rD-v0f" id="PYw-61-I3F"/>
@@ -96,8 +113,12 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="GoldStarFilled" width="53" height="51"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Cosmos
 
 class CityTableViewCell: UITableViewCell {
     
@@ -19,9 +20,12 @@ class CityTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subTitleLabel: UILabel!
     
-    @IBOutlet var gradeLabel: UILabel!
+    @IBOutlet var saveLabel: UILabel!
     
     @IBOutlet var separatorView: UIView!
+    
+    @IBOutlet var cosmosView: CosmosView!
+    
     
     var travel: Travel? {
         didSet {
@@ -37,9 +41,12 @@ class CityTableViewCell: UITableViewCell {
             
             titleLabel.text = title
             subTitleLabel.text = subTitle
-            gradeLabel.text = "평점 \(grade) ∙ 저장 \(save.formatted())"
+            saveLabel.text = "∙ 저장 \(save.formatted())"
             
             updateLikeButtonUI(isLike: like)
+            
+            cosmosView.rating = grade
+            cosmosView.text = "(\(grade))"
         }
     }
     
@@ -65,8 +72,26 @@ class CityTableViewCell: UITableViewCell {
         subTitleLabel.font = .systemFont(ofSize: 13, weight: .bold)
         subTitleLabel.textColor = .systemGray
         
-        gradeLabel.font = .systemFont(ofSize: 13, weight: .medium)
-        gradeLabel.textColor = .systemGray2
+        saveLabel.font = .systemFont(ofSize: 13, weight: .medium)
+        saveLabel.textColor = .systemGray2
+        
+        cosmosView.settings.filledColor = .systemYellow
+        cosmosView.settings.totalStars = 5
+        cosmosView.settings.emptyColor = .systemGray5
+        cosmosView.settings.emptyBorderWidth = 0
+        cosmosView.settings.filledBorderWidth = 0
+        cosmosView.settings.updateOnTouch = false
+        cosmosView.settings.disablePanGestures = false
+        cosmosView.backgroundColor = .clear
+        cosmosView.settings.textColor = .systemGray2
+        cosmosView.settings.textFont = .systemFont(ofSize: 13, weight: .medium)
+        cosmosView.settings.starSize = 12
+        // Set image for the filled star
+        cosmosView.settings.filledImage = UIImage(named: "GoldStarFilled")
+
+        // Set image for the empty star
+        cosmosView.settings.emptyImage = UIImage(named: "GoldStarEmpty")
+        cosmosView.settings.starMargin = 1
     }
     
     func setupLikeButton() {
