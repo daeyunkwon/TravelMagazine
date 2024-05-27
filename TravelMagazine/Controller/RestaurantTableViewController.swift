@@ -14,11 +14,12 @@ class RestaurantTableViewController: UITableViewController {
     @IBOutlet var searchBackView: UIView!
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var searchButton: UIButton!
+    @IBOutlet var searchTextFieldClearButton: UIButton!
     
     @IBOutlet var optionButtons: [UIButton]!
     
     @IBOutlet var noSearchResultLabel: UILabel!
-        
+    
     var restaurants: [Restaurant] = RestaurantList.restaurantArray
     var backupRestaurants: [Restaurant] = RestaurantList.restaurantArray //like 속성값 백업용
 
@@ -56,6 +57,10 @@ class RestaurantTableViewController: UITableViewController {
         
         searchButton.setTitle("", for: .normal)
         searchButton.tintColor = .lightGray
+        
+        searchTextFieldClearButton.setTitle("", for: .normal)
+        searchTextFieldClearButton.tintColor = .lightGray
+        searchTextFieldClearButton.isHidden = true
         
         for btn in optionButtons {
             btn.layer.borderColor = UIColor.lightGray.cgColor
@@ -99,6 +104,21 @@ class RestaurantTableViewController: UITableViewController {
     
     @objc func endEditing() {
         view.endEditing(true)
+    }
+    
+    @IBAction func searchTextFieldChanged(_ sender: UITextField) {
+        guard let text = sender.text else {return}
+        
+        if text.isEmpty {
+            searchTextFieldClearButton.isHidden = true
+        } else {
+            searchTextFieldClearButton.isHidden = false
+        }
+    }
+    
+    @IBAction func searchTextFieldClearButtonTapped(_ sender: UIButton) {
+        self.searchTextField.text = nil
+        searchTextFieldClearButton.isHidden = true
     }
     
     @IBAction func searchButtonTapped(_ sender: UIButton) {
