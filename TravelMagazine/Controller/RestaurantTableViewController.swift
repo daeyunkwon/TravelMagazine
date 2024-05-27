@@ -35,7 +35,7 @@ class RestaurantTableViewController: UITableViewController {
     }
     
     func setupTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(endEditing))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
         view.addGestureRecognizer(tapGesture)
     }
     
@@ -107,7 +107,7 @@ class RestaurantTableViewController: UITableViewController {
     
     //MARK: - Functions
     
-    @objc func endEditing() {
+    @objc func tapGestureAction() {
         view.endEditing(true)
     }
     
