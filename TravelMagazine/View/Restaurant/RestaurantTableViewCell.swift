@@ -82,7 +82,7 @@ class RestaurantTableViewCell: UITableViewCell {
         addressLabel.font = .systemFont(ofSize: 14)
         
         priceLabel.textColor = .label
-        priceLabel.font = .systemFont(ofSize: 12)
+        priceLabel.font = .boldSystemFont(ofSize: 14)
         
         likeButton.tintColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
         likeButton.setTitle("", for: .normal)
