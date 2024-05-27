@@ -22,6 +22,7 @@
 		448819132C0471A90061F4D7 /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 448819112C0471A90061F4D7 /* CityTableViewCell.xib */; };
 		448819352C04B0520061F4D7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448819342C04B0520061F4D7 /* UIColor+Extension.swift */; };
 		448819382C04B7890061F4D7 /* Cosmos in Frameworks */ = {isa = PBXBuildFile; productRef = 448819372C04B7890061F4D7 /* Cosmos */; };
+		4488193A2C054F330061F4D7 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448819392C054F330061F4D7 /* UIImageView+Extension.swift */; };
 		449B34872C0080DD0010F093 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B34862C0080DD0010F093 /* AppDelegate.swift */; };
 		449B34892C0080DD0010F093 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B34882C0080DD0010F093 /* SceneDelegate.swift */; };
 		449B348B2C0080DD0010F093 /* MagazineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B348A2C0080DD0010F093 /* MagazineViewController.swift */; };
@@ -46,6 +47,7 @@
 		448819102C0471A90061F4D7 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		448819112C0471A90061F4D7 /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		448819342C04B0520061F4D7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		448819392C054F330061F4D7 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		449B34832C0080DD0010F093 /* TravelMagazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMagazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		449B34862C0080DD0010F093 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		449B34882C0080DD0010F093 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			children = (
 				447AC9BA2C02C95100B3760C /* Protocols.swift */,
 				448819342C04B0520061F4D7 /* UIColor+Extension.swift */,
+				448819392C054F330061F4D7 /* UIImageView+Extension.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4488193A2C054F330061F4D7 /* UIImageView+Extension.swift in Sources */,
 				449B348B2C0080DD0010F093 /* MagazineViewController.swift in Sources */,
 				445B6D772C01D91C00C40BC2 /* Restaurant.swift in Sources */,
 				445B6D7B2C01DB9000C40BC2 /* RestaurantTableViewController.swift in Sources */,

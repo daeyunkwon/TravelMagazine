@@ -30,8 +30,7 @@ class RestaurantTableViewCell: UITableViewCell {
         didSet {
             guard let restaurant else {return}
             
-            let url = URL(string: restaurant.image)
-            mainImageView.kf.setImage(with: url)
+            mainImageView.setImageToURL(url: restaurant.image)
             
             nameLabel.text = restaurant.name
             categoryLabel.text = restaurant.category

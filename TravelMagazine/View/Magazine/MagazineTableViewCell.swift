@@ -20,8 +20,7 @@ class MagazineTableViewCell: UITableViewCell {
         didSet {
             guard let magazine = magazine else {return}
             
-            let url = URL(string: magazine.photo_image)
-            mainImageView.kf.setImage(with: url)
+            mainImageView.setImageToURL(url: magazine.photo_image)
             
             titleLabel.text = magazine.title
             subTitleLabel.text = magazine.subtitle

@@ -36,8 +36,7 @@ class CityTableViewCell: UITableViewCell {
             guard let save = travel?.save else {return}
             guard let like = travel?.like else {return}
             
-            let url = URL(string: image)
-            mainImageView.kf.setImage(with: url)
+            mainImageView.setImageToURL(url: image)
             
             titleLabel.text = title
             subTitleLabel.text = subTitle
