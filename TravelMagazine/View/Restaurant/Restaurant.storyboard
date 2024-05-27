@@ -199,7 +199,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQc-hm-oB8">
-                                                    <rect key="frame" x="133" y="46" width="245" height="16"/>
+                                                    <rect key="frame" x="150" y="46" width="228" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="FTA-7a-Ixz"/>
                                                     </constraints>
@@ -208,7 +208,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOK-4N-JUZ">
-                                                    <rect key="frame" x="133" y="63" width="245" height="16"/>
+                                                    <rect key="frame" x="150" y="63" width="228" height="16"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="16" id="GDA-eZ-KHa"/>
                                                     </constraints>
@@ -236,18 +236,46 @@
                                                         <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
                                                     </state>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sv4-Ab-Mye">
+                                                    <rect key="frame" x="133" y="46" width="16" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="16" id="ic0-hW-8qq"/>
+                                                        <constraint firstAttribute="width" constant="16" id="ide-Xf-n3z"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemTealColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <imageReference key="image" image="phone.fill" catalog="system" symbolScale="small"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8SB-yl-xzG">
+                                                    <rect key="frame" x="133" y="63" width="16" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="16" id="sov-zF-fpE"/>
+                                                        <constraint firstAttribute="height" constant="16" id="wCx-YJ-6H1"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemCyanColor"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <imageReference key="image" image="mappin.and.ellipse" catalog="system" symbolScale="small"/>
+                                                    </buttonConfiguration>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="pLU-yl-Efi" firstAttribute="leading" secondItem="mEu-ga-Pvv" secondAttribute="trailing" constant="5" id="4us-xu-pcE"/>
                                                 <constraint firstItem="gOK-4N-JUZ" firstAttribute="top" secondItem="HQc-hm-oB8" secondAttribute="bottom" constant="1" id="76N-44-XsU"/>
+                                                <constraint firstItem="sv4-Ab-Mye" firstAttribute="leading" secondItem="mEu-ga-Pvv" secondAttribute="trailing" constant="5" id="CQZ-uc-D5i"/>
                                                 <constraint firstItem="pLU-yl-Efi" firstAttribute="bottom" secondItem="mEu-ga-Pvv" secondAttribute="bottom" id="E05-Ul-llK"/>
                                                 <constraint firstItem="CUM-5U-hOy" firstAttribute="top" secondItem="0aU-1S-ofj" secondAttribute="bottom" constant="1" id="GSS-X3-lrf"/>
+                                                <constraint firstItem="8SB-yl-xzG" firstAttribute="top" secondItem="sv4-Ab-Mye" secondAttribute="bottom" constant="1" id="ISo-jT-5H8"/>
                                                 <constraint firstItem="RsI-Wh-odu" firstAttribute="leading" secondItem="pLU-yl-Efi" secondAttribute="trailing" constant="5" id="IxX-Wg-Dh5"/>
-                                                <constraint firstItem="gOK-4N-JUZ" firstAttribute="leading" secondItem="mEu-ga-Pvv" secondAttribute="trailing" constant="5" id="JbS-QA-bk4"/>
+                                                <constraint firstItem="gOK-4N-JUZ" firstAttribute="leading" secondItem="8SB-yl-xzG" secondAttribute="trailing" constant="1" id="JbS-QA-bk4"/>
                                                 <constraint firstAttribute="trailing" secondItem="RsI-Wh-odu" secondAttribute="trailing" constant="5" id="JlM-Lr-AQP"/>
                                                 <constraint firstAttribute="bottom" secondItem="mEu-ga-Pvv" secondAttribute="bottom" constant="5" id="aZA-6u-tL6"/>
-                                                <constraint firstItem="HQc-hm-oB8" firstAttribute="leading" secondItem="mEu-ga-Pvv" secondAttribute="trailing" constant="5" id="imI-rZ-tJX"/>
+                                                <constraint firstItem="sv4-Ab-Mye" firstAttribute="top" secondItem="CUM-5U-hOy" secondAttribute="bottom" constant="1" id="aai-eS-pwu"/>
+                                                <constraint firstItem="8SB-yl-xzG" firstAttribute="leading" secondItem="mEu-ga-Pvv" secondAttribute="trailing" constant="5" id="ilR-JJ-yaO"/>
+                                                <constraint firstItem="HQc-hm-oB8" firstAttribute="leading" secondItem="sv4-Ab-Mye" secondAttribute="trailing" constant="1" id="imI-rZ-tJX"/>
                                                 <constraint firstAttribute="trailing" secondItem="0aU-1S-ofj" secondAttribute="trailing" constant="5" id="jdq-OH-tr6"/>
                                                 <constraint firstItem="CUM-5U-hOy" firstAttribute="leading" secondItem="mEu-ga-Pvv" secondAttribute="trailing" constant="5" id="kPt-nq-8n5"/>
                                                 <constraint firstItem="mEu-ga-Pvv" firstAttribute="leading" secondItem="t5B-xC-iBh" secondAttribute="leading" constant="8" id="lMQ-Oz-cFc"/>
@@ -330,13 +358,21 @@
     <resources>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="mappin.and.ellipse" catalog="system" width="110" height="128"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="storefront" catalog="system" width="128" height="111"/>
         <image name="storefront.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
