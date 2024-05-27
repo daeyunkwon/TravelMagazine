@@ -66,6 +66,7 @@ class CityTableViewCell: UITableViewCell {
         mainImageView.contentMode = .scaleAspectFill
         
         likeButton.tintColor = .white
+        likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         
         titleLabel.font = .systemFont(ofSize: 16, weight: .heavy)
         
