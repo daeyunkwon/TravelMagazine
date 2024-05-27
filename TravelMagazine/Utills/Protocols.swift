@@ -10,3 +10,7 @@ import Foundation
 protocol RestaurantTableViewCellDelegate: AnyObject {
     func handleLikeButtonTapped(for cell: RestaurantTableViewCell)
 }
+
+protocol CityTableViewCellDelegate: AnyObject {
+    func handleLikeButtonTapped(for cell: CityTableViewCell)
+}

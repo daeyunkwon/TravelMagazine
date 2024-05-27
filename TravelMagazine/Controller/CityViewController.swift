@@ -16,7 +16,7 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var tableView: UITableView!
     
-    let travels: [Travel] = TravelInfo.travel
+    var travels: [Travel] = TravelInfo.travel
     
     
     //MARK: - Life Cycle
@@ -59,12 +59,11 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if travels[indexPath.row].ad == true {
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseAdCell, for: indexPath) as! AdTableViewCell
             cell.setupTitleLabel(text: travels[indexPath.row].title ?? "")
-            cell.selectionStyle = .none
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: reuseCityCell, for: indexPath) as! CityTableViewCell
+            cell.delegate = self
             cell.travel = self.travels[indexPath.row]
-            cell.selectionStyle = .none
             if indexPath.row+1 < travels.count && travels[indexPath.row + 1].ad == true {
                 cell.separatorView.isHidden = true
             } else {
@@ -73,10 +72,20 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return cell
         }
     }
-    
-    //MARK: - Functions
-    
+}
 
-    
+//MARK: - CityTableViewCellDelegate
 
+extension CityViewController: CityTableViewCellDelegate {
+    func handleLikeButtonTapped(for cell: CityTableViewCell) {
+        guard let currentValue = cell.travel?.like else {return}
+        
+        for i in 0..<travels.count {
+            if travels[i].title == cell.travel?.title {
+                travels[i].like = !currentValue
+                tableView.reloadRows(at: [IndexPath(row: i, section: 0)], with: .none)
+                break
+            }
+        }
+    }
 }
