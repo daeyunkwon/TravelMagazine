@@ -30,9 +30,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuY-0z-L4C">
-                                <rect key="frame" x="475" y="10" width="40" height="30"/>
+                                <rect key="frame" x="493" y="2" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="SDb-n4-zvW"/>
+                                    <constraint firstAttribute="width" constant="30" id="SDb-n4-zvW"/>
                                 </constraints>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -42,9 +42,9 @@
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
                             <constraint firstItem="46Q-QV-VpD" firstAttribute="centerY" secondItem="wn8-Cn-jlY" secondAttribute="centerY" id="NRo-ZK-pEf"/>
-                            <constraint firstAttribute="trailing" secondItem="KuY-0z-L4C" secondAttribute="trailing" constant="10" id="av7-zW-nsQ"/>
+                            <constraint firstAttribute="trailing" secondItem="KuY-0z-L4C" secondAttribute="trailing" constant="2" id="av7-zW-nsQ"/>
                             <constraint firstItem="46Q-QV-VpD" firstAttribute="centerX" secondItem="wn8-Cn-jlY" secondAttribute="centerX" id="iRa-f9-M9t"/>
-                            <constraint firstItem="KuY-0z-L4C" firstAttribute="top" secondItem="wn8-Cn-jlY" secondAttribute="top" constant="10" id="nev-kh-8GU"/>
+                            <constraint firstItem="KuY-0z-L4C" firstAttribute="top" secondItem="wn8-Cn-jlY" secondAttribute="top" constant="2" id="nev-kh-8GU"/>
                         </constraints>
                     </view>
                 </subviews>

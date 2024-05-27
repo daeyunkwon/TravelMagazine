@@ -29,25 +29,21 @@ class AdTableViewCell: UITableViewCell {
         backView.layer.cornerRadius = 10
         
         titleLabel.textColor = .black
+        titleLabel.numberOfLines = 0
         
         adButton.setTitle("AD", for: .normal)
         adButton.backgroundColor = .white
-        adButton.layer.cornerRadius = 12
-        adButton.titleLabel?.font = .systemFont(ofSize: 16)
+        adButton.layer.cornerRadius = 10
+        adButton.titleLabel?.font = .systemFont(ofSize: 11)
+        adButton.sizeToFit()
     }
     
     func setupTitleLabel(text: String) {
-        let style = NSMutableParagraphStyle()
-        let fontSize: CGFloat = 15
-        let lineheight = fontSize * 1.6  //font size * multiple
-        style.minimumLineHeight = lineheight
-        style.maximumLineHeight = lineheight
-        
-        titleLabel.attributedText = NSAttributedString(
-          string: text,
-          attributes: [
-            .paragraphStyle: style
-          ])
+        let attrString = NSMutableAttributedString(string: text)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 10
+        attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+        titleLabel.attributedText = attrString
         titleLabel.font = .systemFont(ofSize: 15, weight: .heavy)
         titleLabel.textAlignment = .center
     }
