@@ -54,6 +54,8 @@ class RestaurantTableViewController: UITableViewController {
         searchTextField.textColor = .label
         searchTextField.placeholder = "식당명 검색"
         searchTextField.returnKeyType = .search
+        searchTextField.autocapitalizationType = .none
+        searchTextField.autocorrectionType = .no
         
         searchButton.setTitle("", for: .normal)
         searchButton.tintColor = .lightGray
