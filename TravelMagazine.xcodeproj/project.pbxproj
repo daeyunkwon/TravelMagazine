@@ -114,8 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				447AC9BA2C02C95100B3760C /* Protocols.swift */,
-				448819342C04B0520061F4D7 /* UIColor+Extension.swift */,
-				448819392C054F330061F4D7 /* UIImageView+Extension.swift */,
+				44EF2ED22C060890002DFBDC /* Extension */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -184,11 +183,44 @@
 		449B349F2C0083830010F093 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				449B348A2C0080DD0010F093 /* MagazineViewController.swift */,
-				445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */,
-				448819042C045FA70061F4D7 /* CityViewController.swift */,
+				44EF2ECF2C06086C002DFBDC /* Magazine */,
+				44EF2ED02C060877002DFBDC /* Restaurant */,
+				44EF2ED12C060882002DFBDC /* City */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		44EF2ECF2C06086C002DFBDC /* Magazine */ = {
+			isa = PBXGroup;
+			children = (
+				449B348A2C0080DD0010F093 /* MagazineViewController.swift */,
+			);
+			path = Magazine;
+			sourceTree = "<group>";
+		};
+		44EF2ED02C060877002DFBDC /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */,
+			);
+			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		44EF2ED12C060882002DFBDC /* City */ = {
+			isa = PBXGroup;
+			children = (
+				448819042C045FA70061F4D7 /* CityViewController.swift */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		44EF2ED22C060890002DFBDC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				448819342C04B0520061F4D7 /* UIColor+Extension.swift */,
+				448819392C054F330061F4D7 /* UIImageView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
