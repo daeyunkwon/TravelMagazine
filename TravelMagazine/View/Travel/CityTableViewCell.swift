@@ -82,6 +82,7 @@ class CityTableViewCell: UITableViewCell {
         
         subTitleLabel.font = .systemFont(ofSize: 13, weight: .bold)
         subTitleLabel.textColor = .systemGray
+        subTitleLabel.numberOfLines = 0
         
         saveLabel.font = .systemFont(ofSize: 13, weight: .medium)
         saveLabel.textColor = .systemGray2

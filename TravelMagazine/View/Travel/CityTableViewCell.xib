@@ -12,40 +12,48 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityTableViewCell" rowHeight="210" id="KGk-i7-Jjw" customClass="CityTableViewCell" customModule="TravelMagazine" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="505" height="210"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityTableViewCell" rowHeight="148" id="KGk-i7-Jjw" customClass="CityTableViewCell" customModule="TravelMagazine" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="505" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="505" height="210"/>
+                <rect key="frame" x="0.0" y="0.0" width="505" height="150"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="25m-Uk-UDe">
-                        <rect key="frame" x="335" y="14" width="150" height="180.66666666666669"/>
+                        <rect key="frame" x="385" y="14.000000000000007" width="100" height="120.66666666666669"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="25m-Uk-UDe" secondAttribute="height" multiplier="1:1.2" id="7wK-wm-QsP"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="120" id="6Av-1r-lsg"/>
+                            <constraint firstAttribute="width" constant="100" id="XAg-fK-Bbd"/>
+                            <constraint firstAttribute="width" secondItem="25m-Uk-UDe" secondAttribute="height" multiplier="1:1.2" id="k4j-3w-XXI"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="철도 박물관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWl-rD-v0f">
-                        <rect key="frame" x="20" y="15" width="285" height="24"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="철도 박물관" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWl-rD-v0f">
+                        <rect key="frame" x="20" y="15" width="335" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="k0z-cp-ijW"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일본 철도의 역사를 둘러볼 수 있는 박물관 다양하 ㄴ디자인의 제품이 있느 고급 모다" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbk-f2-qFu">
-                        <rect key="frame" x="20" y="41" width="285" height="33.666666666666657"/>
+                        <rect key="frame" x="20" y="41" width="335" height="33.666666666666657"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33.670000000000002" id="zGD-QO-SPW"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 저장 88,888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64v-1g-EoK">
-                        <rect key="frame" x="121" y="75.666666666666671" width="184" height="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 저장 88,888" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64v-1g-EoK">
+                        <rect key="frame" x="121" y="75.666666666666671" width="234" height="15.666666666666671"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1cy-LU-RA6">
-                        <rect key="frame" x="20" y="209" width="465" height="1"/>
+                        <rect key="frame" x="20" y="149" width="465" height="1"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="7bf-Tp-6Pn"/>
@@ -95,6 +103,7 @@
                     <constraint firstItem="cbk-f2-qFu" firstAttribute="top" secondItem="EWl-rD-v0f" secondAttribute="bottom" constant="2" id="3JG-7X-cld"/>
                     <constraint firstItem="cbk-f2-qFu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="88q-GX-8c9"/>
                     <constraint firstItem="ZvO-gB-jtM" firstAttribute="trailing" secondItem="25m-Uk-UDe" secondAttribute="trailing" id="9RC-CC-1TM"/>
+                    <constraint firstItem="1cy-LU-RA6" firstAttribute="top" secondItem="64v-1g-EoK" secondAttribute="bottom" constant="57.670000000000002" id="F3T-1w-ccR"/>
                     <constraint firstItem="1cy-LU-RA6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="HWN-ih-OY0"/>
                     <constraint firstItem="EWl-rD-v0f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="OVK-ew-Gan"/>
                     <constraint firstItem="ZvO-gB-jtM" firstAttribute="top" secondItem="25m-Uk-UDe" secondAttribute="top" id="PiA-xu-HeE"/>
@@ -103,12 +112,12 @@
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="leading" secondItem="64v-1g-EoK" secondAttribute="trailing" constant="30" id="Zxj-Sy-bhH"/>
                     <constraint firstItem="EWl-rD-v0f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="hSH-lL-mXC"/>
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="hZ6-s8-6Ff"/>
+                    <constraint firstItem="1cy-LU-RA6" firstAttribute="top" secondItem="Caj-mH-Sbp" secondAttribute="bottom" constant="56.329999999999998" id="jwV-9A-gvA"/>
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="leading" secondItem="EWl-rD-v0f" secondAttribute="trailing" constant="30" id="qJt-aQ-vUP"/>
                     <constraint firstAttribute="bottom" secondItem="1cy-LU-RA6" secondAttribute="bottom" id="rUw-az-uDF"/>
                     <constraint firstAttribute="trailing" secondItem="25m-Uk-UDe" secondAttribute="trailing" constant="20" id="t35-jX-cES"/>
                     <constraint firstItem="Caj-mH-Sbp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="vZY-kt-st5"/>
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="leading" secondItem="cbk-f2-qFu" secondAttribute="trailing" constant="30" id="vkC-rS-uh4"/>
-                    <constraint firstAttribute="bottom" secondItem="25m-Uk-UDe" secondAttribute="bottom" constant="15" id="x6o-af-Vli"/>
                     <constraint firstItem="Caj-mH-Sbp" firstAttribute="top" secondItem="cbk-f2-qFu" secondAttribute="bottom" constant="2" id="xep-5j-ur3"/>
                 </constraints>
             </tableViewCellContentView>
@@ -122,7 +131,7 @@
                 <outlet property="subTitleLabel" destination="cbk-f2-qFu" id="Nkv-8X-ehp"/>
                 <outlet property="titleLabel" destination="EWl-rD-v0f" id="PYw-61-I3F"/>
             </connections>
-            <point key="canvasLocation" x="270.99236641221376" y="47.183098591549296"/>
+            <point key="canvasLocation" x="270.99236641221376" y="26.056338028169016"/>
         </tableViewCell>
     </objects>
     <resources>

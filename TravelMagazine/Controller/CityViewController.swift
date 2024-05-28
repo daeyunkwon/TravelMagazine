@@ -41,13 +41,7 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if travels[indexPath.row].ad == false {
-            //CityCell 높이 설정
-            return 150
-        } else {
-            //AdCell 높이 설정
-            return UITableView.automaticDimension
-        }
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
