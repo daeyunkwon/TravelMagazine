@@ -224,7 +224,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOK-4N-JUZ">
                                                     <rect key="frame" x="150" y="63" width="228" height="16"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="16" id="GDA-eZ-KHa"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="GDA-eZ-KHa"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
