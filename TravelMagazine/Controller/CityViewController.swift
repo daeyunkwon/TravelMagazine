@@ -7,8 +7,6 @@
 
 import UIKit
 
-private let reuseCityCell = "CityTableViewCell"
-private let reuseAdCell = "AdTableViewCell"
 
 class CityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -36,8 +34,8 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.rowHeight = 120
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: reuseCityCell)
-        tableView.register(UINib(nibName: "AdTableViewCell", bundle: nil), forCellReuseIdentifier: reuseAdCell)
+        tableView.register(UINib(nibName: CityTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CityTableViewCell.identifier)
+        tableView.register(UINib(nibName: AdTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AdTableViewCell.identifier)
     }
     
     //MARK: - UITableViewDataSource
@@ -60,12 +58,12 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         if travels[indexPath.row].ad == true { 
             //AdCell 표시
-            let cell = tableView.dequeueReusableCell(withIdentifier: reuseAdCell, for: indexPath) as! AdTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: AdTableViewCell.identifier, for: indexPath) as! AdTableViewCell
             cell.setupTitleLabel(text: travels[indexPath.row].title ?? "")
             return cell
         } else {
             //CityCell 표시
-            let cell = tableView.dequeueReusableCell(withIdentifier: reuseCityCell, for: indexPath) as! CityTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CityTableViewCell.identifier, for: indexPath) as! CityTableViewCell
             cell.delegate = self
             cell.travel = self.travels[indexPath.row]
             if indexPath.row+1 < travels.count && travels[indexPath.row + 1].ad == true {

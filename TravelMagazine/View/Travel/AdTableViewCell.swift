@@ -11,6 +11,8 @@ class AdTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     
+    static let identifier = "AdTableViewCell"
+    
     @IBOutlet var backView: UIView!
     
     @IBOutlet var titleLabel: UILabel!

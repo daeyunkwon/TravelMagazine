@@ -13,6 +13,8 @@ class CityTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     
+    static let identifier = "CityTableViewCell"
+    
     @IBOutlet var mainImageView: UIImageView!
     
     @IBOutlet var likeButton: UIButton!
@@ -25,7 +27,6 @@ class CityTableViewCell: UITableViewCell {
     @IBOutlet var separatorView: UIView!
     
     @IBOutlet var cosmosView: CosmosView!
-    
     
     var travel: Travel? {
         didSet {
