@@ -22,7 +22,10 @@
                         <rect key="frame" x="16" y="0.0" width="525" height="245"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="46Q-QV-VpD">
-                                <rect key="frame" x="139.33333333333331" y="102.33333333333333" width="246.33333333333331" height="40.666666666666671"/>
+                                <rect key="frame" x="16" y="10" width="493" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="KUW-hF-xcq"/>
+                                </constraints>
                                 <string key="text">하와이 여행을 가고싶다면?
 수업이 있는데 가실 생각은 아니시죠?</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -41,10 +44,14 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="46Q-QV-VpD" secondAttribute="bottom" constant="10" id="32t-O1-aMm"/>
+                            <constraint firstItem="46Q-QV-VpD" firstAttribute="top" secondItem="wn8-Cn-jlY" secondAttribute="top" constant="10" id="80J-FP-eCn"/>
                             <constraint firstItem="46Q-QV-VpD" firstAttribute="centerY" secondItem="wn8-Cn-jlY" secondAttribute="centerY" id="NRo-ZK-pEf"/>
                             <constraint firstAttribute="trailing" secondItem="KuY-0z-L4C" secondAttribute="trailing" constant="2" id="av7-zW-nsQ"/>
+                            <constraint firstItem="46Q-QV-VpD" firstAttribute="leading" secondItem="wn8-Cn-jlY" secondAttribute="leading" constant="16" id="b0K-O6-wzE"/>
                             <constraint firstItem="46Q-QV-VpD" firstAttribute="centerX" secondItem="wn8-Cn-jlY" secondAttribute="centerX" id="iRa-f9-M9t"/>
                             <constraint firstItem="KuY-0z-L4C" firstAttribute="top" secondItem="wn8-Cn-jlY" secondAttribute="top" constant="2" id="nev-kh-8GU"/>
+                            <constraint firstAttribute="trailing" secondItem="46Q-QV-VpD" secondAttribute="trailing" constant="16" id="yQK-cQ-u5B"/>
                         </constraints>
                     </view>
                 </subviews>

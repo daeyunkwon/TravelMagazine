@@ -46,7 +46,7 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return 150
         } else {
             //AdCell 높이 설정
-            return 70
+            return UITableView.automaticDimension
         }
     }
     
