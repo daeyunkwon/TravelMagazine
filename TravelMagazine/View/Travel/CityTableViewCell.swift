@@ -60,6 +60,8 @@ class CityTableViewCell: UITableViewCell {
         titleLabel.text = ""
         subTitleLabel.text = ""
         saveLabel.text = ""
+        cosmosView.rating = 0
+        cosmosView.text = ""
     }
     
     override func awakeFromNib() {

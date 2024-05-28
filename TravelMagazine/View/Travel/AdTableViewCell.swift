@@ -32,6 +32,7 @@ class AdTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         titleLabel.text = ""
+        backView.backgroundColor = .systemBackground
     }
 
     override func awakeFromNib() {

@@ -53,7 +53,7 @@ class RestaurantTableViewCell: UITableViewCell {
         addressLabel.text = ""
         priceLabel.text = ""
         
-        setupLikeButtonImage(isLike: self.restaurant?.like ?? false)
+        setupLikeButtonImage(isLike: false)
     }
     
     override func awakeFromNib() {
