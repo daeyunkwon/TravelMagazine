@@ -31,23 +31,23 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="철도 박물관" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWl-rD-v0f">
                         <rect key="frame" x="20" y="15" width="335" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="k0z-cp-ijW"/>
+                            <constraint firstAttribute="height" constant="24" id="k0z-cp-ijW"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일본 철도의 역사를 둘러볼 수 있는 박물관 다양하 ㄴ디자인의 제품이 있느 고급 모다" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbk-f2-qFu">
-                        <rect key="frame" x="20" y="41" width="335" height="33.666666666666657"/>
+                        <rect key="frame" x="20" y="41" width="335" height="17"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33.670000000000002" id="zGD-QO-SPW"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="zGD-QO-SPW"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 저장 88,888" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="64v-1g-EoK">
-                        <rect key="frame" x="121" y="75.666666666666671" width="234" height="15.666666666666671"/>
+                        <rect key="frame" x="121" y="58.999999999999993" width="234" height="15.666666666666664"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Caj-mH-Sbp" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="20" y="76.666666666666671" width="104" height="16"/>
+                        <rect key="frame" x="20" y="60" width="104" height="16"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="76g-10-hpk"/>
@@ -103,7 +103,7 @@
                     <constraint firstItem="cbk-f2-qFu" firstAttribute="top" secondItem="EWl-rD-v0f" secondAttribute="bottom" constant="2" id="3JG-7X-cld"/>
                     <constraint firstItem="cbk-f2-qFu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="88q-GX-8c9"/>
                     <constraint firstItem="ZvO-gB-jtM" firstAttribute="trailing" secondItem="25m-Uk-UDe" secondAttribute="trailing" id="9RC-CC-1TM"/>
-                    <constraint firstItem="1cy-LU-RA6" firstAttribute="top" secondItem="64v-1g-EoK" secondAttribute="bottom" constant="57.670000000000002" id="F3T-1w-ccR"/>
+                    <constraint firstItem="1cy-LU-RA6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="64v-1g-EoK" secondAttribute="bottom" constant="73" id="F3T-1w-ccR"/>
                     <constraint firstItem="1cy-LU-RA6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="HWN-ih-OY0"/>
                     <constraint firstItem="EWl-rD-v0f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="OVK-ew-Gan"/>
                     <constraint firstItem="ZvO-gB-jtM" firstAttribute="top" secondItem="25m-Uk-UDe" secondAttribute="top" id="PiA-xu-HeE"/>
@@ -112,7 +112,7 @@
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="leading" secondItem="64v-1g-EoK" secondAttribute="trailing" constant="30" id="Zxj-Sy-bhH"/>
                     <constraint firstItem="EWl-rD-v0f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="hSH-lL-mXC"/>
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="hZ6-s8-6Ff"/>
-                    <constraint firstItem="1cy-LU-RA6" firstAttribute="top" secondItem="Caj-mH-Sbp" secondAttribute="bottom" constant="56.329999999999998" id="jwV-9A-gvA"/>
+                    <constraint firstItem="1cy-LU-RA6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Caj-mH-Sbp" secondAttribute="bottom" constant="73" id="jwV-9A-gvA"/>
                     <constraint firstItem="25m-Uk-UDe" firstAttribute="leading" secondItem="EWl-rD-v0f" secondAttribute="trailing" constant="30" id="qJt-aQ-vUP"/>
                     <constraint firstAttribute="bottom" secondItem="1cy-LU-RA6" secondAttribute="bottom" id="rUw-az-uDF"/>
                     <constraint firstAttribute="trailing" secondItem="25m-Uk-UDe" secondAttribute="trailing" constant="20" id="t35-jX-cES"/>
