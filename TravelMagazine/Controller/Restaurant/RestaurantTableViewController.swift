@@ -105,6 +105,42 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        var contextualAction: UIContextualAction?
+        
+        let data = restaurants[indexPath.row]
+        
+        if data.like == false {
+            likeContextualAction(data: data, like: true, contextualAction: &contextualAction, indexPath: indexPath)
+        } else {
+            likeContextualAction(data: data, like: false, contextualAction: &contextualAction, indexPath: indexPath)
+        }
+        
+        guard let contextualAction else {return nil}
+        contextualAction.backgroundColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
+        let config = UISwipeActionsConfiguration(actions: [contextualAction])
+        config.performsFirstActionWithFullSwipe = false //풀 스와이프 비허용 설정
+        return config
+    }
+    
+    func likeContextualAction(data: Restaurant, like: Bool, contextualAction: inout UIContextualAction?, indexPath: IndexPath) {
+        if like == true {
+            contextualAction = UIContextualAction(style: .normal, title: "좋아요") { action, view, completion in
+                self.updateLikeValue(restaurant: data)
+                self.tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+                completion(true)
+            }
+            contextualAction?.image = UIImage(systemName: "heart.fill")
+        } else {
+            contextualAction = UIContextualAction(style: .normal, title: "좋아요 취소") { action, view, completion in
+                self.updateLikeValue(restaurant: data)
+                self.tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+                completion(true)
+            }
+            contextualAction?.image = UIImage(systemName: "heart")
+        }
+    }
+    
     //MARK: - Functions
     
     @objc func tapGestureAction() {
@@ -223,26 +259,31 @@ class RestaurantTableViewController: UITableViewController {
             }
         }
     }
-}
-
-//MARK: - RestaurantTableViewCellDelegate
-
-extension RestaurantTableViewController: RestaurantTableViewCellDelegate {
-    func handleLikeButtonTapped(for cell: RestaurantTableViewCell) {
+    
+    func updateLikeValue(restaurant: Restaurant) {
         for i in 0..<self.restaurants.count {
-            if self.restaurants[i].name == cell.restaurant?.name {
+            if self.restaurants[i].name == restaurant.name {
                 self.restaurants[i].updateLike()
                 break
             }
         }
         
         for i in 0..<self.backupRestaurants.count {
-            if self.backupRestaurants[i].name == cell.restaurant?.name {
+            if self.backupRestaurants[i].name == restaurant.name {
                 self.backupRestaurants[i].updateLike()
                 break
             }
         }
+    }
+}
+
+//MARK: - RestaurantTableViewCellDelegate
+
+extension RestaurantTableViewController: RestaurantTableViewCellDelegate {
+    func handleLikeButtonTapped(for cell: RestaurantTableViewCell) {
+        guard let restaurant = cell.restaurant else {return}
         
+        updateLikeValue(restaurant: restaurant)
         tableView.reloadData()
     }
 }
