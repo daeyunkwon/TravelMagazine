@@ -44,7 +44,7 @@ class MagazineViewController: UIViewController, UITableViewDataSource, UITableVi
     //MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
