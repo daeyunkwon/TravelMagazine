@@ -28,7 +28,7 @@
                                 </connections>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XBe-bF-tbh">
-                                <rect key="frame" x="30" y="128" width="333" height="31"/>
+                                <rect key="frame" x="30" y="118" width="333" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="xXd-AE-OPa"/>
                                 </constraints>
@@ -38,23 +38,23 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="teD-xd-1pA">
-                                <rect key="frame" x="0.0" y="188" width="393" height="664"/>
+                                <rect key="frame" x="0.0" y="163" width="393" height="655"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="XBe-bF-tbh" firstAttribute="top" secondItem="ddG-gz-af1" secondAttribute="bottom" constant="25" id="0ai-GW-YBF"/>
+                            <constraint firstItem="XBe-bF-tbh" firstAttribute="top" secondItem="ddG-gz-af1" secondAttribute="bottom" constant="15" id="0ai-GW-YBF"/>
                             <constraint firstItem="teD-xd-1pA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="CgZ-E7-Xad"/>
                             <constraint firstItem="ddG-gz-af1" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IdZ-P8-9gm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="teD-xd-1pA" secondAttribute="trailing" id="RcE-eI-Lzu"/>
                             <constraint firstItem="ddG-gz-af1" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="WiC-Ad-7Tp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XBe-bF-tbh" secondAttribute="trailing" constant="30" id="WvE-yD-imK"/>
                             <constraint firstItem="XBe-bF-tbh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="bJb-3K-d6C"/>
-                            <constraint firstAttribute="bottom" secondItem="teD-xd-1pA" secondAttribute="bottom" id="hcG-9w-d1X"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="teD-xd-1pA" secondAttribute="bottom" id="hcG-9w-d1X"/>
                             <constraint firstItem="ddG-gz-af1" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="jGS-jW-5Gh"/>
-                            <constraint firstItem="teD-xd-1pA" firstAttribute="top" secondItem="XBe-bF-tbh" secondAttribute="bottom" constant="30" id="xHC-BG-Eya"/>
+                            <constraint firstItem="teD-xd-1pA" firstAttribute="top" secondItem="XBe-bF-tbh" secondAttribute="bottom" constant="15" id="xHC-BG-Eya"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vo1-ug-bHR"/>
