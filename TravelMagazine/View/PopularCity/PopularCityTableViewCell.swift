@@ -10,6 +10,8 @@ import Kingfisher
 
 class PopularCityTableViewCell: UITableViewCell {
     
+    //MARK: - Properties
+    
     static let reuseIdentifier = "PopularCityTableViewCell"
     
     @IBOutlet var cityImageView: UIImageView!
@@ -34,6 +36,8 @@ class PopularCityTableViewCell: UITableViewCell {
             highlightSearchWord(word: self.searchWord, label: cityExplainLabel)
         }
     }
+    
+    //MARK: - Life Cycle
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -90,7 +94,4 @@ class PopularCityTableViewCell: UITableViewCell {
             }
         }
     }
-    
-    
-    
 }
