@@ -61,6 +61,18 @@ class PopularCityTableViewCell: UITableViewCell {
         cityExplainLabel.textAlignment = .left
         cityExplainLabel.font = .systemFont(ofSize: 13, weight: .semibold)
         cityExplainLabel.textColor = .white
+        
+        cityImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
+        cityImageView.layer.cornerRadius = 20
+        cityImageView.layer.masksToBounds = true
+        
+        imageFrontView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
+        imageFrontView.layer.cornerRadius = 20
+        imageFrontView.layer.masksToBounds = true
+        
+        labelBackView.layer.maskedCorners = [.layerMaxXMaxYCorner]
+        labelBackView.layer.cornerRadius = 20
+        labelBackView.layer.masksToBounds = true
     }
     
     func highlightSearchWord(word: String?, label: UILabel) {
