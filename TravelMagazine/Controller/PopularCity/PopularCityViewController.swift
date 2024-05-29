@@ -16,6 +16,8 @@ class PopularCityViewController: UIViewController, UITableViewDataSource, UITabl
     var citys: [City] = CityInfo.city
     var filterdCitys: [City] = CityInfo.city
     
+    var searchWord: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
@@ -68,6 +70,7 @@ class PopularCityViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PopularCityTableViewCell.reuseIdentifier, for: indexPath) as! PopularCityTableViewCell
         
+        cell.searchWord = self.searchWord
         cell.city = citys[indexPath.row]
         
         return cell
@@ -86,8 +89,10 @@ extension PopularCityViewController: UISearchBarDelegate {
         
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
             self.citys = filterdCitys
+            self.searchWord = nil
         } else {
             text = text.lowercased()
+            self.searchWord = text
             
             var cityArray: [City] = []
             for city in filterdCitys {
