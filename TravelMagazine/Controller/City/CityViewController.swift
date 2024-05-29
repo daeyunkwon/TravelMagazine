@@ -84,7 +84,7 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
             present(navi, animated: true)
         }
         
-        
+        tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .automatic)
     }
 }
 
