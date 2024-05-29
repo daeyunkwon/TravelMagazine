@@ -67,7 +67,6 @@ class PopularCityViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
         self.citys = self.filterdCitys
-        print("실행")
         tableView.reloadData()
     }
     
