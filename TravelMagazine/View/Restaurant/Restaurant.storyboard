@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +15,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="RestaurantTableViewController" id="aLb-ML-ygV" customClass="RestaurantTableViewController" customModule="TravelMagazine" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="t9A-7i-llU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="749"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Vxj-sp-ItR">
@@ -354,11 +355,17 @@
         <scene sceneID="dQk-Lf-ETR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kml-SM-91H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="식당" image="storefront" catalog="system" selectedImage="storefront.fill" id="Sn7-ap-cIc"/>
+                    <tabBarItem key="tabBarItem" title="식당" image="fork.knife" catalog="system" id="Sn7-ap-cIc"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhF-L9-hse">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="mhF-L9-hse">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" name="WhiteToDark"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" name="WhiteToDark"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -371,13 +378,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="mappin.and.ellipse" catalog="system" width="110" height="128"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
-        <image name="storefront" catalog="system" width="128" height="111"/>
-        <image name="storefront.fill" catalog="system" width="128" height="116"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
+        <namedColor name="WhiteToDark">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
