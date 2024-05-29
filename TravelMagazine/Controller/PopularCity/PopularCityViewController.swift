@@ -34,6 +34,7 @@ class PopularCityViewController: UIViewController {
         searchBar.delegate = self
         searchBar.autocapitalizationType = .none
         searchBar.autocorrectionType = .no
+        searchBar.placeholder = "검색"
     }
     
     func setupSegment() {
