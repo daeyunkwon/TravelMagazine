@@ -77,7 +77,11 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let vc = sb.instantiateViewController(withIdentifier: "CityDetailViewController") as! CityDetailViewController
             navigationController?.pushViewController(vc, animated: true)
         } else {
-            
+            let sb = UIStoryboard(name: "AdDetail", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "AdDetailViewController") as! AdDetailViewController
+            let navi = UINavigationController(rootViewController: vc)
+            navi.modalPresentationStyle = .fullScreen
+            present(navi, animated: true)
         }
         
         
