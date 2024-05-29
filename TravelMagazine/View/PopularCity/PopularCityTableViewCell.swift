@@ -60,9 +60,7 @@ class PopularCityTableViewCell: UITableViewCell {
     }
     
     func highlightSearchWord(word: String?, label: UILabel) {
-        guard let word = word, !word.trimmingCharacters(in: .whitespaces).isEmpty else {print("NOOO")
-            
-            return}
+        guard let word = word, !word.trimmingCharacters(in: .whitespaces).isEmpty else {return}
         guard let labelText = label.text?.trimmingCharacters(in: .whitespaces) else {return}
         
         rangeArr = []
