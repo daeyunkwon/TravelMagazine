@@ -116,7 +116,17 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPr-JF-48a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3189" y="-171"/>
+            <point key="canvasLocation" x="3772" y="-35"/>
+        </scene>
+        <!--PopularCity-->
+        <scene sceneID="lGD-0w-HKN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PopularCity" id="7aL-4s-FzP" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4cH-t4-dci"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a4m-0M-DE0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4976" y="-23"/>
         </scene>
         <!--Restaurant-->
         <scene sceneID="btA-5d-Oyp">
@@ -126,7 +136,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4se-6W-RKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3189" y="246"/>
+            <point key="canvasLocation" x="2593" y="45"/>
         </scene>
         <!--매거진-->
         <scene sceneID="qYm-gO-9sH">
@@ -162,6 +172,7 @@
                         <segue destination="Ovp-qf-IqO" kind="relationship" relationship="viewControllers" id="Ie8-kQ-Hj7"/>
                         <segue destination="Sfv-Ih-4EJ" kind="relationship" relationship="viewControllers" id="zbQ-Bv-40R"/>
                         <segue destination="BON-KA-w7m" kind="relationship" relationship="viewControllers" id="xNt-5t-7rh"/>
+                        <segue destination="73T-Bn-EfU" kind="relationship" relationship="viewControllers" id="XWj-zX-B6m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4d0-51-hJS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -185,7 +196,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhY-mx-fZH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2532" y="-171"/>
+            <point key="canvasLocation" x="3112" y="-35"/>
+        </scene>
+        <!--인기 도시-->
+        <scene sceneID="hqe-Au-zrQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="73T-Bn-EfU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="인기 도시" image="party.popper" catalog="system" selectedImage="party.popper.fill" id="ACa-rP-5fG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xCQ-bC-iFW">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7aL-4s-FzP" kind="relationship" relationship="rootViewController" id="rDs-vx-jSX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPp-bV-q5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4429.7709923664124" y="-22.535211267605636"/>
         </scene>
     </scenes>
     <resources>
@@ -193,6 +223,8 @@
         <image name="building.2.fill" catalog="system" width="128" height="117"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="newspaper.fill" catalog="system" width="128" height="112"/>
+        <image name="party.popper" catalog="system" width="128" height="116"/>
+        <image name="party.popper.fill" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
