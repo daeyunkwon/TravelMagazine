@@ -22,7 +22,7 @@ class MagazineViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
-        setupNavi()
+        self.setupNavi(title: "SaSAC TRAVEL")
         setupTableView()
     }
     
@@ -35,10 +35,6 @@ class MagazineViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         
         tableView.separatorStyle = .none
-    }
-    
-    func setupNavi() {
-        navigationItem.title = "SaSAC TRAVEL"
     }
     
     //MARK: - UITableViewDataSource

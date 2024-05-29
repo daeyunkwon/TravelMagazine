@@ -24,13 +24,9 @@ class PopularCityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
-    }
-    
-    func configureUI() {
         setupSearchBar()
         setupSegment()
-        setupNavi()
+        self.setupNavi(title: "인기 도시")
         setupTableView()
     }
     
@@ -49,21 +45,6 @@ class PopularCityViewController: UIViewController {
         segment.addTarget(self, action: #selector(segmentTapped), for: .valueChanged)
     }
     
-    func setupNavi() {
-        navigationItem.title = "인기 도시"
-        
-        let appearance = UINavigationBarAppearance()
-        
-        appearance.titleTextAttributes = [
-            .foregroundColor: UIColor.label,
-        ]
-        
-        appearance.backgroundColor = .whiteToDark
-        
-        self.navigationController?.navigationBar.standardAppearance = appearance
-        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
-    }
-    
     func setupTableView() {
         tableView.keyboardDismissMode = .onDrag
         tableView.separatorStyle = .none
@@ -72,7 +53,6 @@ class PopularCityViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: PopularCityTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: PopularCityTableViewCell.reuseIdentifier)
     }
-    
     
     //MARK: - Functions
     

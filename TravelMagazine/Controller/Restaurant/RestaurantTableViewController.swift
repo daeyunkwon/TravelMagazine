@@ -28,10 +28,10 @@ class RestaurantTableViewController: UITableViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         setupTapGesture()
         setupTableView()
         setupNavi()
-        configureUI()
     }
     
     func setupTapGesture() {

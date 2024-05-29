@@ -21,12 +21,8 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavi()
+        self.setupNavi(title: "도시 상세 정보")
         setupTableView()
-    }
-    
-    func setupNavi() {
-        navigationItem.title = "도시 상세 정보"
     }
     
     func setupTableView() {
