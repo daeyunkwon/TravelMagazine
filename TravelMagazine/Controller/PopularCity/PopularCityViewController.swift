@@ -108,5 +108,20 @@ extension PopularCityViewController: UISearchBarDelegate {
         view.endEditing(true)
     }
     
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard var text = searchBar.text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {return}
+        
+        text = text.lowercased()
+        self.searchWord = text
+        
+        var cityArray: [City] = []
+        for city in filterdCitys {
+            if city.city_name.contains(text) || city.city_english_name.lowercased().contains(text) || city.city_explain.contains(text) {
+                cityArray.append(city)
+            }
+        }
+        
+        self.citys = cityArray
+        tableView.reloadData()
+    }
 }
