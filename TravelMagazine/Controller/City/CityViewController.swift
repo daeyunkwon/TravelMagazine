@@ -8,7 +8,7 @@
 import UIKit
 
 
-class CityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CityViewController: UIViewController {
     
     //MARK: - Properties
     
@@ -33,9 +33,11 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.register(UINib(nibName: CityTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CityTableViewCell.identifier)
         tableView.register(UINib(nibName: AdTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AdTableViewCell.identifier)
     }
-    
-    //MARK: - UITableViewDataSource
-    
+}
+
+//MARK: - TableView
+
+extension CityViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -46,7 +48,7 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if travels[indexPath.row].ad == true { 
+        if travels[indexPath.row].ad == true {
             //AdCell 표시
             let cell = tableView.dequeueReusableCell(withIdentifier: AdTableViewCell.identifier, for: indexPath) as! AdTableViewCell
             cell.setupTitleLabel(text: travels[indexPath.row].title ?? "")
