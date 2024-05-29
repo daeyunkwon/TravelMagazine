@@ -15,8 +15,8 @@ class PopularCityViewController: UIViewController {
     @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
     
-    var citys: [City] = CityInfo.city
-    var filterdCitys: [City] = CityInfo.city
+    var cities: [City] = CityInfo.city
+    var filterdCities: [City] = CityInfo.city
     
     var searchWord: String?
     
@@ -58,32 +58,47 @@ class PopularCityViewController: UIViewController {
     //MARK: - Functions
     
     @objc func segmentTapped() {
-        self.filterdCitys = []
-        let allCitys = CityInfo.city
+        self.filterdCities = []
+        let allCities = CityInfo.city
         
         if segment.selectedSegmentIndex == 0 {
             //전체
-            self.filterdCitys = allCitys
+            for city in allCities {
+                filterdCitiesByKeywordOrNot(city: city)
+            }
             
         } else if segment.selectedSegmentIndex == 1 {
             //국내만 보여주기
-            for city in allCitys {
+            for city in allCities {
                 if city.domestic_travel == true {
-                    self.filterdCitys.append(city)
+                    filterdCitiesByKeywordOrNot(city: city)
                 }
             }
             
         } else if segment.selectedSegmentIndex == 2 {
             //해외만 보여주기
-            for city in allCitys {
+            for city in allCities {
                 if city.domestic_travel == false {
-                    self.filterdCitys.append(city)
+                    filterdCitiesByKeywordOrNot(city: city)
                 }
             }
         }
         
-        self.citys = self.filterdCitys
+        self.cities = self.filterdCities
         tableView.reloadData()
+    }
+    
+    func filterdCitiesByKeywordOrNot(city: City) {
+        if var text = searchBar.text, !text.trimmingCharacters(in: .whitespaces).isEmpty {
+            text = text.lowercased()
+            self.searchWord = text
+            
+            if city.city_name.contains(text) || city.city_english_name.lowercased().contains(text) || city.city_explain.contains(text) {
+                self.filterdCities.append(city)
+            }
+        } else {
+            self.filterdCities.append(city)
+        }
     }
 }
 
@@ -92,14 +107,14 @@ class PopularCityViewController: UIViewController {
 extension PopularCityViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.citys.count
+        self.cities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PopularCityTableViewCell.reuseIdentifier, for: indexPath) as! PopularCityTableViewCell
         
         cell.searchWord = self.searchWord
-        cell.city = citys[indexPath.row]
+        cell.city = cities[indexPath.row]
         
         return cell
     }
@@ -114,20 +129,20 @@ extension PopularCityViewController: UISearchBarDelegate {
         guard var text = searchBar.text else {return}
         
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
-            self.citys = filterdCitys
+            self.cities = filterdCities
             self.searchWord = nil
         } else {
             text = text.lowercased()
             self.searchWord = text
             
             var cityArray: [City] = []
-            for city in filterdCitys {
+            for city in filterdCities {
                 if city.city_name.contains(text) || city.city_english_name.lowercased().contains(text) || city.city_explain.contains(text) {
                     cityArray.append(city)
                 }
             }
             
-            self.citys = cityArray
+            self.cities = cityArray
         }
         
         tableView.reloadData()
@@ -135,19 +150,22 @@ extension PopularCityViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        guard var text = searchBar.text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {return}
+        guard var text = searchBar.text, !text.trimmingCharacters(in: .whitespaces).isEmpty else {
+            segmentTapped()
+            return
+        }
         
         text = text.lowercased()
         self.searchWord = text
         
         var cityArray: [City] = []
-        for city in filterdCitys {
+        for city in filterdCities {
             if city.city_name.contains(text) || city.city_english_name.lowercased().contains(text) || city.city_explain.contains(text) {
                 cityArray.append(city)
             }
         }
         
-        self.citys = cityArray
+        self.cities = cityArray
         tableView.reloadData()
     }
 }
