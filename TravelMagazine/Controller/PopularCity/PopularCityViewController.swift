@@ -7,7 +7,9 @@
 
 import UIKit
 
-class PopularCityViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PopularCityViewController: UIViewController {
+    
+    //MARK: - Properties
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var segment: UISegmentedControl!
@@ -18,8 +20,14 @@ class PopularCityViewController: UIViewController, UITableViewDataSource, UITabl
     
     var searchWord: String?
     
+    //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+    }
+    
+    func configureUI() {
         setupSearchBar()
         setupSegment()
         setupNavi()
@@ -40,6 +48,33 @@ class PopularCityViewController: UIViewController, UITableViewDataSource, UITabl
         
         segment.addTarget(self, action: #selector(segmentTapped), for: .valueChanged)
     }
+    
+    func setupNavi() {
+        navigationItem.title = "인기 도시"
+        
+        let appearance = UINavigationBarAppearance()
+        
+        appearance.titleTextAttributes = [
+            .foregroundColor: UIColor.label,
+        ]
+        
+        appearance.backgroundColor = .whiteToDark
+        
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+    }
+    
+    func setupTableView() {
+        tableView.keyboardDismissMode = .onDrag
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 200
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: PopularCityTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: PopularCityTableViewCell.reuseIdentifier)
+    }
+    
+    
+    //MARK: - Functions
     
     @objc func segmentTapped() {
         self.filterdCitys = []
@@ -69,30 +104,11 @@ class PopularCityViewController: UIViewController, UITableViewDataSource, UITabl
         self.citys = self.filterdCitys
         tableView.reloadData()
     }
-    
-    func setupNavi() {
-        navigationItem.title = "인기 도시"
-        
-        let appearance = UINavigationBarAppearance()
-        
-        appearance.titleTextAttributes = [
-            .foregroundColor: UIColor.label,
-        ]
-        
-        appearance.backgroundColor = .whiteToDark
-        
-        self.navigationController?.navigationBar.standardAppearance = appearance
-        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
-    }
-    
-    func setupTableView() {
-        tableView.keyboardDismissMode = .onDrag
-        tableView.separatorStyle = .none
-        tableView.rowHeight = 200
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(UINib(nibName: PopularCityTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: PopularCityTableViewCell.reuseIdentifier)
-    }
+}
+
+//MARK: - TableView
+
+extension PopularCityViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.citys.count
@@ -106,14 +122,12 @@ class PopularCityViewController: UIViewController, UITableViewDataSource, UITabl
         
         return cell
     }
-    
-
-    
-
 }
 
 //MARK: - UISearchBarDelegate
+
 extension PopularCityViewController: UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         guard var text = searchBar.text else {return}
