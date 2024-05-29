@@ -37,6 +37,38 @@ class PopularCityViewController: UIViewController, UITableViewDataSource, UITabl
         segment.setTitle("모두", forSegmentAt: 0)
         segment.setTitle("국내", forSegmentAt: 1)
         segment.insertSegment(withTitle: "해외", at: 2, animated: false)
+        
+        segment.addTarget(self, action: #selector(segmentTapped), for: .valueChanged)
+    }
+    
+    @objc func segmentTapped() {
+        self.filterdCitys = []
+        let allCitys = CityInfo.city
+        
+        if segment.selectedSegmentIndex == 0 {
+            //전체
+            self.filterdCitys = allCitys
+            
+        } else if segment.selectedSegmentIndex == 1 {
+            //국내만 보여주기
+            for city in allCitys {
+                if city.domestic_travel == true {
+                    self.filterdCitys.append(city)
+                }
+            }
+            
+        } else if segment.selectedSegmentIndex == 2 {
+            //해외만 보여주기
+            for city in allCitys {
+                if city.domestic_travel == false {
+                    self.filterdCitys.append(city)
+                }
+            }
+        }
+        
+        self.citys = self.filterdCitys
+        print("실행")
+        tableView.reloadData()
     }
     
     func setupNavi() {
