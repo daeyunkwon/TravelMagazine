@@ -68,6 +68,20 @@ class CityViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return cell
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = travels[indexPath.row]
+        
+        if !data.ad {
+            let sb = UIStoryboard(name: "CityDetail", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "CityDetailViewController") as! CityDetailViewController
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            
+        }
+        
+        
+    }
 }
 
 //MARK: - CityTableViewCellDelegate
