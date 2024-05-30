@@ -59,7 +59,7 @@ class CityDetailViewController: UIViewController {
         saveLabel.font = .systemFont(ofSize: 15)
         saveLabel.textColor = .lightGray
         
-        descriptionLabel.font = .systemFont(ofSize: 17, weight: .semibold)
+        descriptionLabel.font = .systemFont(ofSize: 20, weight: .semibold)
         descriptionLabel.textColor = .systemGray
         descriptionLabel.textAlignment = .left
         descriptionLabel.numberOfLines = 0
