@@ -18,7 +18,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-cb-8TA">
-                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
+                                <rect key="frame" x="16" y="415.66666666666669" width="361" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="K0M-4z-m7A"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,8 +30,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eMo-cb-8TA" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="8Ny-vL-cfQ"/>
-                            <constraint firstItem="eMo-cb-8TA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Bet-62-bwH"/>
+                            <constraint firstItem="eMo-cb-8TA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ONh-Xa-Flf"/>
+                            <constraint firstItem="eMo-cb-8TA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="356.67000000000002" id="WSe-Uz-ygt"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eMo-cb-8TA" secondAttribute="trailing" constant="16" id="dDt-fQ-teI"/>
                         </constraints>
                     </view>
                     <connections>

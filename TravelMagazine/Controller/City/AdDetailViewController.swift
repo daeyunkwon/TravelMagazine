@@ -9,26 +9,41 @@ import UIKit
 
 class AdDetailViewController: UIViewController {
     
+    //MARK: - Properties
+    
     @IBOutlet var titleLabel: UILabel!
+    
+    var travel: Travel?
+    
+    //MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
         setupNavi()
         configureUI()
     }
     
+    func setupData() {
+        guard let title = travel?.title else {return}
+        titleLabel.text = title
+    }
+    
     func configureUI() {
-        titleLabel.text = "광고 화면"
-        titleLabel.font = .systemFont(ofSize: 30, weight: .heavy)
+        titleLabel.font = .systemFont(ofSize: 25, weight: .heavy)
+        titleLabel.textAlignment = .center
+        titleLabel.numberOfLines = 0
     }
     
     func setupNavi() {
-        self.setupNavi(title: "광고 화면")
+        self.setupNavi(title: "광고")
         
         navigationItem.hidesBackButton = true
         let leftButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(leftBarButtonTapped))
         navigationItem.leftBarButtonItem = leftButton
     }
+    
+    //MARK: - Functions
     
     @objc func leftBarButtonTapped() {
         dismiss(animated: true)
