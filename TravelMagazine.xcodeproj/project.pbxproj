@@ -97,20 +97,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4476E5432C0714D1002AB3DD /* PopularCity */ = {
-			isa = PBXGroup;
-			children = (
-				4476E5412C0714C6002AB3DD /* PopularCityViewController.swift */,
-			);
-			path = PopularCity;
-			sourceTree = "<group>";
-		};
 		4476E5462C071507002AB3DD /* PopularCity */ = {
 			isa = PBXGroup;
 			children = (
 				4476E5442C071501002AB3DD /* PopularCity.storyboard */,
 				4476E5472C071779002AB3DD /* PopularCityTableViewCell.swift */,
 				4476E5482C071779002AB3DD /* PopularCityTableViewCell.xib */,
+				4476E5412C0714C6002AB3DD /* PopularCityViewController.swift */,
 			);
 			path = PopularCity;
 			sourceTree = "<group>";
@@ -120,6 +113,7 @@
 			children = (
 				449B348C2C0080DD0010F093 /* Main.storyboard */,
 				449B34A02C0086590010F093 /* MagazineTableViewCell.swift */,
+				449B348A2C0080DD0010F093 /* MagazineViewController.swift */,
 			);
 			path = Magazine;
 			sourceTree = "<group>";
@@ -130,6 +124,8 @@
 				445B6D782C01DB5300C40BC2 /* Restaurant.storyboard */,
 				445B6D7C2C020A9400C40BC2 /* RestaurantTableViewCell.swift */,
 				445814842C08A55500604BAE /* RestaurantMap.storyboard */,
+				445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */,
+				445814862C08A58600604BAE /* RestaurantMapViewController.swift */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -139,7 +135,6 @@
 			children = (
 				449B34862C0080DD0010F093 /* AppDelegate.swift */,
 				449B34882C0080DD0010F093 /* SceneDelegate.swift */,
-				449B34912C0080DE0010F093 /* LaunchScreen.storyboard */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -147,19 +142,20 @@
 		447AC9B82C02BC0300B3760C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				449B34912C0080DE0010F093 /* LaunchScreen.storyboard */,
 				449B348F2C0080DE0010F093 /* Assets.xcassets */,
 				449B34942C0080DE0010F093 /* Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		447AC9B92C02C94200B3760C /* Utills */ = {
+		447AC9B92C02C94200B3760C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				447AC9BA2C02C95100B3760C /* Protocols.swift */,
 				44EF2ED22C060890002DFBDC /* Extension */,
 			);
-			path = Utills;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		448819032C045F4F0061F4D7 /* Travel */ = {
@@ -172,6 +168,9 @@
 				448819112C0471A90061F4D7 /* CityTableViewCell.xib */,
 				4476E5392C07040B002AB3DD /* CityDetail.storyboard */,
 				4476E53B2C07045C002AB3DD /* AdDetail.storyboard */,
+				448819042C045FA70061F4D7 /* CityViewController.swift */,
+				4476E53D2C0704D5002AB3DD /* CityDetailViewController.swift */,
+				4476E53F2C0704E4002AB3DD /* AdDetailViewController.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -196,10 +195,12 @@
 			isa = PBXGroup;
 			children = (
 				447AC9B72C02BBEE00B3760C /* Application */,
-				447AC9B92C02C94200B3760C /* Utills */,
+				447AC9B92C02C94200B3760C /* Utils */,
 				449B349D2C00833B0010F093 /* Model */,
-				449B349E2C0083520010F093 /* View */,
-				449B349F2C0083830010F093 /* Controller */,
+				447AC9B52C02120C00B3760C /* Magazine */,
+				447AC9B62C02121600B3760C /* Restaurant */,
+				448819032C045F4F0061F4D7 /* Travel */,
+				4476E5462C071507002AB3DD /* PopularCity */,
 				447AC9B82C02BC0300B3760C /* Resource */,
 			);
 			path = TravelMagazine;
@@ -214,55 +215,6 @@
 				4476E54B2C0719EA002AB3DD /* CityInfo.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		449B349E2C0083520010F093 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				447AC9B52C02120C00B3760C /* Magazine */,
-				448819032C045F4F0061F4D7 /* Travel */,
-				447AC9B62C02121600B3760C /* Restaurant */,
-				4476E5462C071507002AB3DD /* PopularCity */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		449B349F2C0083830010F093 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				44EF2ECF2C06086C002DFBDC /* Magazine */,
-				44EF2ED02C060877002DFBDC /* Restaurant */,
-				44EF2ED12C060882002DFBDC /* City */,
-				4476E5432C0714D1002AB3DD /* PopularCity */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		44EF2ECF2C06086C002DFBDC /* Magazine */ = {
-			isa = PBXGroup;
-			children = (
-				449B348A2C0080DD0010F093 /* MagazineViewController.swift */,
-			);
-			path = Magazine;
-			sourceTree = "<group>";
-		};
-		44EF2ED02C060877002DFBDC /* Restaurant */ = {
-			isa = PBXGroup;
-			children = (
-				445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */,
-				445814862C08A58600604BAE /* RestaurantMapViewController.swift */,
-			);
-			path = Restaurant;
-			sourceTree = "<group>";
-		};
-		44EF2ED12C060882002DFBDC /* City */ = {
-			isa = PBXGroup;
-			children = (
-				448819042C045FA70061F4D7 /* CityViewController.swift */,
-				4476E53D2C0704D5002AB3DD /* CityDetailViewController.swift */,
-				4476E53F2C0704E4002AB3DD /* AdDetailViewController.swift */,
-			);
-			path = City;
 			sourceTree = "<group>";
 		};
 		44EF2ED22C060890002DFBDC /* Extension */ = {
