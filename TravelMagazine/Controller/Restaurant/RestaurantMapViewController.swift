@@ -52,7 +52,7 @@ class RestaurantMapViewController: UIViewController {
         
         mapView.addAnnotations(self.annotaitons)
         guard let center = self.annotaitons.randomElement() else {return}
-        mapView.setRegion(MKCoordinateRegion(center: center.coordinate, latitudinalMeters: 3000, longitudinalMeters: 3000), animated: true)
+        mapView.setRegion(MKCoordinateRegion(center: center.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000), animated: true)
     }
     
     //MARK: - Functions
