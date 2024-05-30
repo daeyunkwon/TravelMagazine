@@ -87,7 +87,7 @@ class RestaurantTableViewCell: UITableViewCell {
         priceLabel.textColor = .label
         priceLabel.font = .boldSystemFont(ofSize: 14)
         
-        likeButton.tintColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
+        likeButton.tintColor = UIColor.customPink()
         likeButton.setTitle("", for: .normal)
         likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
     }
