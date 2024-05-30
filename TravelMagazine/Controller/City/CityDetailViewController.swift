@@ -77,7 +77,7 @@ class CityDetailViewController: UIViewController {
         cosmosView.backgroundColor = .clear
         cosmosView.settings.textColor = .systemGray2
         cosmosView.settings.textFont = .systemFont(ofSize: 15, weight: .medium)
-        cosmosView.settings.starSize = 12
+        cosmosView.settings.starSize = 15
         cosmosView.settings.starMargin = 1
     }
     

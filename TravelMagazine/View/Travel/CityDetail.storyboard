@@ -41,7 +41,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VX4-OU-6jj">
-                                <rect key="frame" x="123.99999999999999" y="572" width="41.333333333333329" height="16"/>
+                                <rect key="frame" x="136" y="574" width="41.333333333333343" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="uVm-NE-v3j"/>
                                 </constraints>
@@ -81,10 +81,10 @@
                             <constraint firstItem="yT2-Xg-42P" firstAttribute="bottom" secondItem="meD-SZ-UEY" secondAttribute="bottom" id="NnO-Kl-ei2"/>
                             <constraint firstItem="meD-SZ-UEY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ppt-bg-21d"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="daR-Ln-1WA" secondAttribute="trailing" constant="16" id="ZMa-u5-ogf"/>
-                            <constraint firstItem="VX4-OU-6jj" firstAttribute="leading" secondItem="K1Y-Cl-EsZ" secondAttribute="trailing" constant="8" id="ZSf-Tb-4Wi"/>
+                            <constraint firstItem="VX4-OU-6jj" firstAttribute="leading" secondItem="K1Y-Cl-EsZ" secondAttribute="trailing" constant="20" id="ZSf-Tb-4Wi"/>
                             <constraint firstItem="BGv-7B-MwH" firstAttribute="top" secondItem="yT2-Xg-42P" secondAttribute="bottom" constant="8" symbolic="YES" id="ecZ-K5-SfL"/>
                             <constraint firstItem="K1Y-Cl-EsZ" firstAttribute="top" secondItem="BGv-7B-MwH" secondAttribute="bottom" constant="5" id="fnH-Qe-1CU"/>
-                            <constraint firstItem="VX4-OU-6jj" firstAttribute="top" secondItem="K1Y-Cl-EsZ" secondAttribute="top" constant="-2" id="g99-nb-j74"/>
+                            <constraint firstItem="VX4-OU-6jj" firstAttribute="top" secondItem="K1Y-Cl-EsZ" secondAttribute="top" id="g99-nb-j74"/>
                             <constraint firstItem="yT2-Xg-42P" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="i1Y-g5-rYs"/>
                             <constraint firstItem="BGv-7B-MwH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="jc4-FL-Eab"/>
                             <constraint firstItem="yT2-Xg-42P" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="jiE-od-asw"/>

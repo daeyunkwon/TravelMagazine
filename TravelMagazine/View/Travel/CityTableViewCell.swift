@@ -98,12 +98,11 @@ class CityTableViewCell: UITableViewCell {
         cosmosView.settings.textColor = .systemGray2
         cosmosView.settings.textFont = .systemFont(ofSize: 13, weight: .medium)
         cosmosView.settings.starSize = 12
+        cosmosView.settings.starMargin = 1
         // Set image for the filled star
         cosmosView.settings.filledImage = UIImage(named: "GoldStarFilled")
-
         // Set image for the empty star
         cosmosView.settings.emptyImage = UIImage(named: "GoldStarEmpty")
-        cosmosView.settings.starMargin = 1
     }
     
     func setupLikeButton() {
