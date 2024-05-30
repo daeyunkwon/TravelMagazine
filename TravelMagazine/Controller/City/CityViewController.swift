@@ -73,10 +73,22 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
         if !data.ad {
             let sb = UIStoryboard(name: "CityDetail", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "CityDetailViewController") as! CityDetailViewController
+            vc.travel = self.travels[indexPath.row]
+            vc.closureUseForDataSend = {[weak self] sender in
+                guard let self else {return}
+                for i in 0..<self.travels.count {
+                    if travels[i].title == sender.title {
+                        travels[i].like = sender.like
+                        tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .automatic)
+                        break
+                    }
+                }
+            }
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let sb = UIStoryboard(name: "AdDetail", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "AdDetailViewController") as! AdDetailViewController
+            vc.travel = self.travels[indexPath.row]
             let navi = UINavigationController(rootViewController: vc)
             navi.modalPresentationStyle = .fullScreen
             present(navi, animated: true)
