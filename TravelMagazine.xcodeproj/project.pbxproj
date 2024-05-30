@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		445814852C08A55500604BAE /* RestaurantMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445814842C08A55500604BAE /* RestaurantMap.storyboard */; };
+		445814872C08A58600604BAE /* RestaurantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445814862C08A58600604BAE /* RestaurantMapViewController.swift */; };
 		445B6D752C00925500C40BC2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 445B6D742C00925500C40BC2 /* Kingfisher */; };
 		445B6D772C01D91C00C40BC2 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445B6D762C01D91C00C40BC2 /* Restaurant.swift */; };
 		445B6D792C01DB5300C40BC2 /* Restaurant.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445B6D782C01DB5300C40BC2 /* Restaurant.storyboard */; };
@@ -44,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		445814842C08A55500604BAE /* RestaurantMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantMap.storyboard; sourceTree = "<group>"; };
+		445814862C08A58600604BAE /* RestaurantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewController.swift; sourceTree = "<group>"; };
 		445B6D762C01D91C00C40BC2 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		445B6D782C01DB5300C40BC2 /* Restaurant.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Restaurant.storyboard; sourceTree = "<group>"; };
 		445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			children = (
 				445B6D782C01DB5300C40BC2 /* Restaurant.storyboard */,
 				445B6D7C2C020A9400C40BC2 /* RestaurantTableViewCell.swift */,
+				445814842C08A55500604BAE /* RestaurantMap.storyboard */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -245,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */,
+				445814862C08A58600604BAE /* RestaurantMapViewController.swift */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				4476E5492C071779002AB3DD /* PopularCityTableViewCell.xib in Resources */,
 				4476E5452C071501002AB3DD /* PopularCity.storyboard in Resources */,
 				4476E53C2C07045C002AB3DD /* AdDetail.storyboard in Resources */,
+				445814852C08A55500604BAE /* RestaurantMap.storyboard in Resources */,
 				449B348E2C0080DD0010F093 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +367,7 @@
 				449B348B2C0080DD0010F093 /* MagazineViewController.swift in Sources */,
 				4476E54C2C0719EA002AB3DD /* CityInfo.swift in Sources */,
 				445B6D772C01D91C00C40BC2 /* Restaurant.swift in Sources */,
+				445814872C08A58600604BAE /* RestaurantMapViewController.swift in Sources */,
 				445B6D7B2C01DB9000C40BC2 /* RestaurantTableViewController.swift in Sources */,
 				4476E54A2C071779002AB3DD /* PopularCityTableViewCell.swift in Sources */,
 				4476E53E2C0704D5002AB3DD /* CityDetailViewController.swift in Sources */,
