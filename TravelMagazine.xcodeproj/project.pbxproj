@@ -139,14 +139,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		447AC9B82C02BC0300B3760C /* Resource */ = {
+		447AC9B82C02BC0300B3760C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				449B34912C0080DE0010F093 /* LaunchScreen.storyboard */,
 				449B348F2C0080DE0010F093 /* Assets.xcassets */,
 				449B34942C0080DE0010F093 /* Info.plist */,
 			);
-			path = Resource;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		447AC9B92C02C94200B3760C /* Utils */ = {
@@ -201,7 +201,7 @@
 				447AC9B62C02121600B3760C /* Restaurant */,
 				448819032C045F4F0061F4D7 /* Travel */,
 				4476E5462C071507002AB3DD /* PopularCity */,
-				447AC9B82C02BC0300B3760C /* Resource */,
+				447AC9B82C02BC0300B3760C /* Resources */,
 			);
 			path = TravelMagazine;
 			sourceTree = "<group>";
@@ -490,7 +490,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M37U587ZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelMagazine/Resource/Info.plist;
+				INFOPLIST_FILE = TravelMagazine/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -523,7 +523,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9M37U587ZT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelMagazine/Resource/Info.plist;
+				INFOPLIST_FILE = TravelMagazine/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
