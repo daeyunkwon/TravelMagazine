@@ -138,7 +138,8 @@
 				449B348C2C0080DD0010F093 /* Main.storyboard */,
 				449B348A2C0080DD0010F093 /* MagazineViewController.swift */,
 				449B34A02C0086590010F093 /* MagazineTableViewCell.swift */,
-				44FFE1432C0B475800E7F5F0 /* Chat */,
+				44FFE1432C0B475800E7F5F0 /* TravelTalk */,
+				44FFE1662C0B9CB500E7F5F0 /* Chat */,
 			);
 			path = Magazine;
 			sourceTree = "<group>";
@@ -254,7 +255,7 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		44FFE1432C0B475800E7F5F0 /* Chat */ = {
+		44FFE1432C0B475800E7F5F0 /* TravelTalk */ = {
 			isa = PBXGroup;
 			children = (
 				44FFE1502C0B498100E7F5F0 /* ChatRoom.storyboard */,
@@ -267,6 +268,13 @@
 				44FFE1622C0B670C00E7F5F0 /* ChatRoomFourPeopleTableViewCell.swift */,
 				44FFE15F2C0B59AF00E7F5F0 /* ChatRoomGroupPeopleTableViewCell.xib */,
 				44FFE15E2C0B59AF00E7F5F0 /* ChatRoomGroupPeopleTableViewCell.swift */,
+			);
+			path = TravelTalk;
+			sourceTree = "<group>";
+		};
+		44FFE1662C0B9CB500E7F5F0 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Chat;
 			sourceTree = "<group>";
