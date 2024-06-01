@@ -115,14 +115,18 @@ class RestaurantTableViewController: UITableViewController {
         if like == true {
             contextualAction = UIContextualAction(style: .normal, title: "좋아요") { action, view, completion in
                 self.updateLikeValue(restaurant: data)
-                self.tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    self.tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+                }
                 completion(true)
             }
             contextualAction?.image = UIImage(systemName: "heart.fill")
         } else {
             contextualAction = UIContextualAction(style: .normal, title: "좋아요 취소") { action, view, completion in
                 self.updateLikeValue(restaurant: data)
-                self.tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    self.tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .none)
+                }
                 completion(true)
             }
             contextualAction?.image = UIImage(systemName: "heart")

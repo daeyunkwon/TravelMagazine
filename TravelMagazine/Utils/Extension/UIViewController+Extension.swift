@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func setupNavi(title: String) {
+    func setupNavi(title: String, isShowSeparator: Bool) {
         navigationItem.title = title
         
         let appearance = UINavigationBarAppearance()
@@ -18,6 +18,12 @@ extension UIViewController {
         ]
         
         appearance.backgroundColor = .whiteToDark
+        
+        if isShowSeparator {
+            appearance.shadowColor = .systemGray3
+        } else {
+            appearance.shadowColor = .clear
+        }
         
         self.navigationController?.navigationBar.standardAppearance = appearance
         self.navigationController?.navigationBar.scrollEdgeAppearance = appearance

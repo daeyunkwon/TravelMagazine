@@ -66,17 +66,28 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="17" scale="large" weight="bold"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkK-KF-A4K">
+                                <rect key="frame" x="16" y="59" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="AHp-XZ-hDa"/>
+                                    <constraint firstAttribute="width" constant="35" id="ooa-bl-y2t"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="K1Y-Cl-EsZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="3Mf-Se-3Pw"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="BGv-7B-MwH" secondAttribute="trailing" constant="16" id="8PX-H1-hQA"/>
+                            <constraint firstItem="IkK-KF-A4K" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="BWQ-1I-8te"/>
                             <constraint firstItem="daR-Ln-1WA" firstAttribute="leading" secondItem="meD-SZ-UEY" secondAttribute="trailing" id="HS3-At-r4c"/>
                             <constraint firstItem="BGv-7B-MwH" firstAttribute="top" secondItem="yT2-Xg-42P" secondAttribute="bottom" constant="8" id="Lnf-nx-GLd"/>
                             <constraint firstItem="BGv-7B-MwH" firstAttribute="top" secondItem="daR-Ln-1WA" secondAttribute="bottom" constant="8" symbolic="YES" id="Mfx-as-fhr"/>
                             <constraint firstItem="yT2-Xg-42P" firstAttribute="bottom" secondItem="meD-SZ-UEY" secondAttribute="bottom" id="NnO-Kl-ei2"/>
                             <constraint firstItem="meD-SZ-UEY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ppt-bg-21d"/>
+                            <constraint firstItem="IkK-KF-A4K" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Pxm-Na-RhO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="daR-Ln-1WA" secondAttribute="trailing" constant="16" id="ZMa-u5-ogf"/>
                             <constraint firstItem="VX4-OU-6jj" firstAttribute="leading" secondItem="K1Y-Cl-EsZ" secondAttribute="trailing" constant="20" id="ZSf-Tb-4Wi"/>
                             <constraint firstItem="BGv-7B-MwH" firstAttribute="top" secondItem="yT2-Xg-42P" secondAttribute="bottom" constant="8" symbolic="YES" id="ecZ-K5-SfL"/>
@@ -89,6 +100,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="IkK-KF-A4K" id="1Lx-78-7ud"/>
                         <outlet property="cosmosView" destination="K1Y-Cl-EsZ" id="GPQ-GF-fQ5"/>
                         <outlet property="descriptionLabel" destination="BGv-7B-MwH" id="Mab-5r-ccX"/>
                         <outlet property="likeButton" destination="daR-Ln-1WA" id="cm5-ag-SVw"/>

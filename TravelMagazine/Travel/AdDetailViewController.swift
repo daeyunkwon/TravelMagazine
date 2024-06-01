@@ -38,7 +38,7 @@ class AdDetailViewController: UIViewController {
     }
     
     func setupNavi() {
-        self.setupNavi(title: "광고")
+        self.setupNavi(title: "광고", isShowSeparator: true)
         
         navigationItem.hidesBackButton = true
         let leftButton = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(leftBarButtonTapped))

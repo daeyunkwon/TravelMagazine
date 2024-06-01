@@ -18,19 +18,9 @@ class CityViewController: UIViewController {
     
     //MARK: - Life Cycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationItem.title = "도시 상세 정보"
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationItem.title = ""
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavi(title: "도시 상세 정보")
+        self.setupNavi(title: "도시 상세 정보", isShowSeparator: true)
         setupTableView()
     }
     

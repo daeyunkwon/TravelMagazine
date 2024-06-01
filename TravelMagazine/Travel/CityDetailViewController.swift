@@ -18,6 +18,7 @@ class CityDetailViewController: UIViewController {
     @IBOutlet var saveLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     @IBOutlet var mainImageView: UIImageView!
+    @IBOutlet var backButton: UIButton!
     
     var travel: Travel?
     
@@ -25,10 +26,19 @@ class CityDetailViewController: UIViewController {
     
     //MARK: - Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
-        setupNavi()
         configureUI()
     }
     
@@ -69,6 +79,13 @@ class CityDetailViewController: UIViewController {
         likeButton.tintColor = .white
         likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         
+        backButton.setTitle("", for: .normal)
+        backButton.tintColor = .white
+        let config = UIImage.SymbolConfiguration(pointSize: 25, weight: .regular, scale: .default)
+        let image = UIImage(systemName: "chevron.left", withConfiguration: config)
+        backButton.setImage(image, for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        
         cosmosView.settings.filledColor = .systemYellow
         cosmosView.settings.totalStars = 5
         cosmosView.settings.emptyColor = .systemGray5
@@ -83,25 +100,8 @@ class CityDetailViewController: UIViewController {
         cosmosView.settings.starMargin = 1
     }
     
-    func setupNavi() {
-        navigationItem.title = ""
-        navigationController?.navigationBar.tintColor = .white
-        
-        
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        
-        appearance.backgroundColor = .clear
-        appearance.shadowColor = .clear
-        self.navigationController?.navigationBar.standardAppearance = appearance
-        self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
-        
-        let leftButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(leftBarButtonTapped))
-        navigationItem.backBarButtonItem = leftButton
-    }
-    
     //MARK: - Functions
-    
+
     func updateLikeButtonUI(isLike: Bool) {
         if isLike {
             let largeConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .bold, scale: .large)
@@ -114,7 +114,7 @@ class CityDetailViewController: UIViewController {
         }
     }
     
-    @objc func leftBarButtonTapped() {
+    @objc func backButtonTapped() {
         guard let travel = self.travel else {return}
         self.closureUseForDataSend(travel)
         navigationController?.popViewController(animated: true)

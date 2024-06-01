@@ -90,6 +90,9 @@ class RestaurantTableViewCell: UITableViewCell {
         likeButton.tintColor = UIColor.customPink()
         likeButton.setTitle("", for: .normal)
         likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+        if #available(iOS 17.0, *) {
+            likeButton.isSymbolAnimationEnabled = true
+        }
     }
     
     func setupLikeButtonImage(isLike: Bool) {

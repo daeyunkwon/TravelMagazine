@@ -27,7 +27,7 @@ class PopularCityViewController: UIViewController {
         setTapGesture()
         setupSearchBar()
         setupSegment()
-        self.setupNavi(title: "인기 도시")
+        self.setupNavi(title: "인기 도시", isShowSeparator: true)
         setupTableView()
     }
     
