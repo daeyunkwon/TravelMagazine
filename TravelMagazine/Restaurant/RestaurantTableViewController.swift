@@ -33,6 +33,69 @@ class RestaurantTableViewController: UITableViewController {
         setupNavi()
     }
     
+    //MARK: - Configurations
+    
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    func setupTableView() {
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 140
+    }
+    
+    func setupNavi() {
+        navigationItem.title = "식당"
+        
+        let mapBarButton = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(mapBarButtonTapped))
+        mapBarButton.tintColor = .label
+        if #available(iOS 17.0, *) {
+            mapBarButton.isSymbolAnimationEnabled = true
+        }
+        navigationItem.rightBarButtonItem = mapBarButton
+    }
+    
+    func configureUI() {
+        searchBackView.backgroundColor = .systemGray5
+        searchBackView.layer.cornerRadius = 20
+        
+        searchTextField.borderStyle = .none
+        searchTextField.tintColor = .label
+        searchTextField.textColor = .label
+        searchTextField.placeholder = "식당명 검색"
+        searchTextField.returnKeyType = .search
+        searchTextField.autocapitalizationType = .none
+        searchTextField.autocorrectionType = .no
+        
+        searchButton.setTitle("", for: .normal)
+        searchButton.tintColor = .lightGray
+        
+        searchTextFieldClearButton.setTitle("", for: .normal)
+        searchTextFieldClearButton.tintColor = .lightGray
+        searchTextFieldClearButton.isHidden = true
+        
+        for btn in optionButtons {
+            btn.layer.borderColor = UIColor.lightGray.cgColor
+            btn.layer.borderWidth = 1
+            btn.layer.cornerRadius = 15
+            btn.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
+            
+            if btn == optionButtons.first {
+                btn.titleLabel?.tintColor = .whiteToDark
+                btn.backgroundColor = .label
+                btn.titleLabel?.font = .systemFont(ofSize: 15, weight: .black)
+            } else {
+                btn.titleLabel?.tintColor = .label
+                btn.backgroundColor = .systemBackground
+            }
+        }
+        
+        noSearchResultLabel.text = "검색 결과가 없습니다."
+        noSearchResultLabel.font = .boldSystemFont(ofSize: 20)
+        noSearchResultLabel.isHidden = true
+    }
+    
     //MARK: - Functions
     
     @objc func tapGestureAction() {
@@ -192,67 +255,6 @@ class RestaurantTableViewController: UITableViewController {
                 break
             }
         }
-    }
-}
-
-//MARK: - Configurations
-
-extension RestaurantTableViewController {
-    func setupTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    func setupTableView() {
-        tableView.separatorStyle = .none
-        tableView.rowHeight = 140
-    }
-    
-    func setupNavi() {
-        navigationItem.title = "식당"
-        
-        let mapBarButton = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(mapBarButtonTapped))
-        navigationItem.rightBarButtonItem = mapBarButton
-    }
-    
-    func configureUI() {
-        searchBackView.backgroundColor = .systemGray5
-        searchBackView.layer.cornerRadius = 20
-        
-        searchTextField.borderStyle = .none
-        searchTextField.tintColor = .label
-        searchTextField.textColor = .label
-        searchTextField.placeholder = "식당명 검색"
-        searchTextField.returnKeyType = .search
-        searchTextField.autocapitalizationType = .none
-        searchTextField.autocorrectionType = .no
-        
-        searchButton.setTitle("", for: .normal)
-        searchButton.tintColor = .lightGray
-        
-        searchTextFieldClearButton.setTitle("", for: .normal)
-        searchTextFieldClearButton.tintColor = .lightGray
-        searchTextFieldClearButton.isHidden = true
-        
-        for btn in optionButtons {
-            btn.layer.borderColor = UIColor.lightGray.cgColor
-            btn.layer.borderWidth = 1
-            btn.layer.cornerRadius = 15
-            btn.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
-            
-            if btn == optionButtons.first {
-                btn.titleLabel?.tintColor = .whiteToDark
-                btn.backgroundColor = .label
-                btn.titleLabel?.font = .systemFont(ofSize: 15, weight: .black)
-            } else {
-                btn.titleLabel?.tintColor = .label
-                btn.backgroundColor = .systemBackground
-            }
-        }
-        
-        noSearchResultLabel.text = "검색 결과가 없습니다."
-        noSearchResultLabel.font = .boldSystemFont(ofSize: 20)
-        noSearchResultLabel.isHidden = true
     }
 }
 
