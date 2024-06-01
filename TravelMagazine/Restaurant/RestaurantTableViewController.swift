@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantTableViewController: UITableViewController {
     
@@ -126,6 +127,23 @@ class RestaurantTableViewController: UITableViewController {
             }
             contextualAction?.image = UIImage(systemName: "heart")
         }
+    }
+    
+    func mapContextualAction(data: Restaurant, contextualAction: inout UIContextualAction?, indexPath: IndexPath) {
+        contextualAction = UIContextualAction(style: .normal, title: "지도") { action, view, completion in
+            let sb = UIStoryboard(name: "RestaurantMap", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: RestaurantMapViewController.reuseIdentifier) as! RestaurantMapViewController
+            let coordinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
+            let annotaiton = MKPointAnnotation(__coordinate: coordinate, title: data.name, subtitle: nil)
+            vc.restaurants.append(data)
+            vc.annotaitons.append(annotaiton)
+            vc.filterButtonIsHidden = true
+            let navi = UINavigationController(rootViewController: vc)
+            navi.modalPresentationStyle = .fullScreen
+            self.present(navi, animated: true)
+            completion(true)
+        }
+        contextualAction?.image = UIImage(systemName: "map")
     }
     
     @IBAction func searchTextFieldChanged(_ sender: UITextField) {
@@ -269,7 +287,7 @@ extension RestaurantTableViewController: RestaurantTableViewCellDelegate {
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource & UITableViewDelegate
 
 extension RestaurantTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -288,19 +306,24 @@ extension RestaurantTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        var contextualAction: UIContextualAction?
+        var like: UIContextualAction?
+        var map: UIContextualAction?
         
         let data = restaurants[indexPath.row]
         
         if data.like == false {
-            likeContextualAction(data: data, like: true, contextualAction: &contextualAction, indexPath: indexPath)
+            likeContextualAction(data: data, like: true, contextualAction: &like, indexPath: indexPath)
         } else {
-            likeContextualAction(data: data, like: false, contextualAction: &contextualAction, indexPath: indexPath)
+            likeContextualAction(data: data, like: false, contextualAction: &like, indexPath: indexPath)
         }
         
-        guard let contextualAction else {return nil}
-        contextualAction.backgroundColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
-        let config = UISwipeActionsConfiguration(actions: [contextualAction])
+        mapContextualAction(data: data, contextualAction: &map, indexPath: indexPath)
+        
+        guard let like, let map else {return nil}
+        like.backgroundColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
+        map.backgroundColor = UIColor.rgb(red: 133, green: 186, blue: 238)
+        
+        let config = UISwipeActionsConfiguration(actions: [like, map])
         config.performsFirstActionWithFullSwipe = false //풀 스와이프 비허용 설정
         return config
     }

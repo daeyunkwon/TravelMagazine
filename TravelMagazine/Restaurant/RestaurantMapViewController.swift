@@ -18,8 +18,10 @@ class RestaurantMapViewController: UIViewController {
     @IBOutlet var xMarkButton: UIButton!
     @IBOutlet var filterButton: UIButton!
     
-    let restaurants: [Restaurant] = RestaurantList.restaurantArray
+    var restaurants: [Restaurant] = []
     var annotaitons: [MKPointAnnotation] = []
+    
+    var filterButtonIsHidden: Bool = false
     
     //MARK: - Life Cycle
     
@@ -48,21 +50,31 @@ class RestaurantMapViewController: UIViewController {
         }
         xMarkButton.addTarget(self, action: #selector(xMarkButtonTapped), for: .touchUpInside)
         
-        filterButton.setTitle("Filter", for: .normal)
-        filterButton.titleLabel?.font = .boldSystemFont(ofSize: 12)
-        filterButton.tintColor = .white
-        filterButton.backgroundColor = .systemBlue
-        filterButton.layer.cornerRadius = 10
-        filterButton.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
+        if self.filterButtonIsHidden {
+            filterButton.isHidden = true
+        } else {
+            filterButton.isHidden = false
+            filterButton.setTitle("Filter", for: .normal)
+            filterButton.titleLabel?.font = .boldSystemFont(ofSize: 12)
+            filterButton.tintColor = .white
+            filterButton.backgroundColor = .systemBlue
+            filterButton.layer.cornerRadius = 10
+            filterButton.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
+        }
     }
     
     func setupMapView(isFirstStart: Bool) {
         if isFirstStart {
+            if restaurants.isEmpty {
+                self.restaurants = RestaurantList.restaurantArray
+            }
             for data in self.restaurants {
                 addAnnotation(latitude: data.latitude, longitude: data.longitude, title: data.name)
             }
         } else {
-            mapView.removeAnnotations(mapView.annotations)
+            if !mapView.annotations.isEmpty {
+                mapView.removeAnnotations(mapView.annotations)
+            }
         }
         
         mapView.addAnnotations(self.annotaitons)
