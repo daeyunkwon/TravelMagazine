@@ -24,6 +24,7 @@ class PopularCityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTapGesture()
         setupSearchBar()
         setupSegment()
         self.setupNavi(title: "인기 도시")
@@ -31,6 +32,11 @@ class PopularCityViewController: UIViewController {
     }
     
     //MARK: - Configurations
+    
+    func setTapGesture() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        view.addGestureRecognizer(tap)
+    }
     
     func setupSearchBar() {
         searchBar.delegate = self
@@ -58,6 +64,10 @@ class PopularCityViewController: UIViewController {
     }
     
     //MARK: - Functions
+    
+    @objc func tapGesture() {
+        view.endEditing(true)
+    }
     
     @objc func segmentTapped() {
         self.filterdCities = []
