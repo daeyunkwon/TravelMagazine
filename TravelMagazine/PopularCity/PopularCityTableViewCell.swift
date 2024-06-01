@@ -12,6 +12,7 @@ class PopularCityTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     
+    @IBOutlet var shadowView: UIView!
     @IBOutlet var cityImageView: UIImageView!
     @IBOutlet var imageFrontView: UIView!
     @IBOutlet var labelBackView: UIView!
@@ -52,6 +53,12 @@ class PopularCityTableViewCell: UITableViewCell {
     //MARK: - Configurations
     
     func configureUI() {
+        shadowView.backgroundColor = .lightGray
+        shadowView.layer.shadowOffset = CGSize(width: 5, height: 5) //그림자의 위치(기본 0,0 -> 부모의 위치를 따라감)
+        shadowView.layer.shadowOpacity = 1 //그림자 투명도 지정(0 ~ 1)
+        shadowView.layer.shadowRadius = 5 //그림자의 블러 정도 지정 (0일때 선같이 진한 그림자 높을 수록 퍼지는 효과)
+        shadowView.layer.shadowColor = UIColor.gray.cgColor
+        
         cityImageView.contentMode = .scaleAspectFill
         
         cityNameLabel.font = .systemFont(ofSize: 20, weight: .heavy)
@@ -62,17 +69,17 @@ class PopularCityTableViewCell: UITableViewCell {
         cityExplainLabel.font = .systemFont(ofSize: 13, weight: .semibold)
         cityExplainLabel.textColor = .white
         
+        shadowView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
+        shadowView.layer.cornerRadius = 20
+        
         cityImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
         cityImageView.layer.cornerRadius = 20
-        cityImageView.layer.masksToBounds = true
         
         imageFrontView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
         imageFrontView.layer.cornerRadius = 20
-        imageFrontView.layer.masksToBounds = true
-        
+
         labelBackView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         labelBackView.layer.cornerRadius = 20
-        labelBackView.layer.masksToBounds = true
     }
     
     //MARK: - Functions
