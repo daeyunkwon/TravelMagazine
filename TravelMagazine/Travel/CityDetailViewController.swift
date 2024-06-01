@@ -96,9 +96,8 @@ class CityDetailViewController: UIViewController {
         self.navigationController?.navigationBar.standardAppearance = appearance
         self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
-        navigationItem.hidesBackButton = true
         let leftButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(leftBarButtonTapped))
-        navigationItem.leftBarButtonItem = leftButton
+        navigationItem.backBarButtonItem = leftButton
     }
     
     //MARK: - Functions
