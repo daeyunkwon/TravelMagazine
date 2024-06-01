@@ -30,8 +30,8 @@ class CityViewController: UIViewController {
         tableView.rowHeight = 120
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: CityTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: CityTableViewCell.identifier)
-        tableView.register(UINib(nibName: AdTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: AdTableViewCell.identifier)
+        tableView.register(UINib(nibName: CityTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: CityTableViewCell.reuseIdentifier)
+        tableView.register(UINib(nibName: AdTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: AdTableViewCell.reuseIdentifier)
     }
 }
 
@@ -50,12 +50,12 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
         
         if travels[indexPath.row].ad == true {
             //AdCell 표시
-            let cell = tableView.dequeueReusableCell(withIdentifier: AdTableViewCell.identifier, for: indexPath) as! AdTableViewCell
-            cell.setupTitleLabel(text: travels[indexPath.row].title ?? "")
+            let cell = tableView.dequeueReusableCell(withIdentifier: AdTableViewCell.reuseIdentifier, for: indexPath) as! AdTableViewCell
+            cell.travel = self.travels[indexPath.row]
             return cell
         } else {
             //CityCell 표시
-            let cell = tableView.dequeueReusableCell(withIdentifier: CityTableViewCell.identifier, for: indexPath) as! CityTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: CityTableViewCell.reuseIdentifier, for: indexPath) as! CityTableViewCell
             cell.delegate = self
             cell.travel = self.travels[indexPath.row]
             if indexPath.row+1 < travels.count && travels[indexPath.row + 1].ad == true {
@@ -72,7 +72,7 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
         
         if !data.ad {
             let sb = UIStoryboard(name: "CityDetail", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "CityDetailViewController") as! CityDetailViewController
+            let vc = sb.instantiateViewController(withIdentifier: CityDetailViewController.reuseIdentifier) as! CityDetailViewController
             vc.travel = self.travels[indexPath.row]
             vc.closureUseForDataSend = {[weak self] sender in
                 guard let self else {return}
@@ -87,7 +87,7 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
             navigationController?.pushViewController(vc, animated: true)
         } else {
             let sb = UIStoryboard(name: "AdDetail", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "AdDetailViewController") as! AdDetailViewController
+            let vc = sb.instantiateViewController(withIdentifier: AdDetailViewController.reuseIdentifier) as! AdDetailViewController
             vc.travel = self.travels[indexPath.row]
             let navi = UINavigationController(rootViewController: vc)
             navi.modalPresentationStyle = .fullScreen

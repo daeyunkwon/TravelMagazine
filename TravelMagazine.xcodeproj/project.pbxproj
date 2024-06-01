@@ -43,6 +43,7 @@
 		449B34932C0080DE0010F093 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 449B34922C0080DE0010F093 /* Base */; };
 		449B349B2C00829A0010F093 /* Magazine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B349A2C00829A0010F093 /* Magazine.swift */; };
 		449B34A12C0086590010F093 /* MagazineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449B34A02C0086590010F093 /* MagazineTableViewCell.swift */; };
+		44DDCA662C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDCA652C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		449B34942C0080DE0010F093 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		449B349A2C00829A0010F093 /* Magazine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magazine.swift; sourceTree = "<group>"; };
 		449B34A02C0086590010F093 /* MagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewCell.swift; sourceTree = "<group>"; };
+		44DDCA652C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				4476E5442C071501002AB3DD /* PopularCity.storyboard */,
-				4476E5472C071779002AB3DD /* PopularCityTableViewCell.swift */,
-				4476E5482C071779002AB3DD /* PopularCityTableViewCell.xib */,
 				4476E5412C0714C6002AB3DD /* PopularCityViewController.swift */,
+				4476E5482C071779002AB3DD /* PopularCityTableViewCell.xib */,
+				4476E5472C071779002AB3DD /* PopularCityTableViewCell.swift */,
 			);
 			path = PopularCity;
 			sourceTree = "<group>";
@@ -112,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				449B348C2C0080DD0010F093 /* Main.storyboard */,
-				449B34A02C0086590010F093 /* MagazineTableViewCell.swift */,
 				449B348A2C0080DD0010F093 /* MagazineViewController.swift */,
+				449B34A02C0086590010F093 /* MagazineTableViewCell.swift */,
 			);
 			path = Magazine;
 			sourceTree = "<group>";
@@ -123,8 +125,8 @@
 			children = (
 				445B6D782C01DB5300C40BC2 /* Restaurant.storyboard */,
 				445B6D7C2C020A9400C40BC2 /* RestaurantTableViewCell.swift */,
-				445814842C08A55500604BAE /* RestaurantMap.storyboard */,
 				445B6D7A2C01DB9000C40BC2 /* RestaurantTableViewController.swift */,
+				445814842C08A55500604BAE /* RestaurantMap.storyboard */,
 				445814862C08A58600604BAE /* RestaurantMapViewController.swift */,
 			);
 			path = Restaurant;
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				447AC9BA2C02C95100B3760C /* Protocols.swift */,
+				44DDCA652C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift */,
 				44EF2ED22C060890002DFBDC /* Extension */,
 			);
 			path = Utils;
@@ -162,14 +165,14 @@
 			isa = PBXGroup;
 			children = (
 				448819062C045FF90061F4D7 /* City.storyboard */,
-				4488190C2C04636C0061F4D7 /* AdTableViewCell.swift */,
-				4488190D2C04636C0061F4D7 /* AdTableViewCell.xib */,
-				448819102C0471A90061F4D7 /* CityTableViewCell.swift */,
-				448819112C0471A90061F4D7 /* CityTableViewCell.xib */,
-				4476E5392C07040B002AB3DD /* CityDetail.storyboard */,
-				4476E53B2C07045C002AB3DD /* AdDetail.storyboard */,
 				448819042C045FA70061F4D7 /* CityViewController.swift */,
+				4488190D2C04636C0061F4D7 /* AdTableViewCell.xib */,
+				4488190C2C04636C0061F4D7 /* AdTableViewCell.swift */,
+				448819112C0471A90061F4D7 /* CityTableViewCell.xib */,
+				448819102C0471A90061F4D7 /* CityTableViewCell.swift */,
+				4476E5392C07040B002AB3DD /* CityDetail.storyboard */,
 				4476E53D2C0704D5002AB3DD /* CityDetailViewController.swift */,
+				4476E53B2C07045C002AB3DD /* AdDetail.storyboard */,
 				4476E53F2C0704E4002AB3DD /* AdDetailViewController.swift */,
 			);
 			path = Travel;
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4488193A2C054F330061F4D7 /* UIImageView+Extension.swift in Sources */,
+				44DDCA662C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift in Sources */,
 				449B348B2C0080DD0010F093 /* MagazineViewController.swift in Sources */,
 				4476E54C2C0719EA002AB3DD /* CityInfo.swift in Sources */,
 				445B6D772C01D91C00C40BC2 /* Restaurant.swift in Sources */,

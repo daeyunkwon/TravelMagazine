@@ -27,6 +27,8 @@ class RestaurantMapViewController: UIViewController {
         setupMapView(isFirstStart: true)
     }
     
+    //MARK: - Configurations
+    
     func configureUI () {
         filterMark.clipsToBounds = true
         filterMark.layer.borderColor = UIColor.white.cgColor

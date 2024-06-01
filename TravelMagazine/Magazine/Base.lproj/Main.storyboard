@@ -133,20 +133,11 @@
             <objects>
                 <viewControllerPlaceholder storyboardName="Restaurant" id="Sfv-Ih-4EJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="gvY-uK-dsn"/>
+                    <navigationItem key="navigationItem" id="VMh-IZ-34Z"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4se-6W-RKL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2682" y="645"/>
-        </scene>
-        <!--RestaurantMap-->
-        <scene sceneID="5bR-8l-3bg">
-            <objects>
-                <viewControllerPlaceholder storyboardName="RestaurantMap" id="AXU-7E-hYU" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="aic-gS-fxT"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="txI-9D-DEs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2662" y="739"/>
         </scene>
         <!--매거진-->
         <scene sceneID="qYm-gO-9sH">
@@ -180,7 +171,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Ovp-qf-IqO" kind="relationship" relationship="viewControllers" id="Ie8-kQ-Hj7"/>
-                        <segue destination="cwx-dv-J8z" kind="relationship" relationship="viewControllers" id="s3L-bi-7Hb"/>
+                        <segue destination="Sfv-Ih-4EJ" kind="relationship" relationship="viewControllers" id="yzc-Ru-dJf"/>
                         <segue destination="BON-KA-w7m" kind="relationship" relationship="viewControllers" id="xNt-5t-7rh"/>
                         <segue destination="73T-Bn-EfU" kind="relationship" relationship="viewControllers" id="XWj-zX-B6m"/>
                     </connections>
@@ -227,30 +218,10 @@
             </objects>
             <point key="canvasLocation" x="4808" y="-35"/>
         </scene>
-        <!--식당-->
-        <scene sceneID="Fg9-f0-3IA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cwx-dv-J8z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="식당" image="fork.knife" catalog="system" id="sBP-8z-bFa"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zeH-nC-6zk">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="AXU-7E-hYU" kind="relationship" relationship="rootViewController" id="DLr-ND-JqG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2sC-8z-Uka" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2073" y="739"/>
-        </scene>
     </scenes>
     <resources>
         <image name="building.2" catalog="system" width="128" height="108"/>
         <image name="building.2.fill" catalog="system" width="128" height="117"/>
-        <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="newspaper" catalog="system" width="128" height="111"/>
         <image name="newspaper.fill" catalog="system" width="128" height="112"/>
         <image name="party.popper" catalog="system" width="128" height="116"/>

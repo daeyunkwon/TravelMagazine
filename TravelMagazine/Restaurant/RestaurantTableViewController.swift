@@ -7,8 +7,6 @@
 
 import UIKit
 
-private let reuseIdentifier = "RestaurantTableViewCell"
-
 class RestaurantTableViewController: UITableViewController {
     
     //MARK: - Properties
@@ -26,6 +24,7 @@ class RestaurantTableViewController: UITableViewController {
     var backupRestaurants: [Restaurant] = RestaurantList.restaurantArray //like 속성값 백업용
 
     //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -34,93 +33,10 @@ class RestaurantTableViewController: UITableViewController {
         setupNavi()
     }
     
-    func setupTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
-        view.addGestureRecognizer(tapGesture)
-    }
+    //MARK: - Functions
     
-    func setupTableView() {
-        tableView.separatorStyle = .none
-        tableView.rowHeight = 140
-    }
-    
-    func setupNavi() {
-        navigationItem.title = "식당"
-    }
-    
-    func configureUI() {
-        searchBackView.backgroundColor = .systemGray5
-        searchBackView.layer.cornerRadius = 20
-        
-        searchTextField.borderStyle = .none
-        searchTextField.tintColor = .label
-        searchTextField.textColor = .label
-        searchTextField.placeholder = "식당명 검색"
-        searchTextField.returnKeyType = .search
-        searchTextField.autocapitalizationType = .none
-        searchTextField.autocorrectionType = .no
-        
-        searchButton.setTitle("", for: .normal)
-        searchButton.tintColor = .lightGray
-        
-        searchTextFieldClearButton.setTitle("", for: .normal)
-        searchTextFieldClearButton.tintColor = .lightGray
-        searchTextFieldClearButton.isHidden = true
-        
-        for btn in optionButtons {
-            btn.layer.borderColor = UIColor.lightGray.cgColor
-            btn.layer.borderWidth = 1
-            btn.layer.cornerRadius = 15
-            btn.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
-            
-            if btn == optionButtons.first {
-                btn.titleLabel?.tintColor = .whiteToDark
-                btn.backgroundColor = .label
-                btn.titleLabel?.font = .systemFont(ofSize: 15, weight: .black)
-            } else {
-                btn.titleLabel?.tintColor = .label
-                btn.backgroundColor = .systemBackground
-            }
-        }
-        
-        noSearchResultLabel.text = "검색 결과가 없습니다."
-        noSearchResultLabel.font = .boldSystemFont(ofSize: 20)
-        noSearchResultLabel.isHidden = true
-    }
-
-    // MARK: - UITableViewDataSource
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        restaurants.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! RestaurantTableViewCell
-        
-        cell.delegate = self
-        
-        cell.restaurant = self.restaurants[indexPath.row]
-        
-        cell.selectionStyle = .none
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        var contextualAction: UIContextualAction?
-        
-        let data = restaurants[indexPath.row]
-        
-        if data.like == false {
-            likeContextualAction(data: data, like: true, contextualAction: &contextualAction, indexPath: indexPath)
-        } else {
-            likeContextualAction(data: data, like: false, contextualAction: &contextualAction, indexPath: indexPath)
-        }
-        
-        guard let contextualAction else {return nil}
-        contextualAction.backgroundColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
-        let config = UISwipeActionsConfiguration(actions: [contextualAction])
-        config.performsFirstActionWithFullSwipe = false //풀 스와이프 비허용 설정
-        return config
+    @objc func tapGestureAction() {
+        view.endEditing(true)
     }
     
     func likeContextualAction(data: Restaurant, like: Bool, contextualAction: inout UIContextualAction?, indexPath: IndexPath) {
@@ -139,12 +55,6 @@ class RestaurantTableViewController: UITableViewController {
             }
             contextualAction?.image = UIImage(systemName: "heart")
         }
-    }
-    
-    //MARK: - Functions
-    
-    @objc func tapGestureAction() {
-        view.endEditing(true)
     }
     
     @IBAction func searchTextFieldChanged(_ sender: UITextField) {
@@ -277,6 +187,64 @@ class RestaurantTableViewController: UITableViewController {
     }
 }
 
+//MARK: - Configurations
+
+extension RestaurantTableViewController {
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapGestureAction))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    func setupTableView() {
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 140
+    }
+    
+    func setupNavi() {
+        navigationItem.title = "식당"
+    }
+    
+    func configureUI() {
+        searchBackView.backgroundColor = .systemGray5
+        searchBackView.layer.cornerRadius = 20
+        
+        searchTextField.borderStyle = .none
+        searchTextField.tintColor = .label
+        searchTextField.textColor = .label
+        searchTextField.placeholder = "식당명 검색"
+        searchTextField.returnKeyType = .search
+        searchTextField.autocapitalizationType = .none
+        searchTextField.autocorrectionType = .no
+        
+        searchButton.setTitle("", for: .normal)
+        searchButton.tintColor = .lightGray
+        
+        searchTextFieldClearButton.setTitle("", for: .normal)
+        searchTextFieldClearButton.tintColor = .lightGray
+        searchTextFieldClearButton.isHidden = true
+        
+        for btn in optionButtons {
+            btn.layer.borderColor = UIColor.lightGray.cgColor
+            btn.layer.borderWidth = 1
+            btn.layer.cornerRadius = 15
+            btn.titleLabel?.font = .systemFont(ofSize: 13, weight: .semibold)
+            
+            if btn == optionButtons.first {
+                btn.titleLabel?.tintColor = .whiteToDark
+                btn.backgroundColor = .label
+                btn.titleLabel?.font = .systemFont(ofSize: 15, weight: .black)
+            } else {
+                btn.titleLabel?.tintColor = .label
+                btn.backgroundColor = .systemBackground
+            }
+        }
+        
+        noSearchResultLabel.text = "검색 결과가 없습니다."
+        noSearchResultLabel.font = .boldSystemFont(ofSize: 20)
+        noSearchResultLabel.isHidden = true
+    }
+}
+
 //MARK: - RestaurantTableViewCellDelegate
 
 extension RestaurantTableViewController: RestaurantTableViewCellDelegate {
@@ -285,5 +253,42 @@ extension RestaurantTableViewController: RestaurantTableViewCellDelegate {
         
         updateLikeValue(restaurant: restaurant)
         tableView.reloadData()
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension RestaurantTableViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        restaurants.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantTableViewCell.reuseIdentifier, for: indexPath) as! RestaurantTableViewCell
+        
+        cell.delegate = self
+        
+        cell.restaurant = self.restaurants[indexPath.row]
+        
+        cell.selectionStyle = .none
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        var contextualAction: UIContextualAction?
+        
+        let data = restaurants[indexPath.row]
+        
+        if data.like == false {
+            likeContextualAction(data: data, like: true, contextualAction: &contextualAction, indexPath: indexPath)
+        } else {
+            likeContextualAction(data: data, like: false, contextualAction: &contextualAction, indexPath: indexPath)
+        }
+        
+        guard let contextualAction else {return nil}
+        contextualAction.backgroundColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
+        let config = UISwipeActionsConfiguration(actions: [contextualAction])
+        config.performsFirstActionWithFullSwipe = false //풀 스와이프 비허용 설정
+        return config
     }
 }

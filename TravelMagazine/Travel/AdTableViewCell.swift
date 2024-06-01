@@ -11,12 +11,8 @@ class AdTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     
-    static let identifier = "AdTableViewCell"
-    
     @IBOutlet var backView: UIView!
-    
     @IBOutlet var titleLabel: UILabel!
-    
     @IBOutlet var adButton: UIButton!
     
     var randomBackgroundColorList: [UIColor] = [
@@ -26,6 +22,15 @@ class AdTableViewCell: UITableViewCell {
         UIColor.rgb(red: 171, green: 182, blue: 251),
         UIColor.rgb(red: 160, green: 216, blue: 161),
     ]
+    
+    var travel: Travel? {
+        didSet {
+            guard let travel = self.travel else {return}
+            guard let title = travel.title else {return}
+            
+            self.setupTitleLabel(text: title)
+        }
+    }
     
     //MARK: - Life Cycle
     
@@ -40,6 +45,8 @@ class AdTableViewCell: UITableViewCell {
         configureUI()
     }
     
+    //MARK: - Configurations
+    
     func configureUI() {
         backView.backgroundColor = randomBackgroundColorList.randomElement()
         backView.layer.cornerRadius = 10
@@ -53,6 +60,8 @@ class AdTableViewCell: UITableViewCell {
         adButton.titleLabel?.font = .systemFont(ofSize: 11)
         adButton.sizeToFit()
     }
+    
+    //MARK: - Functions
     
     func setupTitleLabel(text: String) {
         let attrString = NSMutableAttributedString(string: text)

@@ -13,8 +13,6 @@ class CityTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     
-    static let identifier = "CityTableViewCell"
-    
     @IBOutlet var mainImageView: UIImageView!
     
     @IBOutlet var likeButton: UIButton!
@@ -70,6 +68,8 @@ class CityTableViewCell: UITableViewCell {
         setupLikeButton()
     }
     
+    //MARK: - Configurations
+    
     func configureUI() {
         mainImageView.backgroundColor = .systemGray5
         mainImageView.layer.cornerRadius = 10
@@ -109,6 +109,8 @@ class CityTableViewCell: UITableViewCell {
         likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
     }
     
+    //MARK: - Functions
+    
     func updateLikeButtonUI(isLike: Bool) {
         if isLike {
             likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
@@ -116,8 +118,6 @@ class CityTableViewCell: UITableViewCell {
             likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
     }
-    
-    //MARK: - Functions
     
     @objc func likeButtonTapped() {
         self.delegate?.handleLikeButtonTapped(for: self)

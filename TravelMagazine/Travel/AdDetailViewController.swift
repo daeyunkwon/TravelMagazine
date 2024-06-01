@@ -24,6 +24,8 @@ class AdDetailViewController: UIViewController {
         configureUI()
     }
     
+    //MARK: - Configurations
+    
     func setupData() {
         guard let title = travel?.title else {return}
         titleLabel.text = title
@@ -48,9 +50,4 @@ class AdDetailViewController: UIViewController {
     @objc func leftBarButtonTapped() {
         dismiss(animated: true)
     }
-    
-    
-    
-    
-    
 }

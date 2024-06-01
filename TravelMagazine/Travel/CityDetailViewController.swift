@@ -32,6 +32,8 @@ class CityDetailViewController: UIViewController {
         configureUI()
     }
     
+    //MARK: - Configurations
+    
     func setupData() {
         guard let travel = self.travel else {return}
         guard let travel_image = travel.travel_image else {return}
@@ -99,6 +101,8 @@ class CityDetailViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftButton
     }
     
+    //MARK: - Functions
+    
     func updateLikeButtonUI(isLike: Bool) {
         if isLike {
             let largeConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .bold, scale: .large)
@@ -111,8 +115,6 @@ class CityDetailViewController: UIViewController {
         }
     }
     
-    //MARK: - Functions
-    
     @objc func leftBarButtonTapped() {
         guard let travel = self.travel else {return}
         self.closureUseForDataSend(travel)
@@ -124,9 +126,4 @@ class CityDetailViewController: UIViewController {
         guard let like = travel?.like else {return}
         updateLikeButtonUI(isLike: like)
     }
-    
-    
-    
-    
-    
 }

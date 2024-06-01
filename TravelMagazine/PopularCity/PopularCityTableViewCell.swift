@@ -12,8 +12,6 @@ class PopularCityTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     
-    static let reuseIdentifier = "PopularCityTableViewCell"
-    
     @IBOutlet var cityImageView: UIImageView!
     @IBOutlet var imageFrontView: UIView!
     @IBOutlet var labelBackView: UIView!
@@ -51,6 +49,8 @@ class PopularCityTableViewCell: UITableViewCell {
         configureUI()
     }
     
+    //MARK: - Configurations
+    
     func configureUI() {
         cityImageView.contentMode = .scaleAspectFill
         
@@ -74,6 +74,8 @@ class PopularCityTableViewCell: UITableViewCell {
         labelBackView.layer.cornerRadius = 20
         labelBackView.layer.masksToBounds = true
     }
+    
+    //MARK: - Functions
     
     func highlightSearchWord(word: String?, label: UILabel) {
         guard let word = word, !word.trimmingCharacters(in: .whitespaces).isEmpty else {return}

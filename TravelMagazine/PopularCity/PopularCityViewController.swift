@@ -30,6 +30,8 @@ class PopularCityViewController: UIViewController {
         setupTableView()
     }
     
+    //MARK: - Configurations
+    
     func setupSearchBar() {
         searchBar.delegate = self
         searchBar.autocapitalizationType = .none
@@ -125,7 +127,6 @@ extension PopularCityViewController: UITableViewDataSource, UITableViewDelegate 
 extension PopularCityViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
         guard var text = searchBar.text else {return}
         
         if text.trimmingCharacters(in: .whitespaces).isEmpty {
