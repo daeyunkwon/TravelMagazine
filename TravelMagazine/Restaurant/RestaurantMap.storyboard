@@ -19,79 +19,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1oW-j8-f8S">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="필터" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAu-11-0nN">
-                                <rect key="frame" x="355" y="60" width="35" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzh-Gk-Hhn">
+                                <rect key="frame" x="342" y="59" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="H65-Ml-0AD"/>
+                                    <constraint firstAttribute="width" constant="35" id="Xdd-U7-exS"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Filter"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdn-ZJ-Gsb">
+                                <rect key="frame" x="16" y="59" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="LNc-uS-5bp"/>
+                                    <constraint firstAttribute="width" constant="35" id="T5w-eR-RYr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1oW-j8-f8S" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="EFS-4u-TrJ"/>
+                            <constraint firstItem="1oW-j8-f8S" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="EFS-4u-TrJ"/>
                             <constraint firstItem="1oW-j8-f8S" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="FOl-Tv-uWB"/>
+                            <constraint firstItem="Zdn-ZJ-Gsb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Jcy-tV-76M"/>
+                            <constraint firstItem="Uzh-Gk-Hhn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="PKT-ec-nYq"/>
                             <constraint firstItem="1oW-j8-f8S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="i2T-7N-zBb"/>
+                            <constraint firstItem="Zdn-ZJ-Gsb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="jqF-Dq-SiO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Uzh-Gk-Hhn" secondAttribute="trailing" constant="16" id="kbZ-lI-mfR"/>
                             <constraint firstItem="1oW-j8-f8S" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="rpI-Lh-xDo"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="filterMark" destination="jAu-11-0nN" id="P1o-Ap-Fem"/>
+                        <outlet property="filterButton" destination="Uzh-Gk-Hhn" id="OgK-wZ-elf"/>
                         <outlet property="mapView" destination="1oW-j8-f8S" id="BR0-Cv-sXp"/>
+                        <outlet property="xMarkButton" destination="Zdn-ZJ-Gsb" id="AKc-0D-MnX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879" y="-28"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="d2J-2P-UkA">
-            <objects>
-                <viewController id="R71-0U-UNs" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="oPV-In-A2I">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ci5-um-cDm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="slU-B8-wzh">
-                        <barButtonItem key="rightBarButtonItem" title="filter" id="sc0-en-TD0"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZCm-2Q-Flw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2257.2519083969464" y="-28.169014084507044"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xQP-78-wAA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="782-uf-Ttc" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iFm-YR-VSz">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="R71-0U-UNs" kind="relationship" relationship="rootViewController" id="PLh-qh-lf7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Fw-wi-mla" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1330.534351145038" y="-28.169014084507044"/>
+            <point key="canvasLocation" x="2170" y="-26"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

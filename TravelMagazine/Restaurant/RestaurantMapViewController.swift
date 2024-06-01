@@ -5,6 +5,8 @@
 //  Created by 권대윤 on 5/30/24.
 //
 
+
+
 import UIKit
 import MapKit
 
@@ -13,7 +15,8 @@ class RestaurantMapViewController: UIViewController {
     //MARK: - Properties
     
     @IBOutlet var mapView: MKMapView!
-    @IBOutlet var filterMark: UILabel!
+    @IBOutlet var xMarkButton: UIButton!
+    @IBOutlet var filterButton: UIButton!
     
     let restaurants: [Restaurant] = RestaurantList.restaurantArray
     var annotaitons: [MKPointAnnotation] = []
@@ -23,24 +26,34 @@ class RestaurantMapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        setupNavi()
         setupMapView(isFirstStart: true)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
     }
     
     //MARK: - Configurations
     
     func configureUI () {
-        filterMark.clipsToBounds = true
-        filterMark.layer.borderColor = UIColor.white.cgColor
-        filterMark.layer.borderWidth = 0.8
-        filterMark.layer.cornerRadius = 10
-        filterMark.font = .boldSystemFont(ofSize: 12)
-    }
-    
-    func setupNavi() {
-        let filter = UIBarButtonItem(image: UIImage(named: "필터"), style: .plain, target: self, action: #selector(filterButtonTapped))
-        navigationItem.rightBarButtonItem = filter
-        navigationController?.navigationBar.tintColor = .white
+        let symbolConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .large)
+        let xmark = UIImage(systemName: "xmark", withConfiguration: symbolConfig)
+        
+        xMarkButton.setImage(xmark, for: .normal)
+        xMarkButton.setTitle("", for: .normal)
+        xMarkButton.tintColor = .label
+        if #available(iOS 17.0, *) {
+            xMarkButton.isSymbolAnimationEnabled = true
+        }
+        xMarkButton.addTarget(self, action: #selector(xMarkButtonTapped), for: .touchUpInside)
+        
+        filterButton.setTitle("Filter", for: .normal)
+        filterButton.titleLabel?.font = .boldSystemFont(ofSize: 12)
+        filterButton.tintColor = .white
+        filterButton.backgroundColor = .systemBlue
+        filterButton.layer.cornerRadius = 10
+        filterButton.addTarget(self, action: #selector(filterButtonTapped), for: .touchUpInside)
     }
     
     func setupMapView(isFirstStart: Bool) {
@@ -59,6 +72,14 @@ class RestaurantMapViewController: UIViewController {
     
     //MARK: - Functions
     
+    @objc func xMarkButtonTapped() {
+        dismiss(animated: true)
+    }
+    
+    @objc func filterButtonTapped() {
+        showActionSheet()
+    }
+    
     func addAnnotation(latitude: CLLocationDegrees, longitude: CLLocationDegrees, title: String) {
         let center = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         
@@ -67,10 +88,6 @@ class RestaurantMapViewController: UIViewController {
         annotation.coordinate = center
         
         self.annotaitons.append(annotation)
-    }
-    
-    @objc func filterButtonTapped() {
-        showActionSheet()
     }
     
     func showActionSheet() {

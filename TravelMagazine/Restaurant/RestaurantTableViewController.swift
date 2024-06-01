@@ -39,6 +39,14 @@ class RestaurantTableViewController: UITableViewController {
         view.endEditing(true)
     }
     
+    @objc func mapBarButtonTapped() {
+        let sb = UIStoryboard(name: "RestaurantMap", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: RestaurantMapViewController.reuseIdentifier) as! RestaurantMapViewController
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        present(navi, animated: true)
+    }
+    
     func likeContextualAction(data: Restaurant, like: Bool, contextualAction: inout UIContextualAction?, indexPath: IndexPath) {
         if like == true {
             contextualAction = UIContextualAction(style: .normal, title: "좋아요") { action, view, completion in
@@ -202,6 +210,9 @@ extension RestaurantTableViewController {
     
     func setupNavi() {
         navigationItem.title = "식당"
+        
+        let mapBarButton = UIBarButtonItem(image: UIImage(systemName: "map"), style: .plain, target: self, action: #selector(mapBarButtonTapped))
+        navigationItem.rightBarButtonItem = mapBarButton
     }
     
     func configureUI() {
