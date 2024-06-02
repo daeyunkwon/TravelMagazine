@@ -15,7 +15,7 @@ enum User: String {
     case other_friend = "내옆자리의앞자리에개발잘하는친구"
     case simsim = "심심이"
     
-    case dateSeparator = "날짜 구분선입니다."
+    case dateSeparator = "날짜 구분선용 케이스입니다!"
     
     var profileImage: String {
         switch self {

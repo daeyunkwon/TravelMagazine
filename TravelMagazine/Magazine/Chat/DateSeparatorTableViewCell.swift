@@ -18,7 +18,7 @@ class DateSeparatorTableViewCell: UITableViewCell {
         didSet {
             guard let chat = self.chat else {return}
             
-            dateLabel.text = self.changeDateFormat(str: chat.date, format: "yyyy년 M월 d일 EEE요일")
+            dateLabel.text = self.changeDateFormat(str: chat.date, format: "yyyy년 M월 d일 EEEE")
         }
     }
     

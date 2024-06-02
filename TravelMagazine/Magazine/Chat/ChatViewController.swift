@@ -20,9 +20,6 @@ class ChatViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var chatList: [Chat] = []
-    
-    var originalContentInset: UIEdgeInsets = .zero
-
 
     //MARK: - Life Cycle
     
@@ -49,7 +46,7 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: UserChatTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: UserChatTableViewCell.reuseIdentifier)
-        tableView.register(UINib(nibName: MeChatTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MeChatTableViewCell.reuseIdentifier)
+        tableView.register(UINib(nibName: MyChatTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: MyChatTableViewCell.reuseIdentifier)
         tableView.register(UINib(nibName: DateSeparatorTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: DateSeparatorTableViewCell.reuseIdentifier)
     }
     
@@ -129,7 +126,7 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if chatList[indexPath.row].user == .user {
-            let cell = tableView.dequeueReusableCell(withIdentifier: MeChatTableViewCell.reuseIdentifier, for: indexPath) as! MeChatTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: MyChatTableViewCell.reuseIdentifier, for: indexPath) as! MyChatTableViewCell
             cell.chat = self.chatList[indexPath.row]
             cell.selectionStyle = .none
             return cell

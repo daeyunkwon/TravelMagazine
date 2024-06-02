@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MeChatTableViewCell: UITableViewCell {
+class MyChatTableViewCell: UITableViewCell {
     
     //MARK: - Properties
     

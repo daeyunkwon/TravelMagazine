@@ -47,8 +47,8 @@
 		44AD10042C0C1A430090CF5F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD10032C0C1A430090CF5F /* ChatViewController.swift */; };
 		44AD10072C0C1C3A0090CF5F /* UserChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD10052C0C1C3A0090CF5F /* UserChatTableViewCell.swift */; };
 		44AD10082C0C1C3A0090CF5F /* UserChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44AD10062C0C1C3A0090CF5F /* UserChatTableViewCell.xib */; };
-		44AD100B2C0C4A6E0090CF5F /* MeChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD10092C0C4A6E0090CF5F /* MeChatTableViewCell.swift */; };
-		44AD100C2C0C4A6E0090CF5F /* MeChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44AD100A2C0C4A6E0090CF5F /* MeChatTableViewCell.xib */; };
+		44AD100B2C0C4A6E0090CF5F /* MyChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD10092C0C4A6E0090CF5F /* MyChatTableViewCell.swift */; };
+		44AD100C2C0C4A6E0090CF5F /* MyChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44AD100A2C0C4A6E0090CF5F /* MyChatTableViewCell.xib */; };
 		44AD100F2C0C50E30090CF5F /* DateSeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD100D2C0C50E30090CF5F /* DateSeparatorTableViewCell.swift */; };
 		44AD10102C0C50E30090CF5F /* DateSeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44AD100E2C0C50E30090CF5F /* DateSeparatorTableViewCell.xib */; };
 		44DDCA662C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDCA652C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift */; };
@@ -108,8 +108,8 @@
 		44AD10032C0C1A430090CF5F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		44AD10052C0C1C3A0090CF5F /* UserChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatTableViewCell.swift; sourceTree = "<group>"; };
 		44AD10062C0C1C3A0090CF5F /* UserChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserChatTableViewCell.xib; sourceTree = "<group>"; };
-		44AD10092C0C4A6E0090CF5F /* MeChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeChatTableViewCell.swift; sourceTree = "<group>"; };
-		44AD100A2C0C4A6E0090CF5F /* MeChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeChatTableViewCell.xib; sourceTree = "<group>"; };
+		44AD10092C0C4A6E0090CF5F /* MyChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyChatTableViewCell.swift; sourceTree = "<group>"; };
+		44AD100A2C0C4A6E0090CF5F /* MyChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyChatTableViewCell.xib; sourceTree = "<group>"; };
 		44AD100D2C0C50E30090CF5F /* DateSeparatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSeparatorTableViewCell.swift; sourceTree = "<group>"; };
 		44AD100E2C0C50E30090CF5F /* DateSeparatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateSeparatorTableViewCell.xib; sourceTree = "<group>"; };
 		44DDCA652C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
@@ -301,8 +301,8 @@
 				44AD10032C0C1A430090CF5F /* ChatViewController.swift */,
 				44AD10062C0C1C3A0090CF5F /* UserChatTableViewCell.xib */,
 				44AD10052C0C1C3A0090CF5F /* UserChatTableViewCell.swift */,
-				44AD100A2C0C4A6E0090CF5F /* MeChatTableViewCell.xib */,
-				44AD10092C0C4A6E0090CF5F /* MeChatTableViewCell.swift */,
+				44AD100A2C0C4A6E0090CF5F /* MyChatTableViewCell.xib */,
+				44AD10092C0C4A6E0090CF5F /* MyChatTableViewCell.swift */,
 				44AD100E2C0C50E30090CF5F /* DateSeparatorTableViewCell.xib */,
 				44AD100D2C0C50E30090CF5F /* DateSeparatorTableViewCell.swift */,
 			);
@@ -380,7 +380,7 @@
 				445B6D792C01DB5300C40BC2 /* Restaurant.storyboard in Resources */,
 				4488190F2C04636C0061F4D7 /* AdTableViewCell.xib in Resources */,
 				44FFE15C2C0B53DB00E7F5F0 /* ChatRoomThreePeopleTableViewCell.xib in Resources */,
-				44AD100C2C0C4A6E0090CF5F /* MeChatTableViewCell.xib in Resources */,
+				44AD100C2C0C4A6E0090CF5F /* MyChatTableViewCell.xib in Resources */,
 				449B34932C0080DE0010F093 /* Base in Resources */,
 				44FFE1512C0B498100E7F5F0 /* ChatRoom.storyboard in Resources */,
 				44FFE1642C0B670C00E7F5F0 /* ChatRoomFourPeopleTableViewCell.xib in Resources */,
@@ -413,7 +413,7 @@
 				449B348B2C0080DD0010F093 /* MagazineViewController.swift in Sources */,
 				44FFE1552C0B4D1D00E7F5F0 /* ChatRoomTableViewCell.swift in Sources */,
 				4476E54C2C0719EA002AB3DD /* CityInfo.swift in Sources */,
-				44AD100B2C0C4A6E0090CF5F /* MeChatTableViewCell.swift in Sources */,
+				44AD100B2C0C4A6E0090CF5F /* MyChatTableViewCell.swift in Sources */,
 				445B6D772C01D91C00C40BC2 /* Restaurant.swift in Sources */,
 				445814872C08A58600604BAE /* RestaurantMapViewController.swift in Sources */,
 				445B6D7B2C01DB9000C40BC2 /* RestaurantTableViewController.swift in Sources */,
