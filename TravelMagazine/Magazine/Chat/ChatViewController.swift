@@ -11,16 +11,31 @@ class ChatViewController: UIViewController {
     
     //MARK: - Properties
     
+    @IBOutlet var textBackView: UIView!
+    
+    @IBOutlet var textView: UITextView!
+    
+    @IBOutlet var sendButton: UIButton!
+    
     @IBOutlet var tableView: UITableView!
     
     var chatList: [Chat] = []
 
     //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupTapGesture()
         scrollTableViewToBottom()
+        configureUI()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - Configurations
@@ -41,7 +56,51 @@ class ChatViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    func configureUI() {
+        textBackView.backgroundColor = .systemGray6
+        textBackView.layer.cornerRadius = 10
+        
+        textView.text = "메시지를 입력하세요"
+        textView.textColor = .lightGray
+        textView.backgroundColor = .clear
+        textView.delegate = self
+        textView.isScrollEnabled = false
+        
+        sendButton.setTitle("", for: .normal)
+        sendButton.setImage(UIImage(systemName: "paperplane.circle"), for: .normal)
+        sendButton.tintColor = UIColor.customBlue()
+        sendButton.addTarget(self, action: #selector(sendButtonTapped), for: .touchUpInside)
+    }
+    
     //MARK: - Functions
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+          let keybaordRectangle = keyboardFrame.cgRectValue
+          let keyboardHeight = keybaordRectangle.height
+          textBackView.frame.origin.y -= keyboardHeight - 20
+            sendButton.frame.origin.y -= keyboardHeight - 20
+            textView.frame.origin.y -= keyboardHeight - 20
+            view.frame.origin.y -= keyboardHeight - 20
+        }
+        scrollTableViewToBottom()
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+          let keybaordRectangle = keyboardFrame.cgRectValue
+          let keyboardHeight = keybaordRectangle.height
+            textBackView.frame.origin.y += keyboardHeight - 20
+            sendButton.frame.origin.y += keyboardHeight - 20
+            textView.frame.origin.y += keyboardHeight - 20
+            view.frame.origin.y += keyboardHeight - 20
+        }
+        scrollTableViewToBottom()
+    }
+    
+    @objc func sendButtonTapped() {
+        print(#function)
+    }
     
     @objc func tapGesture() {
         view.endEditing(true)
@@ -65,7 +124,8 @@ class ChatViewController: UIViewController {
     
     func scrollTableViewToBottom() {
         let index = IndexPath(row: self.chatList.count - 1, section: 0)
-        self.tableView.scrollToRow(at: index, at: .bottom, animated: true)
+
+        self.tableView.scrollToRow(at: index, at: .bottom, animated: false)
     }
 }
 
@@ -102,6 +162,24 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
             cell.chat = self.chatList[indexPath.row]
             cell.selectionStyle = .none
             return cell
+        }
+    }
+}
+
+//MARK: - UITextViewDelegate
+
+extension ChatViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "메시지를 입력하세요" && textView.textColor == UIColor.lightGray {
+            textView.text = ""
+            textView.textColor = .label
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty && textView.textColor == UIColor.label {
+            textView.text = "메시지를 입력하세요"
+            textView.textColor = .lightGray
         }
     }
 }
