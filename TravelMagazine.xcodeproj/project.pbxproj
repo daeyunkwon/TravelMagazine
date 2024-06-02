@@ -56,6 +56,7 @@
 		44FFE1642C0B670C00E7F5F0 /* ChatRoomFourPeopleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44FFE1632C0B670C00E7F5F0 /* ChatRoomFourPeopleTableViewCell.xib */; };
 		44FFE1652C0B670C00E7F5F0 /* ChatRoomFourPeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE1622C0B670C00E7F5F0 /* ChatRoomFourPeopleTableViewCell.swift */; };
 		44FFE1682C0BFAC400E7F5F0 /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE1672C0BFAC400E7F5F0 /* UITableViewCell+Extension.swift */; };
+		44FFE16A2C0BFF7400E7F5F0 /* UISearchBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE1692C0BFF7400E7F5F0 /* UISearchBar+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		44FFE1622C0B670C00E7F5F0 /* ChatRoomFourPeopleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomFourPeopleTableViewCell.swift; sourceTree = "<group>"; };
 		44FFE1632C0B670C00E7F5F0 /* ChatRoomFourPeopleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatRoomFourPeopleTableViewCell.xib; sourceTree = "<group>"; };
 		44FFE1672C0BFAC400E7F5F0 /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		44FFE1692C0BFF7400E7F5F0 /* UISearchBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 				448819392C054F330061F4D7 /* UIImageView+Extension.swift */,
 				44690F282C07505F00BD2437 /* UIViewController+Extension.swift */,
 				44FFE1672C0BFAC400E7F5F0 /* UITableViewCell+Extension.swift */,
+				44FFE1692C0BFF7400E7F5F0 /* UISearchBar+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				4476E54A2C071779002AB3DD /* PopularCityTableViewCell.swift in Sources */,
 				4476E53E2C0704D5002AB3DD /* CityDetailViewController.swift in Sources */,
 				447AC9BB2C02C95100B3760C /* Protocols.swift in Sources */,
+				44FFE16A2C0BFF7400E7F5F0 /* UISearchBar+Extension.swift in Sources */,
 				449B34A12C0086590010F093 /* MagazineTableViewCell.swift in Sources */,
 				44FFE15D2C0B53DB00E7F5F0 /* ChatRoomThreePeopleTableViewCell.swift in Sources */,
 				448819052C045FA70061F4D7 /* CityViewController.swift in Sources */,
