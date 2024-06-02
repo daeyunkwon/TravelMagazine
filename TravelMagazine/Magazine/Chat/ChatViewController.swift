@@ -19,6 +19,10 @@ class ChatViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var textViewHeight: NSLayoutConstraint!
+    var save: CGFloat = 0
+    
+    
     var chatList: [Chat] = []
 
     //MARK: - Life Cycle
@@ -31,6 +35,7 @@ class ChatViewController: UIViewController {
         configureUI()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     deinit {
@@ -73,8 +78,20 @@ class ChatViewController: UIViewController {
     
     //MARK: - Functions
     
-    @objc func keyboardWillShow(notification: NSNotification) {
+    @objc func keyboardWillShow() {
         scrollTableViewToBottom()
+//        textView.translatesAutoresizingMaskIntoConstraints = false
+//        //textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
+//        textView.heightAnchor.constraint(equalToConstant: 30).isActive = false
+        
+    }
+    
+    @objc func keyboardWillHide() {
+        
+////        textViewHeight.relation = .equal
+////        textViewHeight.constant = 30
+//        textView.translatesAutoresizingMaskIntoConstraints = false
+//        textView.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
     @objc func sendButtonTapped() {

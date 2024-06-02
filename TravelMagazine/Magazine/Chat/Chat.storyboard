@@ -18,18 +18,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dPe-aN-Ii0">
-                                <rect key="frame" x="0.0" y="59" width="393" height="680"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="709"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="680" id="0Gr-D2-mbO"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="dPe-aN-Ii0" secondAttribute="height" multiplier="393:680" constant="800" id="3EU-gr-Ycj"/>
                                 </constraints>
                             </tableView>
                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tnA-rc-byq">
-                                <rect key="frame" x="30" y="739" width="343" height="79"/>
+                                <rect key="frame" x="30" y="768" width="343" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxV-Px-r4i">
-                                <rect key="frame" x="327" y="749" width="36" height="36"/>
+                                <rect key="frame" x="327" y="778" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="6nD-Um-5Bf"/>
                                     <constraint firstAttribute="height" constant="36" id="gHt-SU-Pdh"/>
@@ -38,8 +38,11 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oRt-ly-gIW">
-                                <rect key="frame" x="40" y="749" width="282" height="59"/>
+                                <rect key="frame" x="40" y="778" width="282" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="G7y-BE-4Lr"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -70,6 +73,7 @@
                         <outlet property="tableView" destination="dPe-aN-Ii0" id="rRz-Pb-ObE"/>
                         <outlet property="textBackView" destination="tnA-rc-byq" id="t2f-pF-vQ5"/>
                         <outlet property="textView" destination="oRt-ly-gIW" id="rxy-d5-oY7"/>
+                        <outlet property="textViewHeight" destination="G7y-BE-4Lr" id="5vO-2f-wo3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
