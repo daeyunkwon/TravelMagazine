@@ -15,4 +15,12 @@ extension UIColor {
     static func customPink() -> UIColor {
         return UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
     }
+    
+    static func customSkyBlue() -> UIColor {
+        return UIColor.rgb(red: 133, green: 186, blue: 238)
+    }
+    
+    static func customBlue() -> UIColor {
+        return UIColor.rgb(red: 46, green: 146, blue: 244)
+    }
 }

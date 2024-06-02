@@ -15,6 +15,8 @@ enum User: String {
     case other_friend = "내옆자리의앞자리에개발잘하는친구"
     case simsim = "심심이"
     
+    case dateSeparator = "날짜 구분선입니다."
+    
     var profileImage: String {
         switch self {
         default: return rawValue
@@ -46,6 +48,7 @@ struct Chat {
         
         //원하는 format으로 표시하기 위해 다시 Date -> String 으로 변환하기
         myFormatter.dateFormat = format
+        myFormatter.locale = Locale(identifier: "ko-KR")
         let dateString = myFormatter.string(from: date)
         
         return dateString

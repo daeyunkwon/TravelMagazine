@@ -324,8 +324,8 @@ extension RestaurantTableViewController {
         mapContextualAction(data: data, contextualAction: &map, indexPath: indexPath)
         
         guard let like, let map else {return nil}
-        like.backgroundColor = UIColor(red: 0.96, green: 0.46, blue: 0.56, alpha: 1.00)
-        map.backgroundColor = UIColor.rgb(red: 133, green: 186, blue: 238)
+        like.backgroundColor = UIColor.customPink()
+        map.backgroundColor = UIColor.customSkyBlue()
         
         let config = UISwipeActionsConfiguration(actions: [like, map])
         config.performsFirstActionWithFullSwipe = false //풀 스와이프 비허용 설정

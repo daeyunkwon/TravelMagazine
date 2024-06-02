@@ -36,6 +36,12 @@ class ChatRoomViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = true
+        navigationItem.title = "TRAVEL TALK"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationItem.title = ""
     }
     
     override func viewDidLoad() {
@@ -113,7 +119,16 @@ extension ChatRoomViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(self.chatRoomList[indexPath.row].chatroomName)
+        let sb = UIStoryboard(name: "Chat", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: ChatViewController.reuseIdentifier) as! ChatViewController
+        let chatList = self.chatRoomList[indexPath.row].chatList
+        
+        vc.chatList = chatList
+        vc.checkAndAddNewDate()
+        vc.navigationItem.title = self.chatRoomList[indexPath.row].chatroomName
+        navigationController?.pushViewController(vc, animated: true)
+        
+        tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .automatic)
     }
 }
 
