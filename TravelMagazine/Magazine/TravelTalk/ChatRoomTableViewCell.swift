@@ -65,9 +65,4 @@ class ChatRoomTableViewCell: UITableViewCell {
         dateLabel.textColor = .lightGray
         dateLabel.textAlignment = .right
     }
-    
-    
-
-    
-    
 }
