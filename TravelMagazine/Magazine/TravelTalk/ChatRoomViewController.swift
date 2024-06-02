@@ -39,9 +39,7 @@ class ChatRoomViewController: UIViewController {
     }
     
     func setupSearchBar() {
-        searchBar.layer.borderWidth = 1
-        searchBar.layer.borderColor = UIColor.whiteToDark.cgColor
-        
+        searchBar.backgroundImage = UIImage()
         searchBar.delegate = self
         searchBar.setupSearchBar(placeholder: "친구 이름을 검색해보세요")
     }
