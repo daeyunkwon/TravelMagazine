@@ -20,6 +20,9 @@ class ChatViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     var chatList: [Chat] = []
+    
+    var originalContentInset: UIEdgeInsets = .zero
+
 
     //MARK: - Life Cycle
     
@@ -31,7 +34,6 @@ class ChatViewController: UIViewController {
         configureUI()
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     deinit {
@@ -42,7 +44,7 @@ class ChatViewController: UIViewController {
     
     func setupTableView() {
         tableView.separatorStyle = .none
-        tableView.keyboardDismissMode = .onDrag
+        tableView.keyboardDismissMode = .none
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -75,26 +77,6 @@ class ChatViewController: UIViewController {
     //MARK: - Functions
     
     @objc func keyboardWillShow(notification: NSNotification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-          let keybaordRectangle = keyboardFrame.cgRectValue
-          let keyboardHeight = keybaordRectangle.height
-          textBackView.frame.origin.y -= keyboardHeight - 20
-            sendButton.frame.origin.y -= keyboardHeight - 20
-            textView.frame.origin.y -= keyboardHeight - 20
-            view.frame.origin.y -= keyboardHeight - 20
-        }
-        scrollTableViewToBottom()
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification) {
-        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-          let keybaordRectangle = keyboardFrame.cgRectValue
-          let keyboardHeight = keybaordRectangle.height
-            textBackView.frame.origin.y += keyboardHeight - 20
-            sendButton.frame.origin.y += keyboardHeight - 20
-            textView.frame.origin.y += keyboardHeight - 20
-            view.frame.origin.y += keyboardHeight - 20
-        }
         scrollTableViewToBottom()
     }
     
