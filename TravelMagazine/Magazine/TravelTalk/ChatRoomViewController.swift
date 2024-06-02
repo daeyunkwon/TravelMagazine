@@ -14,7 +14,22 @@ class ChatRoomViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
-    let chatRoomList: [ChatRoom] = mockChatList
+    var chatRoomList: [ChatRoom] = mockChatList {
+        didSet {
+            chatRoomList.sort {
+                let firstDateString = $0.chatList.last?.date ?? ""
+                let secondDateString = $1.chatList.last?.date ?? ""
+                
+                let firstDate = Chat.makeDate(str: firstDateString)
+                let secondDate = Chat.makeDate(str: secondDateString)
+                
+                return firstDate > secondDate //최신순 정렬
+            }
+            tableView.reloadData()
+        }
+    }
+    
+    var searchText: String?
     
     //MARK: - Life Cycle
     
@@ -55,11 +70,6 @@ class ChatRoomViewController: UIViewController {
         tableView.register(UINib(nibName: ChatRoomFourPeopleTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ChatRoomFourPeopleTableViewCell.reuseIdentifier)
         tableView.register(UINib(nibName: ChatRoomGroupPeopleTableViewCell.reuseIdentifier, bundle: nil), forCellReuseIdentifier: ChatRoomGroupPeopleTableViewCell.reuseIdentifier)
     }
-    
-    //MARK: - Functions
-    
-
-    
 }
 
 //MARK: - UITableViewDataSource & UITableViewDelegate
@@ -78,27 +88,59 @@ extension ChatRoomViewController: UITableViewDataSource, UITableViewDelegate {
         switch chatRoomList[indexPath.row].chatroomImage.count {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatRoomTableViewCell.reuseIdentifier, for: indexPath) as! ChatRoomTableViewCell
+            cell.searchWord = self.searchText
             cell.chatRoom = self.chatRoomList[indexPath.row]
+            return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatRoomThreePeopleTableViewCell.reuseIdentifier, for: indexPath) as! ChatRoomThreePeopleTableViewCell
+            cell.searchWord = self.searchText
             cell.chatRoom = self.chatRoomList[indexPath.row]
+            return cell
         case 3:
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatRoomFourPeopleTableViewCell.reuseIdentifier, for: indexPath) as! ChatRoomFourPeopleTableViewCell
+            cell.searchWord = self.searchText
             cell.chatRoom = self.chatRoomList[indexPath.row]
+            return cell
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: ChatRoomGroupPeopleTableViewCell.reuseIdentifier, for: indexPath) as! ChatRoomGroupPeopleTableViewCell
+            cell.searchWord = self.searchText
             cell.chatRoom = self.chatRoomList[indexPath.row]
+            return cell
         default: break
         }
         
         return UITableViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(self.chatRoomList[indexPath.row].chatroomName)
+    }
 }
 
 //MARK: - UISearchBarDelegate
 
 extension ChatRoomViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchBarText = searchBar.text else {return}
+        
+        let text = searchBarText.trimmingCharacters(in: .whitespaces).lowercased()
+        
+        if text.isEmpty {
+            self.searchText = nil
+            self.chatRoomList = mockChatList
+        } else {
+            self.searchText = text
+            var filterd: [ChatRoom] = []
+            for item in mockChatList {
+                if item.chatroomName.lowercased().contains(text) {
+                    filterd.append(item)
+                }
+            }
+            self.chatRoomList = filterd
+        }
+    }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
 }

@@ -19,6 +19,8 @@ class ChatRoomFourPeopleTableViewCell: UITableViewCell {
     @IBOutlet var subtitleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     
+    var searchWord: String?
+    
     var chatRoom: ChatRoom? {
         didSet {
             guard let chatRoom = self.chatRoom else {return}
@@ -32,6 +34,8 @@ class ChatRoomFourPeopleTableViewCell: UITableViewCell {
             titleLabel.text = chatRoom.chatroomName
             subtitleLabel.text = chatRoom.chatList.last?.message
             dateLabel.text = Chat.makeDateString(str: date, format: "yy.MM.dd")
+            
+            highlightSearchWord(word: self.searchWord, label: titleLabel)
         }
     }
     

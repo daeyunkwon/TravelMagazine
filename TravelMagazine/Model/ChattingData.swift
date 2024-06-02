@@ -50,6 +50,15 @@ struct Chat {
         
         return dateString
     }
+    
+    static func makeDate(str: String) -> Date {
+        let myFormatter = DateFormatter()
+        myFormatter.dateFormat = "yyyy-MM-dd HH:mm"  // String의 문자열 형식과 동일 해야함
+        myFormatter.timeZone = NSTimeZone(name: "UTC") as TimeZone?
+        
+        let date = myFormatter.date(from: str) ?? Date()
+        return date
+    }
 }
 
 
