@@ -78,11 +78,11 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
             let vc = sb.instantiateViewController(withIdentifier: CityDetailViewController.reuseIdentifier) as! CityDetailViewController
             vc.travel = self.travels[indexPath.row]
             vc.closureUseForDataSend = {[weak self] sender in
-                guard let self else {return}
+                guard let self = self else {return}
                 for i in 0..<self.travels.count {
-                    if travels[i].title == sender.title {
-                        travels[i].like = sender.like
-                        tableView.reloadRows(at: [IndexPath(row: indexPath.row, section: 0)], with: .automatic)
+                    if self.travels[i].title == sender.title {
+                        self.travels[i].like = sender.like
+                        self.tableView.reloadData()
                         break
                     }
                 }
