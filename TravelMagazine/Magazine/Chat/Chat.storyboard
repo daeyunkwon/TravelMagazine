@@ -73,7 +73,6 @@
                         <outlet property="tableView" destination="dPe-aN-Ii0" id="rRz-Pb-ObE"/>
                         <outlet property="textBackView" destination="tnA-rc-byq" id="t2f-pF-vQ5"/>
                         <outlet property="textView" destination="oRt-ly-gIW" id="rxy-d5-oY7"/>
-                        <outlet property="textViewHeight" destination="G7y-BE-4Lr" id="5vO-2f-wo3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

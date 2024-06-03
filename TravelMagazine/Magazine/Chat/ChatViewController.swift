@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ChatViewController: UIViewController {
     
@@ -18,10 +19,6 @@ class ChatViewController: UIViewController {
     @IBOutlet var sendButton: UIButton!
     
     @IBOutlet var tableView: UITableView!
-    
-    @IBOutlet var textViewHeight: NSLayoutConstraint!
-    var save: CGFloat = 0
-    
     
     var chatList: [Chat] = []
 
@@ -80,18 +77,16 @@ class ChatViewController: UIViewController {
     
     @objc func keyboardWillShow() {
         scrollTableViewToBottom()
-//        textView.translatesAutoresizingMaskIntoConstraints = false
-//        //textView.heightAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
-//        textView.heightAnchor.constraint(equalToConstant: 30).isActive = false
         
+        textView.snp.updateConstraints { make in
+            make.height.lessThanOrEqualTo(100)
+        }
     }
     
     @objc func keyboardWillHide() {
-        
-////        textViewHeight.relation = .equal
-////        textViewHeight.constant = 30
-//        textView.translatesAutoresizingMaskIntoConstraints = false
-//        textView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        textView.snp.updateConstraints { make in
+            make.height.lessThanOrEqualTo(30)
+        }
     }
     
     @objc func sendButtonTapped() {
