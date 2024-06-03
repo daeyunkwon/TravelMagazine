@@ -15,14 +15,6 @@ class AdTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var adButton: UIButton!
     
-    var randomBackgroundColorList: [UIColor] = [
-        UIColor.rgb(red: 250, green: 187, blue: 200),
-        UIColor.rgb(red: 139, green: 206, blue: 228),
-        UIColor.rgb(red: 249, green: 215, blue: 128),
-        UIColor.rgb(red: 171, green: 182, blue: 251),
-        UIColor.rgb(red: 160, green: 216, blue: 161),
-    ]
-    
     var travel: Travel? {
         didSet {
             guard let travel = self.travel else {return}
@@ -32,12 +24,18 @@ class AdTableViewCell: UITableViewCell {
         }
     }
     
+    var backColor: UIColor? {
+        didSet {
+            backView.backgroundColor = self.backColor
+        }
+    }
+    
     //MARK: - Life Cycle
     
     override func prepareForReuse() {
         super.prepareForReuse()
         titleLabel.text = ""
-        backView.backgroundColor = randomBackgroundColorList.randomElement()
+        backView.backgroundColor = backColor
     }
 
     override func awakeFromNib() {
@@ -48,7 +46,7 @@ class AdTableViewCell: UITableViewCell {
     //MARK: - Configurations
     
     func configureUI() {
-        backView.backgroundColor = randomBackgroundColorList.randomElement()
+        backView.backgroundColor = backColor
         backView.layer.cornerRadius = 10
         
         titleLabel.textColor = .black

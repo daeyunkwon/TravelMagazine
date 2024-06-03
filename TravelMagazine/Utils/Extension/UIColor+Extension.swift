@@ -23,4 +23,16 @@ extension UIColor {
     static func customBlue() -> UIColor {
         return UIColor.rgb(red: 46, green: 146, blue: 244)
     }
+    
+    static func randomColor() -> UIColor {
+        var randomBackgroundColorList: [UIColor] = [
+            UIColor.rgb(red: 250, green: 187, blue: 200),
+            UIColor.rgb(red: 139, green: 206, blue: 228),
+            UIColor.rgb(red: 249, green: 215, blue: 128),
+            UIColor.rgb(red: 171, green: 182, blue: 251),
+            UIColor.rgb(red: 160, green: 216, blue: 161),
+        ]
+        
+        return randomBackgroundColorList.randomElement() ?? UIColor.rgb(red: 250, green: 187, blue: 200)
+    }
 }

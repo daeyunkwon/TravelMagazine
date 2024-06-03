@@ -15,6 +15,8 @@ class AdDetailViewController: UIViewController {
     
     var travel: Travel?
     
+    var backColor: UIColor?
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -35,6 +37,7 @@ class AdDetailViewController: UIViewController {
         titleLabel.font = .systemFont(ofSize: 25, weight: .heavy)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 0
+        view.backgroundColor = backColor
     }
     
     func setupNavi() {

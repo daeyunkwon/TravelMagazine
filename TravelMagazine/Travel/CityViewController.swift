@@ -16,6 +16,8 @@ class CityViewController: UIViewController {
     
     var travels: [Travel] = TravelInfo.travel
     
+    var sendColorForAdCell: UIColor?
+    
     //MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -51,6 +53,8 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
             //AdCell 표시
             let cell = tableView.dequeueReusableCell(withIdentifier: AdTableViewCell.reuseIdentifier, for: indexPath) as! AdTableViewCell
             cell.travel = self.travels[indexPath.row]
+            self.sendColorForAdCell = UIColor.randomColor()
+            cell.backColor = sendColorForAdCell
             return cell
         } else {
             //CityCell 표시
@@ -88,6 +92,7 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
             let sb = UIStoryboard(name: "AdDetail", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: AdDetailViewController.reuseIdentifier) as! AdDetailViewController
             vc.travel = self.travels[indexPath.row]
+            vc.backColor = self.sendColorForAdCell
             let navi = UINavigationController(rootViewController: vc)
             navi.modalPresentationStyle = .fullScreen
             present(navi, animated: true)

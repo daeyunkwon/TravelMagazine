@@ -26,8 +26,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mEv-1e-gW5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="4Tj-Lr-hrA"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mEv-1e-gW5" secondAttribute="trailing" id="Ey3-pL-a23"/>
-                            <constraint firstItem="mEv-1e-gW5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jvg-PZ-UKG"/>
+                            <constraint firstAttribute="trailing" secondItem="mEv-1e-gW5" secondAttribute="trailing" id="Ey3-pL-a23"/>
+                            <constraint firstItem="mEv-1e-gW5" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="jvg-PZ-UKG"/>
                             <constraint firstAttribute="bottom" secondItem="mEv-1e-gW5" secondAttribute="bottom" id="rIK-9j-rGG"/>
                         </constraints>
                     </view>
