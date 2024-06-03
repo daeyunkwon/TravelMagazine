@@ -66,6 +66,10 @@ class ChatViewController: UIViewController {
         textView.backgroundColor = .clear
         textView.delegate = self
         textView.isScrollEnabled = false
+        textView.showsVerticalScrollIndicator = false
+        textView.snp.makeConstraints { make in
+            make.height.lessThanOrEqualTo(30)
+        }
         
         sendButton.setTitle("", for: .normal)
         sendButton.setImage(UIImage(systemName: "paperplane.circle"), for: .normal)
@@ -76,11 +80,10 @@ class ChatViewController: UIViewController {
     //MARK: - Functions
     
     @objc func keyboardWillShow() {
-        scrollTableViewToBottom()
-        
         textView.snp.updateConstraints { make in
             make.height.lessThanOrEqualTo(100)
         }
+        scrollTableViewToBottom()
     }
     
     @objc func keyboardWillHide() {

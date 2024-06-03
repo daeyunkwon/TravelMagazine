@@ -52,7 +52,6 @@
 		44AD100F2C0C50E30090CF5F /* DateSeparatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AD100D2C0C50E30090CF5F /* DateSeparatorTableViewCell.swift */; };
 		44AD10102C0C50E30090CF5F /* DateSeparatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44AD100E2C0C50E30090CF5F /* DateSeparatorTableViewCell.xib */; };
 		44AD105E2C0DACF80090CF5F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 44AD105D2C0DACF80090CF5F /* SnapKit */; };
-		44AD10602C0DACF80090CF5F /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 44AD105F2C0DACF80090CF5F /* SnapKit-Dynamic */; };
 		44DDCA662C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDCA652C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift */; };
 		44FFE1422C0B450100E7F5F0 /* ChattingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE1412C0B450100E7F5F0 /* ChattingData.swift */; };
 		44FFE14B2C0B494300E7F5F0 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE14A2C0B494300E7F5F0 /* ChatRoomViewController.swift */; };
@@ -138,7 +137,6 @@
 				44AD105E2C0DACF80090CF5F /* SnapKit in Frameworks */,
 				448819382C04B7890061F4D7 /* Cosmos in Frameworks */,
 				445B6D752C00925500C40BC2 /* Kingfisher in Frameworks */,
-				44AD10602C0DACF80090CF5F /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +331,6 @@
 				445B6D742C00925500C40BC2 /* Kingfisher */,
 				448819372C04B7890061F4D7 /* Cosmos */,
 				44AD105D2C0DACF80090CF5F /* SnapKit */,
-				44AD105F2C0DACF80090CF5F /* SnapKit-Dynamic */,
 			);
 			productName = TravelMagazine;
 			productReference = 449B34832C0080DD0010F093 /* TravelMagazine.app */;
@@ -723,11 +720,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 44AD105C2C0DACF80090CF5F /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		44AD105F2C0DACF80090CF5F /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 44AD105C2C0DACF80090CF5F /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
