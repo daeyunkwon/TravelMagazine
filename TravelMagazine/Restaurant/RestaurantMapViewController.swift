@@ -85,6 +85,8 @@ class RestaurantMapViewController: UIViewController {
     }
     
     func setupMapView(isFirstStart: Bool) {
+        mapView.showsUserLocation = true
+        
         if isFirstStart {
             if restaurants.isEmpty {
                 self.restaurants = RestaurantList.restaurantArray
