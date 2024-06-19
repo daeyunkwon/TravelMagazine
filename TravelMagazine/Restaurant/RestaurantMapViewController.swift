@@ -38,6 +38,12 @@ class RestaurantMapViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        switch viewType {
+        case .mapView:
+            checkDeviceLocationServiceEnabled()
+        case .restaurantDetail:
+            break
+        }
     }
     
     override func viewDidLoad() {
@@ -160,8 +166,29 @@ class RestaurantMapViewController: UIViewController {
     }
     
     @IBAction func locationButtonTapped(_ sender: UIButton) {
-        changeUILocationButton(isActive: false)
-        checkDeviceLocationServiceEnabled()
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                let status: CLAuthorizationStatus
+                
+                if #available(iOS 14.0, *) {
+                    status = self.locationManager.authorizationStatus
+                } else {
+                    status = CLLocationManager.authorizationStatus()
+                }
+                
+                switch status {
+                case .denied:
+                    DispatchQueue.main.async {
+                        self.showLocationSettingAlert()
+                        self.changeUILocationButton(isActive: true)
+                    }
+                    return
+                default:
+                    break
+                }
+            }
+            self.checkDeviceLocationServiceEnabled()
+        }
     }
     
     func changeUILocationButton(isActive: Bool) {
@@ -202,8 +229,7 @@ class RestaurantMapViewController: UIViewController {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.requestWhenInUseAuthorization()
         case .denied:
-            showLocationSettingAlert()
-            changeUILocationButton(isActive: true)
+            break
         case .authorizedWhenInUse:
             locationManager.startUpdatingLocation()
             changeUILocationButton(isActive: false)
@@ -250,11 +276,25 @@ extension RestaurantMapViewController: CLLocationManagerDelegate {
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        self.checkDeviceLocationServiceEnabled() //iOS14 이상
+        //iOS14 이상
+        
+        switch viewType {
+        case .mapView:
+            self.checkDeviceLocationServiceEnabled()
+        case .restaurantDetail:
+            break
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        self.checkDeviceLocationServiceEnabled() //iOS14 미만
+        //iOS14 미만
+        
+        switch viewType {
+        case .mapView:
+            self.checkDeviceLocationServiceEnabled()
+        case .restaurantDetail:
+            break
+        }
     }
 }
 
