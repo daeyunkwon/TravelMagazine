@@ -27,6 +27,12 @@ class RestaurantMapViewController: UIViewController {
     
     let locationManager = CLLocationManager()
     
+    enum ViewType {
+        case mapView
+        case restaurantDetail
+    }
+    var viewType: ViewType = .mapView
+    
     //MARK: - Life Cycle
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,8 +93,15 @@ class RestaurantMapViewController: UIViewController {
         }
         
         mapView.addAnnotations(self.annotaitons)
-        guard let center = self.annotaitons.randomElement() else {return}
-        mapView.setRegion(MKCoordinateRegion(center: center.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000), animated: true)
+        
+        switch viewType {
+        case .mapView:
+            let yeongdeungpoCampus = CLLocationCoordinate2D(latitude: 37.517742, longitude: 126.886463)
+            mapView.setRegion(MKCoordinateRegion(center: yeongdeungpoCampus, latitudinalMeters: 500, longitudinalMeters: 500), animated: true)
+        case .restaurantDetail:
+            guard let center = self.annotaitons.randomElement() else {return}
+            mapView.setRegion(MKCoordinateRegion(center: center.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000), animated: true)
+        }
     }
     
     //MARK: - Functions

@@ -142,6 +142,7 @@ class RestaurantTableViewController: UITableViewController {
             vc.restaurants.append(data)
             vc.annotaitons.append(annotaiton)
             vc.filterButtonIsHidden = true
+            vc.viewType = .restaurantDetail
             let navi = UINavigationController(rootViewController: vc)
             navi.modalPresentationStyle = .fullScreen
             self.present(navi, animated: true)
