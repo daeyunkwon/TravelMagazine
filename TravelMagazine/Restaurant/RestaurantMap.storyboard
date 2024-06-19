@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -40,14 +41,32 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o3Q-KF-1JP">
+                                <rect key="frame" x="16" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Ozd-hb-4Mg"/>
+                                    <constraint firstAttribute="height" constant="50" id="aSV-hk-Nxx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="location.square" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="locationButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7Yl-Nx-0fU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="o3Q-KF-1JP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="2p1-UW-Aab"/>
                             <constraint firstItem="1oW-j8-f8S" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="EFS-4u-TrJ"/>
                             <constraint firstItem="1oW-j8-f8S" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="FOl-Tv-uWB"/>
                             <constraint firstItem="Zdn-ZJ-Gsb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Jcy-tV-76M"/>
                             <constraint firstItem="Uzh-Gk-Hhn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="PKT-ec-nYq"/>
+                            <constraint firstItem="o3Q-KF-1JP" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="-50" id="WrH-mQ-4G4"/>
                             <constraint firstItem="1oW-j8-f8S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="i2T-7N-zBb"/>
                             <constraint firstItem="Zdn-ZJ-Gsb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="jqF-Dq-SiO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Uzh-Gk-Hhn" secondAttribute="trailing" constant="16" id="kbZ-lI-mfR"/>
@@ -56,16 +75,18 @@
                     </view>
                     <connections>
                         <outlet property="filterButton" destination="Uzh-Gk-Hhn" id="OgK-wZ-elf"/>
+                        <outlet property="locationButton" destination="o3Q-KF-1JP" id="Nwe-uZ-5y6"/>
                         <outlet property="mapView" destination="1oW-j8-f8S" id="BR0-Cv-sXp"/>
                         <outlet property="xMarkButton" destination="Zdn-ZJ-Gsb" id="AKc-0D-MnX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2170" y="-26"/>
+            <point key="canvasLocation" x="2168.7022900763359" y="-26.056338028169016"/>
         </scene>
     </scenes>
     <resources>
+        <image name="location.square" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
