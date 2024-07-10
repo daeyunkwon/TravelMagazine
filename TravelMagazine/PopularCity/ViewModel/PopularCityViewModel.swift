@@ -21,9 +21,9 @@ final class PopularCityViewModel {
     
     //MARK: - Ouput
     
-    private var outputFilteredCities = Observable<[City]>(CityInfo.city)
+    private(set) var outputFilteredCities = Observable<[City]>(CityInfo.city)
     
-    private var outputCities = Observable<[City]>(CityInfo.city)
+    private(set) var outputCities = Observable<[City]>(CityInfo.city)
     
     //MARK: - Init
     
