@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44520B8F2C3D7ED50004685D /* PopularCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44520B8E2C3D7ED50004685D /* PopularCityViewModel.swift */; };
+		44520B912C3D7F130004685D /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44520B902C3D7F130004685D /* Observable.swift */; };
 		445814852C08A55500604BAE /* RestaurantMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445814842C08A55500604BAE /* RestaurantMap.storyboard */; };
 		445814872C08A58600604BAE /* RestaurantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445814862C08A58600604BAE /* RestaurantMapViewController.swift */; };
 		445B6D752C00925500C40BC2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 445B6D742C00925500C40BC2 /* Kingfisher */; };
@@ -69,6 +71,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44520B8E2C3D7ED50004685D /* PopularCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCityViewModel.swift; sourceTree = "<group>"; };
+		44520B902C3D7F130004685D /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		445814842C08A55500604BAE /* RestaurantMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RestaurantMap.storyboard; sourceTree = "<group>"; };
 		445814862C08A58600604BAE /* RestaurantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewController.swift; sourceTree = "<group>"; };
 		445B6D762C01D91C00C40BC2 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -143,13 +147,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4476E5462C071507002AB3DD /* PopularCity */ = {
+		44520BAA2C3E51C60004685D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				44520B8E2C3D7ED50004685D /* PopularCityViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		44520BAB2C3E51D70004685D /* View */ = {
 			isa = PBXGroup;
 			children = (
 				4476E5442C071501002AB3DD /* PopularCity.storyboard */,
 				4476E5412C0714C6002AB3DD /* PopularCityViewController.swift */,
 				4476E5482C071779002AB3DD /* PopularCityTableViewCell.xib */,
 				4476E5472C071779002AB3DD /* PopularCityTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4476E5462C071507002AB3DD /* PopularCity */ = {
+			isa = PBXGroup;
+			children = (
+				44520BAA2C3E51C60004685D /* ViewModel */,
+				44520BAB2C3E51D70004685D /* View */,
 			);
 			path = PopularCity;
 			sourceTree = "<group>";
@@ -202,6 +223,7 @@
 			children = (
 				447AC9BA2C02C95100B3760C /* Protocols.swift */,
 				44DDCA652C0AF96300BE44A9 /* ReuseIdentifierProtocol.swift */,
+				44520B902C3D7F130004685D /* Observable.swift */,
 				44EF2ED22C060890002DFBDC /* Extension */,
 			);
 			path = Utils;
@@ -431,6 +453,7 @@
 				44FFE1612C0B59AF00E7F5F0 /* ChatRoomGroupPeopleTableViewCell.swift in Sources */,
 				44AD10042C0C1A430090CF5F /* ChatViewController.swift in Sources */,
 				445B6D7D2C020A9400C40BC2 /* RestaurantTableViewCell.swift in Sources */,
+				44520B8F2C3D7ED50004685D /* PopularCityViewModel.swift in Sources */,
 				44AD100F2C0C50E30090CF5F /* DateSeparatorTableViewCell.swift in Sources */,
 				4476E5402C0704E4002AB3DD /* AdDetailViewController.swift in Sources */,
 				448819352C04B0520061F4D7 /* UIColor+Extension.swift in Sources */,
@@ -439,6 +462,7 @@
 				44FFE1652C0B670C00E7F5F0 /* ChatRoomFourPeopleTableViewCell.swift in Sources */,
 				449B349B2C00829A0010F093 /* Magazine.swift in Sources */,
 				448819122C0471A90061F4D7 /* CityTableViewCell.swift in Sources */,
+				44520B912C3D7F130004685D /* Observable.swift in Sources */,
 				44AD10072C0C1C3A0090CF5F /* UserChatTableViewCell.swift in Sources */,
 				4488190E2C04636C0061F4D7 /* AdTableViewCell.swift in Sources */,
 				448819022C045BA30061F4D7 /* TravelModel.swift in Sources */,
